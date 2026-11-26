@@ -675,12 +675,22 @@ const handleRequest = async (req, res) => {
   // ----------------------------------------------------
   // Static File Serving
   // ----------------------------------------------------
-  let filePath = path.join(__dirname, 'public', pathname === '/' ? 'index.html' : pathname);
+  let targetPath = pathname;
+  if (isKekaApp) {
+    targetPath = path.join('hr-payroll', 'keka', pathname === '/' ? 'index.html' : pathname);
+  } else if (targetPath === '/') {
+    targetPath = 'index.html';
+  }
+
+  let filePath = path.join(__dirname, 'public', targetPath);
   
   fs.stat(filePath, (err, stats) => {
     if (err || !stats.isFile()) {
-      // SPA Fallback to index.html
-      filePath = path.join(__dirname, 'public', 'index.html');
+      if (isKekaApp) {
+        filePath = path.join(__dirname, 'public', 'hr-payroll', 'keka', 'index.html');
+      } else {
+        filePath = path.join(__dirname, 'public', 'index.html');
+      }
     }
     const ext = path.extname(filePath).toLowerCase();
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
