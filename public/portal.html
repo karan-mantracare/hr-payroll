@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MantraCare HR & Payroll Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .container {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(99, 102, 241, 0.2);
+      border: 1px solid rgba(129, 140, 248, 0.4);
+      color: #a5b4fc;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    p.subtitle {
+      font-size: 18px;
+      color: #94a3b8;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .app-card {
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 32px 28px;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(12px);
+    }
+    .app-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(99, 102, 241, 0.6);
+      box-shadow: 0 20px 40px -15px rgba(79, 70, 229, 0.35);
+      background: rgba(30, 41, 59, 0.95);
+    }
+    .app-card.disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      border-style: dashed;
+    }
+    .app-card.disabled:hover {
+      transform: none;
+      border-color: rgba(255, 255, 255, 0.1);
+      box-shadow: none;
+    }
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    .icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 800;
+    }
+    .icon-keka {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      color: white;
+      box-shadow: 0 8px 16px -4px rgba(79, 70, 229, 0.5);
+    }
+    .icon-coming-soon {
+      background: rgba(51, 65, 85, 0.8);
+      color: #94a3b8;
+    }
+    .status-tag {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .status-live {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .status-upcoming {
+      background: rgba(148, 163, 184, 0.15);
+      color: #cbd5e1;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    p.desc {
+      font-size: 14px;
+      color: #94a3b8;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .features-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+    .feature-chip {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      color: #cbd5e1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 16px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #a5b4fc;
+    }
+    .card-footer span.arrow {
+      font-size: 18px;
+      transition: transform 0.2s ease;
+    }
+    .app-card:hover .card-footer span.arrow {
+      transform: translateX(4px);
+    }
+    .footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 13px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="badge">Enterprise HR & Payroll Portal</div>
+      <h1>Choose an HR Application</h1>
+      <p class="subtitle">Select which application workspace you would like to open. Additional enterprise suites can be launched from this portal.</p>
+    </div>
+
+    <div class="apps-grid">
+      <!-- 1. Keka HR Suite -->
+      <a href="/hr-payroll/keka" class="app-card">
+        <div>
+          <div class="card-top">
+            <div class="icon-box icon-keka">K</div>
+            <span class="status-tag status-live">● Ready to Open</span>
+          </div>
+          <h2>Keka HR</h2>
+          <p class="desc">Original full-featured HR & Payroll suite reverse-engineered from Keka HR 3.5.20. Includes attendance logs, configurable leaves, multi-tier approvals, payslips, timesheets, and helpdesk.</p>
+          <div class="features-list">
+            <span class="feature-chip">Leave & Approvals</span>
+            <span class="feature-chip">Attendance & Shifts</span>
+            <span class="feature-chip">Payslips</span>
+            <span class="feature-chip">Directory</span>
+            <span class="feature-chip">Expenses</span>
+            <span class="feature-chip">Role-Based Access</span>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span>Launch Keka HR App</span>
+          <span class="arrow">→</span>
+        </div>
+      </a>
+
+      <!-- 2. Next App Slot (Placeholder) -->
+      <div class="app-card disabled">
+        <div>
+          <div class="card-top">
+            <div class="icon-box icon-coming-soon">+</div>
+            <span class="status-tag status-upcoming">Next APK Slot</span>
+          </div>
+          <h2>Secondary HR / Payroll App</h2>
+          <p class="desc">Reserved workspace ready to host your next APK decompilation and application module (e.g., Darwinbox, Zoho People, or GreytHR).</p>
+          <div class="features-list">
+            <span class="feature-chip">Target: /hr-payroll/app2</span>
+            <span class="feature-chip">Awaiting APK Package</span>
+          </div>
+        </div>
+        <div class="card-footer" style="color: #64748b;">
+          <span>Available when APK is loaded</span>
+          <span>⏳</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      MantraCare Enterprise HR System • Built for Vercel Serverless & Node.js 22
+    </div>
+  </div>
+</body>
+</html>

@@ -77,14 +77,6 @@ const handleRequest = async (req, res) => {
   let pathname = parsedUrl.pathname;
   const method = req.method;
 
-  // Strip prefix /hr-payroll/keka if present so the app can mount under /hr-payroll/keka or root
-  const PREFIX = '/hr-payroll/keka';
-  if (pathname === PREFIX) {
-    pathname = '/';
-  } else if (pathname.startsWith(PREFIX + '/')) {
-    pathname = pathname.slice(PREFIX.length);
-  }
-
   // Handle CORS preflight
   if (method === 'OPTIONS') {
     res.writeHead(204, {
@@ -93,6 +85,30 @@ const handleRequest = async (req, res) => {
       'Access-Control-Allow-Headers': 'Content-Type, Authorization'
     });
     return res.end();
+  }
+
+  // 1. Root / or /index.html -> Serve the Apps Portal landing page
+  if (pathname === '/' || pathname === '/portal.html') {
+    const portalPath = path.join(__dirname, 'public', 'portal.html');
+    return fs.readFile(portalPath, (err, data) => {
+      if (err) {
+        res.writeHead(500, { 'Content-Type': 'text/plain' });
+        return res.end('Error loading portal');
+      }
+      res.writeHead(200, { 'Content-Type': 'text/html' });
+      res.end(data);
+    });
+  }
+
+  // 2. Base path /hr-payroll/keka routing
+  const PREFIX = '/hr-payroll/keka';
+  let isKekaApp = false;
+  if (pathname === PREFIX || pathname === `${PREFIX}/`) {
+    isKekaApp = true;
+    pathname = '/';
+  } else if (pathname.startsWith(PREFIX + '/')) {
+    isKekaApp = true;
+    pathname = pathname.slice(PREFIX.length);
   }
 
   // ----------------------------------------------------
