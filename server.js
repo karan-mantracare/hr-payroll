@@ -73,9 +73,17 @@ const MIME_TYPES = {
 };
 
 const handleRequest = async (req, res) => {
-  const parsedUrl = new URL(req.url, `http://${req.headers.host}`);
-  const pathname = parsedUrl.pathname;
+  const parsedUrl = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+  let pathname = parsedUrl.pathname;
   const method = req.method;
+
+  // Strip prefix /hr-payroll/keka if present so the app can mount under /hr-payroll/keka or root
+  const PREFIX = '/hr-payroll/keka';
+  if (pathname === PREFIX) {
+    pathname = '/';
+  } else if (pathname.startsWith(PREFIX + '/')) {
+    pathname = pathname.slice(PREFIX.length);
+  }
 
   // Handle CORS preflight
   if (method === 'OPTIONS') {

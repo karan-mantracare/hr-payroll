@@ -1,5 +1,8 @@
 // Pulse HR - Frontend Application Engine
 
+// Detect base URL path dynamically (e.g. '' or '/hr-payroll/keka')
+const BASE_PATH = window.location.pathname.startsWith('/hr-payroll/keka') ? '/hr-payroll/keka' : '';
+
 let currentUser = null;
 let authToken = '';
 let currentTab = 'home';
@@ -15,12 +18,13 @@ const DEMO_CREDENTIALS = {
 
 // API Fetch Helper
 async function api(path, options = {}) {
+  const url = `${BASE_PATH}${path}`;
   const headers = {
     'Content-Type': 'application/json',
     ...(authToken ? { 'Authorization': `Bearer ${authToken}` } : {}),
     ...(options.headers || {})
   };
-  const res = await fetch(path, { ...options, headers });
+  const res = await fetch(url, { ...options, headers });
   const data = await res.json().catch(() => ({}));
   if (!res.ok) {
     throw new Error(data.error || `HTTP ${res.status}`);
