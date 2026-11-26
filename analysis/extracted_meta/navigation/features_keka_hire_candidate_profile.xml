@@ -1,0 +1,82 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A04EA" app:startDestination="@7F0A0856">
+  <deepLink app:uri="app://com.keka.xhr/hire_job_detail_candidate_profile?candidateIdentifier={candidateIdentifier}&amp;jobId={jobId}"/>
+  <argument android:name="jobId" app:argType="integer" app:nullable="false"/>
+  <argument android:name="candidateIdentifier" app:argType="string" app:nullable="false"/>
+  <argument android:name="preferredInterviewTransactionId" android:defaultValue="null" app:argType="string" app:nullable="true"/>
+  <fragment android:name="com.keka.xhr.features.hire.jobcandidateprofile.component.HireJobCandidateProfileFragment" android:id="@7F0A0856">
+    <action android:id="@7F0A0B21" app:destination="@7F0A04EC"/>
+    <action android:id="@7F0A0B20" app:destination="@7F0A04ED"/>
+    <action android:id="@7F0A0B1E" app:destination="@7F0A043A"/>
+    <action android:id="@7F0A0B1D" app:destination="@7F0A000A"/>
+    <action android:id="@7F0A0B18" app:destination="@7F0A044B"/>
+    <action android:id="@7F0A0B29" app:destination="@7F0A044C"/>
+    <action android:id="@7F0A0B2C" app:destination="@7F0A0437">
+      <argument android:name="scoreCardId" app:argType="integer" app:nullable="false"/>
+      <argument android:name="comment" app:argType="string" app:nullable="false"/>
+      <argument android:name="sourceScreen" app:argType="string" app:nullable="false"/>
+    </action>
+    <action android:id="@7F0A0B10" app:destination="@7F0A011A">
+      <argument android:name="logItem" app:argType="com.keka.xhr.core.model.hire.CandidateActivityLogsData" app:nullable="false"/>
+    </action>
+    <action android:id="@7F0A0B2B" app:destination="@7F0A0438"/>
+    <action android:id="@7F0A0B23" app:destination="@7F0A043B"/>
+    <action android:id="@7F0A0B2D" app:destination="@7F0A0436"/>
+  </fragment>
+  <dialog android:name="com.keka.xhr.features.hire.jobcandidateprofile.component.actions.HireCandidateProfileActionsBottomSheet" android:id="@7F0A04EC">
+    <action android:id="@7F0A0B22" app:destination="@7F0A04EE"/>
+    <action android:id="@7F0A0B0E" app:destination="@7F0A000B"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.features.hire.jobcandidateprofile.component.actions.HireJobCandidateMoveStageBottomSheet" android:id="@7F0A04ED">
+    <action android:id="@7F0A0B1F" app:destination="@7F0A04E6"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.features.hire.jobcandidateprofile.component.actions.HireJobCandidateMultipleJobsBottomSheet" android:id="@7F0A04EE"/>
+  <dialog android:name="com.keka.xhr.features.hire.jobcandidateprofile.component.actions.HireCandidateProfileStageSelectBottomSheetFragment" android:id="@7F0A04E6"/>
+  <dialog android:name="com.keka.xhr.features.hire.jobcandidateprofile.component.notes.addNote.notePrivilegeBottomSheet.HireNoteActionsBottomSheet" android:id="@7F0A043B">
+    <argument android:name="noteItem" app:argType="com.keka.xhr.core.model.hire.AllFeedbacksResponse" app:nullable="false"/>
+    <action android:id="@7F0A0B1E" app:destination="@7F0A043A"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.features.hire.jobcandidateprofile.component.notes.addNote.HireNotesBottomSheet" android:id="@7F0A0436">
+    <argument android:name="noteItem" app:argType="com.keka.xhr.core.model.hire.AllFeedbacksResponse" app:nullable="false"/>
+    <action android:id="@7F0A0B1E" app:destination="@7F0A043A"/>
+  </dialog>
+  <fragment android:label="HireArchiveCandidateFragment" android:name="com.keka.xhr.features.hire.jobcandidateprofile.component.archive.HireArchiveCandidateFragment" android:id="@7F0A000B">
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <action android:id="@7F0A0B0F" app:destination="@7F0A0856"/>
+    <action android:id="@7F0A0B15" app:destination="@7F0A0448"/>
+    <action android:id="@7F0A0B17" app:destination="@7F0A044A"/>
+    <action android:id="@7F0A0B16" app:destination="@7F0A0449"/>
+  </fragment>
+  <fragment android:label="HireAddFeedbackFragment" android:name="com.keka.xhr.features.hire.jobcandidatefeedback.component.AddFeedbackFragment" android:id="@7F0A000A">
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <action android:id="@7F0A0B19" app:destination="@7F0A044D"/>
+    <action android:id="@7F0A0B1A" app:destination="@7F0A0856"/>
+    <action android:id="@7F0A0B25" app:destination="@7F0A04F2"/>
+  </fragment>
+  <dialog android:label="HireSelectReasonBottomSheet" android:name="com.keka.xhr.features.hire.jobcandidateprofile.component.archive.selectReason.HireSelectReasonBottomSheet" android:id="@7F0A0448"/>
+  <dialog android:label="HireTemplateBottomSheet" android:name="com.keka.xhr.features.hire.jobcandidateprofile.component.archive.template.HireTemplateBottomSheet" android:id="@7F0A044A"/>
+  <dialog android:label="HireSendMessageTimeBottomSheet" android:name="com.keka.xhr.features.hire.jobcandidateprofile.component.archive.sendMessageTime.HireSendMessageTimeBottomSheet" android:id="@7F0A0449"/>
+  <dialog android:label="HireRatingBottomSheet" android:name="com.keka.xhr.features.hire.jobcandidatefeedback.component.RatingBottomSheetFragment" android:id="@7F0A044D"/>
+  <dialog android:label="pendingFeedbackOnOtherBottomSheet" android:name="com.keka.xhr.features.hire.jobcandidatefeedback.component.PendingFeedbackRemindBottomSheetFragment" android:id="@7F0A044B"/>
+  <dialog android:label="pendingFeedbacksBottomSheet" android:name="com.keka.xhr.features.hire.jobcandidatefeedback.component.PendingFeedbacksBottomSheetFragment" android:id="@7F0A044C">
+    <action android:id="@7F0A0B1D" app:destination="@7F0A000A"/>
+  </dialog>
+  <fragment android:label="HireAddNoteFragment" android:name="com.keka.xhr.features.hire.jobcandidateprofile.component.notes.addNote.HireAddNoteFragment" android:id="@7F0A043A">
+    <argument android:name="isEdit" android:defaultValue="false" app:argType="boolean"/>
+    <action android:id="@7F0A0AEB" app:destination="@7F0A0435"/>
+  </fragment>
+  <dialog android:label="HireNotePrivilegeBottomSheet" android:name="com.keka.xhr.features.hire.jobcandidateprofile.component.notes.addNote.notePrivilegeBottomSheet.HireNotePrivilegeBottomSheet" android:id="@7F0A0435"/>
+  <dialog android:label="HireScorecardBottomSheet" android:name="com.keka.xhr.features.hire.jobcandidatefeedback.component.scorecardBottomSheet.FeedbackScorecardBottomSheet" android:id="@7F0A0437">
+    <argument android:name="scoreCardId" app:argType="integer" app:nullable="false"/>
+    <argument android:name="comment" app:argType="string" app:nullable="false"/>
+    <argument android:name="sourceScreen" app:argType="string" app:nullable="false"/>
+    <action android:id="@7F0A0B1D" app:destination="@7F0A000A"/>
+  </dialog>
+  <dialog android:label="HireSingleSelectionBottomSheet" android:name="com.keka.xhr.features.hire.jobcandidatefeedback.component.singleSelectionBottomSheet.SingleSelectionBottomSheetFragment" android:id="@7F0A04F2">
+    <argument android:name="skillId" app:argType="integer" app:nullable="false"/>
+  </dialog>
+  <dialog android:label="ActivityInfoBottomSheet" android:name="com.keka.xhr.features.hire.jobcandidateprofile.component.activity.ActivityInfoBottomSheet" android:id="@7F0A011A">
+    <argument android:name="logItem" app:argType="com.keka.xhr.core.model.hire.CandidateActivityLogsData" app:nullable="false"/>
+  </dialog>
+  <dialog android:label="HireScoreCardInfoMessageBottomSheet" android:name="com.keka.xhr.features.hire.jobcandidatefeedback.component.scorecardInfoBottomSheet.ScoreCardInfoMessageBottomSheetFragment" android:id="@7F0A0438"/>
+  <dialog android:label="Hint" android:name="com.keka.xhr.features.hire.jobcandidatefeedback.component.scorecardBottomSheet.FeedbackScorecardBottomSheet" android:id="@7F0A0439"/>
+</navigation>

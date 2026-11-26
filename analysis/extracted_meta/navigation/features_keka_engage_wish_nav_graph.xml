@@ -1,0 +1,11 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0445" app:startDestination="@7F0A0E32">
+  <fragment android:label="WishFragment" android:name="com.keka.xhr.engage.wish.component.WishFragment" android:id="@7F0A0E32">
+    <argument android:name="employeeId" app:argType="integer"/>
+    <argument android:name="wishType" app:argType="string" app:nullable="false"/>
+    <action android:id="@7F0A0AE6" app:destination="@7F0A036A"/>
+  </fragment>
+  <dialog android:name="com.keka.xhr.engage.wall.common.component.bottomsheet.delete.DeleteActionBottomSheetFragment" android:id="@7F0A036A">
+    <argument android:name="backstackResultKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/deleteActionBottomSheet?backstackResultKey={backstackResultKey}"/>
+  </dialog>
+</navigation>

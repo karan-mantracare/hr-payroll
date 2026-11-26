@@ -1,0 +1,63 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0475">
+  <dialog android:label="AddTasksBottomSheetFragment" android:name="com.keka.xhr.psa.component.tasks.AddTasksBottomSheetFragment" android:id="@7F0A0123">
+    <deepLink app:uri="app://com.keka.xhr/addTasksBottomSheetDialog"/>
+  </dialog>
+  <dialog android:label="CopyTasksBottomSheetFragment" android:name="com.keka.xhr.psa.component.tasks.CopyWeeklyTasksBottomSheetFragment" android:id="@7F0A031F">
+    <deepLink app:uri="app://com.keka.xhr/copyWeeklyTasksBottomSheetDialog"/>
+  </dialog>
+  <dialog android:label="AddTimeAndCommentBottomSheet" android:name="com.keka.xhr.psa.component.dayview.AddTimeAndCommentBottomSheet" android:id="@7F0A0124">
+    <deepLink app:uri="app://com.keka.xhr/addTimeAndCommentBottomSheet"/>
+  </dialog>
+  <dialog android:label="billingItemsBottomSheetDialog" android:name="com.keka.xhr.psa.component.dayview.BillingItemsBottomSheetDialog" android:id="@7F0A0183">
+    <argument android:name="title" app:argType="string"/>
+    <argument android:name="billingItems" app:argType="com.keka.xhr.core.model.psa.request.BillingItem[]"/>
+  </dialog>
+  <action android:id="@7F0A0073" app:destination="@7F0A0183"/>
+  <fragment android:label="fragment_dayview_timesheet" android:name="com.keka.xhr.psa.component.dayview.DayViewTimeSheetFragment" android:id="@7F0A035E">
+    <argument android:name="selectedDate" app:argType="string"/>
+    <argument android:name="timeSheetPolicySettings" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="weeklyTimeSheetStatus" android:defaultValue="0" app:argType="integer"/>
+    <deepLink app:uri="app://com.keka.xhr/dayViewTimeSheetFragment?selectedDate={selectedDate}&amp;timeSheetPolicySettings={timeSheetPolicySettings}&amp;weeklyTimeSheetStatus={weeklyTimeSheetStatus}"/>
+  </fragment>
+  <dialog android:label="TimeEntryCommentsBottomSheet" android:name="com.keka.xhr.psa.component.dayview.TimeEntryCommentInfoBottomSheet" android:id="@7F0A0AD0">
+    <argument android:name="comments" app:argType="string"/>
+    <argument android:name="title" android:defaultValue="0" app:argType="integer"/>
+    <deepLink app:uri="app://com.keka.xhr/timeEntryCommentsBottomSheet?comments={comments}&amp;title={title}"/>
+  </dialog>
+  <fragment android:label="RejectedEntriesFragment" android:name="com.keka.xhr.psa.component.rejected.RejectedEntriesFragment" android:id="@7F0A0967">
+    <argument android:name="timeSheetPolicyId" app:argType="integer"/>
+    <deepLink app:uri="app://com.keka.xhr/rejectedEntriesFragment?timeSheetPolicyId={timeSheetPolicyId}"/>
+  </fragment>
+  <fragment android:label="fragment_weekly_timesheet" android:name="com.keka.xhr.psa.component.weeklyview.WeeklyTimeSheetFragment" android:id="@7F0A0E2F">
+    <argument android:name="rejectedTimeSheetPeriodInfo" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="timeSheetPolicyId" android:defaultValue="0" app:argType="integer"/>
+    <deepLink app:uri="app://com.keka.xhr/weeklyTimeSheetFragment?rejectedTimeSheetPeriodInfo={rejectedTimeSheetPeriodInfo}&amp;timeSheetPolicyId={timeSheetPolicyId}"/>
+  </fragment>
+  <dialog android:label="SelectDaysBottomSheetFragment" android:name="com.keka.xhr.psa.component.weeklyview.SelectDaysBottomSheetFragment" android:id="@7F0A0A17">
+    <argument android:name="restrictTimeEntryAddingOnWeekOff" android:defaultValue="false" app:argType="boolean"/>
+  </dialog>
+  <action android:id="@7F0A009E" app:destination="@7F0A0A17"/>
+  <dialog android:name="com.keka.xhr.psa.component.weeklyview.SubmitWeeklyTimeSheetBottomSheetFragment" android:id="@7F0A0A74"/>
+  <action android:id="@7F0A00F0" app:destination="@7F0A0A74"/>
+  <dialog android:label="timeSheetActivityTimeLineBottomSheet" android:name="com.keka.xhr.psa.component.weeklyview.TimeSheetActivityTimeLineBottomSheetFragment" android:id="@7F0A0AD3">
+    <argument android:name="timeSheetActivityTimeLineLogs" app:argType="com.keka.xhr.core.ui.components.compose.request_detail.ActivityLog[]"/>
+  </dialog>
+  <dialog android:label="WeekSelectionBottomSheetFragment" android:name="com.keka.xhr.psa.component.weeklyview.WeekSelectionBottomSheetFragment" android:id="@7F0A0E2D">
+    <argument android:name="rejectedTimeSheetStartDate" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+  </dialog>
+  <dialog android:label="DaywiseTaskSelectionFragment" android:name="com.keka.xhr.psa.component.dayview.DayWiseTaskSelectionFragment" android:id="@7F0A035F">
+    <argument android:name="day_wise_items_in_a_week" app:argType="com.keka.xhr.core.model.DayWiseItem[]"/>
+  </dialog>
+  <action android:id="@7F0A007A" app:destination="@7F0A035F"/>
+  <action android:id="@7F0A00F2" app:destination="@7F0A0AD0"/>
+  <action android:id="@7F0A00AA" app:destination="@7F0A0E2D"/>
+  <action android:id="@7F0A005B" app:destination="@7F0A0AD3"/>
+  <include app:graph="@7F110002"/>
+  <action android:id="@7F0A0B14" app:destination="@7F0A0324">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentViewerInput" app:nullable="false"/>
+  </action>
+  <include app:graph="@7F110000"/>
+  <action android:id="@7F0A0B12" app:destination="@7F0A0322">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentChooserInput" app:nullable="false"/>
+  </action>
+</navigation>

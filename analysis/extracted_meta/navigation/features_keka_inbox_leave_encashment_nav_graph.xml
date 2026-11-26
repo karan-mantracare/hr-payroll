@@ -1,0 +1,26 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0457">
+  <fragment android:label="InboxLeaveEncashmentRequestsFragment" android:name="com.keka.xhr.features.inbox.leave.encashment.request.component.InboxLeaveEncashmentRequestsFragment" android:id="@7F0A056D">
+    <argument android:name="isPending" app:argType="boolean"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/leave/encashment/requests?isPending={isPending}"/>
+    <action android:id="@7F0A0070" app:destination="@7F0A0156"/>
+    <action android:id="@7F0A008A" app:destination="@7F0A056C"/>
+    <action android:id="@7F0A006F" app:destination="@7F0A0155"/>
+  </fragment>
+  <fragment android:label="InboxLeaveEncashmentRequestDetailFragment" android:name="com.keka.xhr.features.inbox.leave.encashment.details.component.InboxLeaveEncashmentRequestDetailFragment" android:id="@7F0A056C">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="isPending" app:argType="boolean"/>
+    <argument android:name="backstackRequestKey" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/leave/encashment/details?requestId={requestId}&amp;isPending={isPending}&amp;backstackRequestKey={backstackRequestKey}"/>
+    <action android:id="@7F0A0070" app:destination="@7F0A0156"/>
+  </fragment>
+  <dialog android:label="ApproveLeaveEncashmentRequestBottomSheet" android:name="com.keka.xhr.features.inbox.leave.encashment.approve.component.ApproveLeaveEncashmentRequestBottomSheet" android:id="@7F0A0156">
+    <argument android:name="id" app:argType="integer"/>
+    <argument android:name="leaveTypeName" app:argType="string"/>
+    <argument android:name="totalDays" app:argType="float"/>
+    <argument android:name="backstackRequestKey" app:argType="string"/>
+  </dialog>
+  <dialog android:label="ApproveBulkEnhancementRequestBottomSheet.kt" android:name="com.keka.xhr.features.inbox.leave.encashment.approve.component.ApproveBulkEnhancementRequestBottomSheet" android:id="@7F0A0155">
+    <argument android:name="backstackRequestKey" app:argType="string"/>
+    <argument android:name="requestCount" app:argType="integer"/>
+  </dialog>
+</navigation>

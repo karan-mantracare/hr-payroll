@@ -1,0 +1,9 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0446">
+  <fragment android:label="@7F140347" android:name="com.keka.xhr.features.hire.candidatesearch.component.CandidateSearchFragment" android:id="@7F0A01E8">
+    <action android:id="@7F0A0B11" app:destination="@7F0A04EA">
+      <argument android:name="jobId" app:argType="integer" app:nullable="false"/>
+      <argument android:name="candidateIdentifier" app:argType="string" app:nullable="false"/>
+    </action>
+  </fragment>
+  <include app:graph="@7F110010"/>
+</navigation>

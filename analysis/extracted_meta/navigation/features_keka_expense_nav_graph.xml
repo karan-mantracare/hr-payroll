@@ -1,0 +1,150 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0898">
+  <fragment android:label="MyExpenseFragment" android:name="com.keka.expense.compose.component.myexpense.MyExpenseFragment" android:id="@7F0A0890">
+    <deepLink android:id="@7F0A088F" app:uri="app://com.keka.xhr/myExpenses"/>
+    <action android:id="@7F0A0082" app:destination="@7F0A042D"/>
+    <action android:id="@7F0A0079" app:destination="@7F0A032E"/>
+    <action android:id="@7F0A0078" app:destination="@7F0A032D"/>
+    <action android:id="@7F0A00A6" app:destination="@7F0A0D7F"/>
+  </fragment>
+  <fragment android:label="claimedExpenseFragment" android:name="com.keka.expense.compose.component.claimed.ClaimedExpenseFragment" android:id="@7F0A02EA">
+    <argument android:name="isPending" android:defaultValue="true" app:argType="boolean"/>
+    <deepLink android:id="@7F0A088F" app:uri="app://com.keka.xhr/claimedExpense?isPending={isPending}"/>
+    <action android:id="@7F0A0082" app:destination="@7F0A042D"/>
+  </fragment>
+  <fragment android:label="claimedExpenseFragment" android:name="com.keka.expense.compose.component.expensedetail.ExpenseDetailFragment" android:id="@7F0A042B">
+    <argument android:name="id" app:argType="integer"/>
+    <argument android:name="showEdit" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="expenseClaimId" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="backstackRequestKey" android:defaultValue="" app:argType="string"/>
+    <deepLink android:id="@7F0A042A" app:uri="app://com.keka.xhr/expenseDetail?id={id}&amp;showEdit={showEdit}&amp;expenseClaimId={expenseClaimId}&amp;backstackRequestKey={backstackRequestKey}"/>
+    <action android:id="@7F0A0078" app:destination="@7F0A032D"/>
+  </fragment>
+  <fragment android:label="CreateExpenseFragment" android:name="com.keka.expense.compose.component.createexpense.CreateExpenseFragment" android:id="@7F0A032D">
+    <argument android:name="expenseCategoryId" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="id" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="isDraft" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="expenseClaimId" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="backstackRequestKey" android:defaultValue="" app:argType="string"/>
+    <deepLink android:id="@7F0A032D" app:uri="app://com.keka.xhr/createExpense?expenseCategoryId={expenseCategoryId}&amp;id={id}&amp;isDraft={isDraft}&amp;expenseClaimId={expenseClaimId}&amp;backstackRequestKey={backstackRequestKey}"/>
+    <action android:id="@7F0A0079" app:destination="@7F0A032E"/>
+    <action android:id="@7F0A0081" app:destination="@7F0A042C"/>
+    <action android:id="@7F0A0080" app:destination="@7F0A0427"/>
+    <action android:id="@7F0A00A0" app:destination="@7F0A0A1C"/>
+    <action android:id="@7F0A009C" app:destination="@7F0A0A14"/>
+  </fragment>
+  <dialog android:name="com.keka.expense.regular.component.fragments.ExpenseTypeChooserBottomSheet" android:id="@7F0A042D">
+    <argument android:name="isAdvanceShow" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="backstackRequestKey" android:defaultValue="" app:argType="string"/>
+    <action android:id="@7F0A0080" app:destination="@7F0A0427" app:popUpTo="@7F0A042D" app:popUpToInclusive="true"/>
+    <action android:id="@7F0A0066" app:destination="@7F0A012D" app:popUpTo="@7F0A042D" app:popUpToInclusive="true"/>
+  </dialog>
+  <dialog android:label="CreateNewClaimDialogFragment" android:name="com.keka.expense.regular.component.fragments.CreateNewClaimDialogFragment" android:id="@7F0A032E">
+    <argument android:name="totalAmount" app:argType="float"/>
+    <argument android:name="selectedMyExpense" app:argType="integer[]"/>
+    <argument android:name="backstackRequestKey" android:defaultValue="" app:argType="string"/>
+  </dialog>
+  <fragment android:label="CreateClaimFragment" android:name="com.keka.expense.compose.component.claim.CreateClaimFragment" android:id="@7F0A032C">
+    <argument android:name="id" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="selectedExpenseIds" app:argType="string"/>
+    <argument android:name="expenseClaimId" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="backstackRequestKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/createClaim?id={id}&amp;selectedExpenseIds={selectedExpenseIds}&amp;expenseClaimId={expenseClaimId}&amp;backstackRequestKey={backstackRequestKey}"/>
+    <action android:id="@7F0A0095" app:destination="@7F0A0910"/>
+  </fragment>
+  <fragment android:label="fragment_rejected_advance_request" android:name="com.keka.expense.regular.component.fragments.RejectedAdvanceRequestFragment" android:id="@7F0A0966"/>
+  <dialog android:name="com.keka.expense.regular.component.ExpenseLinkableEntityDialogFragment" android:id="@7F0A042C">
+    <argument android:name="backstackRefreshKey" android:defaultValue="" app:argType="string"/>
+  </dialog>
+  <dialog android:name="com.keka.expense.regular.component.ExpenseCategoryListDialogFragment" android:id="@7F0A0427">
+    <argument android:name="fromCreateExpense" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="expenseClaimId" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="backstackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <action android:id="@7F0A0078" app:destination="@7F0A032D" app:popUpTo="@7F0A0427" app:popUpToInclusive="true"/>
+  </dialog>
+  <dialog android:name="com.keka.expense.regular.component.fragments.PickMoreExpenseDialogFragment" android:id="@7F0A0910">
+    <argument android:name="expenseIds" app:argType="integer[]"/>
+    <argument android:name="backstackRefreshKey" android:defaultValue="" app:argType="string"/>
+  </dialog>
+  <dialog android:name="com.keka.expense.compose.component.currencyselection.ExpenseCurrencySelectionBottomSheet" android:id="@7F0A0429">
+    <argument android:name="selectedCurrencyCode" app:argType="string"/>
+    <argument android:name="backstackRefreshKey" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/expense_currency_selection?selectedCurrencyCode={selectedCurrencyCode}&amp;backstackRefreshKey={backstackRefreshKey}"/>
+  </dialog>
+  <dialog android:name="com.keka.expense.compose.component.reason.ExpenseAmountUpdateReasonBottomSheet" android:id="@7F0A0426">
+    <argument android:name="backstackRefreshKey" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/expense_update_amount_reason?backstackRefreshKey={backstackRefreshKey}"/>
+  </dialog>
+  <dialog android:name="com.keka.expense.compose.component.updatecurrency.UpdateCurrencyBottomSheet" android:id="@7F0A0D7F">
+    <argument android:name="id" app:argType="integer"/>
+    <argument android:name="currencyCodeString" app:argType="string"/>
+    <argument android:name="conversionRate" app:argType="float"/>
+    <argument android:name="policyBaseCurrencyString" app:argType="string"/>
+    <argument android:name="modelBaseCurrencyString" app:argType="string"/>
+    <argument android:name="backstackRefreshKey" app:argType="string"/>
+  </dialog>
+  <fragment android:label="ExpenseClaimDetailFragment" android:name="com.keka.expense.compose.component.claimdetail.ExpenseClaimDetailFragment" android:id="@7F0A0428">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="advanceRequestId" app:argType="integer"/>
+    <argument android:name="status" app:argType="integer"/>
+    <argument android:name="requestType" app:argType="integer"/>
+    <argument android:name="backstackRequestKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/expense_claim_detail?requestId={requestId}&amp;advanceRequestId={advanceRequestId}&amp;requestType={requestType}&amp;status={status}&amp;backstackRequestKey={backstackRequestKey}"/>
+    <action android:id="@7F0A0066" app:destination="@7F0A012D"/>
+    <action android:id="@7F0A0080" app:destination="@7F0A0427"/>
+    <action android:id="@7F0A0095" app:destination="@7F0A0910"/>
+  </fragment>
+  <fragment android:label="fragment_advance_request" android:name="com.keka.expense.advancerequest.component.fragments.AdvanceRequestFragment" android:id="@7F0A012D">
+    <action android:id="@7F0A00B0" app:destination="@7F0A0DA7"/>
+    <argument android:name="isAdvRequestCategoryEdited" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="allowCategoryChange" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="backstackRequestKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/expense/advancerequest?isAdvRequestCategoryEdited={isAdvRequestCategoryEdited}&amp;allowCategoryChange={allowCategoryChange}&amp;backstackRequestKey={backstackRequestKey}"/>
+    <action android:id="@7F0A0067" app:destination="@7F0A012E"/>
+    <action android:id="@7F0A0074" app:destination="@7F0A01F4"/>
+    <action android:id="@7F0A00A5" app:destination="@7F0A0B48"/>
+    <action android:id="@7F0A0064" app:destination="@7F0A004B"/>
+  </fragment>
+  <fragment android:label="fragment_view_cash_advance" android:name="com.keka.expense.advancerequest.component.fragments.ViewCashAdvanceFragment" android:id="@7F0A0DA7"/>
+  <fragment android:label="fragment_cash_advance" android:name="com.keka.expense.advancerequest.component.fragments.CashAdvanceFragment" android:id="@7F0A01F4">
+    <argument android:name="expenseCategoryId" app:argType="integer"/>
+    <argument android:name="allowCategoryChange" android:defaultValue="true" app:argType="boolean"/>
+    <action android:id="@7F0A0067" app:destination="@7F0A012E"/>
+    <action android:id="@7F0A0081" app:destination="@7F0A042C"/>
+  </fragment>
+  <fragment android:label="fragment_travel_booking" android:name="com.keka.expense.advancerequest.component.fragments.TravelBookingFragment" android:id="@7F0A0B48">
+    <argument android:name="expenseCategoryId" app:argType="integer"/>
+    <argument android:name="allowCategoryChange" android:defaultValue="true" app:argType="boolean"/>
+    <action android:id="@7F0A0067" app:destination="@7F0A012E"/>
+    <action android:id="@7F0A0081" app:destination="@7F0A042C"/>
+    <action android:id="@7F0A00A0" app:destination="@7F0A0A1C"/>
+    <action android:id="@7F0A009C" app:destination="@7F0A0A14"/>
+  </fragment>
+  <fragment android:label="fragment_accomodation_booking" android:name="com.keka.expense.advancerequest.component.fragments.AccommodationBookingFragment" android:id="@7F0A004B">
+    <argument android:name="expenseCategoryId" app:argType="integer"/>
+    <argument android:name="allowCategoryChange" android:defaultValue="true" app:argType="boolean"/>
+    <action android:id="@7F0A0067" app:destination="@7F0A012E"/>
+    <action android:id="@7F0A0081" app:destination="@7F0A042C"/>
+    <action android:id="@7F0A009C" app:destination="@7F0A0A14"/>
+  </fragment>
+  <dialog android:name="com.keka.expense.advancerequest.component.fragments.AdvanceRequestTypeChooserBottomSheet" android:id="@7F0A012E">
+    <argument android:name="selectedCategoryId" android:defaultValue="0" app:argType="integer"/>
+    <action android:id="@7F0A0074" app:destination="@7F0A01F4" app:popUpTo="@7F0A012E" app:popUpToInclusive="true"/>
+    <action android:id="@7F0A00A5" app:destination="@7F0A0B48" app:popUpTo="@7F0A012E" app:popUpToInclusive="true"/>
+    <action android:id="@7F0A0064" app:destination="@7F0A004B" app:popUpTo="@7F0A012E" app:popUpToInclusive="true"/>
+  </dialog>
+  <dialog android:label="SelectTravelFieldBottomSheet" android:name="com.keka.expense.regular.component.selecttravelfields.SelectTravelFieldBottomSheet" android:id="@7F0A0A1C">
+    <argument android:name="fieldType" app:argType="string"/>
+    <argument android:name="modeOfTravel" app:argType="integer"/>
+  </dialog>
+  <dialog android:label="SelectAccommodationFieldBottomSheet" android:name="com.keka.expense.regular.component.selectaccommodationfields.SelectAccommodationFieldBottomSheet" android:id="@7F0A0A14">
+    <argument android:name="fieldType" app:argType="string"/>
+  </dialog>
+  <include app:graph="@7F110002"/>
+  <action android:id="@7F0A0B14" app:destination="@7F0A0324">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentViewerInput" app:nullable="false"/>
+  </action>
+  <include app:graph="@7F110000"/>
+  <action android:id="@7F0A0B12" app:destination="@7F0A0322">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentChooserInput" app:nullable="false"/>
+  </action>
+</navigation>

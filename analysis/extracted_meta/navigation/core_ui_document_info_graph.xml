@@ -1,0 +1,6 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0323" app:startDestination="@7F0A038F">
+  <dialog android:label="DocumentsInfoBottomSheetDialog" android:name="com.keka.xhr.core.ui.components.documentviewer.presentation.ui.DocumentsInfoBottomSheetDialog" android:id="@7F0A038F">
+    <argument android:name="title" android:defaultValue="" app:argType="string"/>
+    <argument android:name="description" android:defaultValue="" app:argType="string"/>
+  </dialog>
+</navigation>

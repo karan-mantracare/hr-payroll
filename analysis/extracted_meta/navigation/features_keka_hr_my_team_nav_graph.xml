@@ -1,0 +1,29 @@
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android" android:id="@7F0A0896" app:startDestination="@7F0A0895">
+  <fragment android:name="com.keka.xhr.features.hr.myteams.component.MyTeamFragment" android:id="@7F0A0895">
+    <action android:id="@7F0A00EF" app:destination="@7F0A0D7E"/>
+    <action android:id="@7F0A00EE" app:destination="@7F0A0A9C"/>
+    <action android:id="@7F0A00ED" app:destination="@7F0A03CD"/>
+  </fragment>
+  <fragment android:label="UpcomingLeavesFragment" android:name="com.keka.xhr.features.hr.myteams.component.UpcomingLeavesFragment" android:id="@7F0A0D7E">
+    <argument android:name="isUsedInHome" android:defaultValue="false" app:argType="boolean"/>
+    <deepLink app:uri="app://com.keka.xhr/upcomingLeavesFragment?isUsedInHome={isUsedInHome}"/>
+  </fragment>
+  <fragment android:label="Engineering" android:name="com.keka.xhr.features.hr.myteams.component.TeamDepartmentFragment" android:id="@7F0A0A9C">
+    <action android:id="@7F0A0061" app:destination="@7F0A036D"/>
+    <argument android:name="departmentName" android:defaultValue="" app:argType="string"/>
+    <argument android:name="departmentId" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="totalDepartmentsCount" android:defaultValue="0" app:argType="integer"/>
+  </fragment>
+  <fragment android:label="Engineering" android:name="com.keka.xhr.features.hr.myteams.component.DepartmentWiseEmployeeFragment" android:id="@7F0A036D">
+    <argument android:name="selectedGroupType" android:defaultValue="DEPARTMENT" app:argType="com.keka.xhr.core.model.hr.enums.SystemGroupTypeEnum"/>
+    <argument android:name="selectedGroupId" app:argType="integer"/>
+    <argument android:name="selectedGroupName" app:argType="string"/>
+  </fragment>
+  <dialog android:label="EmployeesByReportingTypeBottomSheetFragment" android:name="com.keka.xhr.features.hr.myteams.component.EmployeesByReportingTypeBottomSheetFragment" android:id="@7F0A03CD">
+    <argument android:name="selectedReportingType" android:defaultValue="NONE" app:argType="com.keka.xhr.core.model.hr.enums.ReportingTreeType"/>
+    <argument android:name="selectedFilterType" android:defaultValue="ALL" app:argType="com.keka.xhr.core.model.hr.enums.TeamAvailabilityFilters"/>
+    <argument android:name="totalEmployeesBasedOnReportingType" android:defaultValue="0" app:argType="integer"/>
+  </dialog>
+  <action android:id="@7F0A0106" app:destination="@7F0A088E"/>
+  <dialog android:label="MyDepartmentsAndBusinessUnitsBottomSheetFragment" android:name="com.keka.xhr.features.hr.myteams.component.MyDepartmentsAndBusinessUnitsBottomSheetFragment" android:id="@7F0A088E"/>
+</navigation>

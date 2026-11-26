@@ -1,0 +1,30 @@
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android" android:id="@7F0A0490" app:startDestination="@7F0A0894">
+  <fragment android:label="MyPayFragment" android:name="com.keka.xhr.features.payroll.mypay.component.MyPayFragment" android:id="@7F0A0894">
+    <action android:id="@7F0A00EB" app:destination="@7F0A0DD1"/>
+    <action android:id="@7F0A00EA" app:destination="@7F0A09EC"/>
+    <action android:id="@7F0A00EC" app:destination="@7F0A0DEB"/>
+    <argument android:name="canEmployeeUpdate" app:argType="boolean" app:nullable="false"/>
+    <argument android:name="year" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <deepLink app:uri="app://com.keka.xhr/myPayScreen?canEmployeeUpdate={canEmployeeUpdate}&amp;year={year}"/>
+  </fragment>
+  <fragment android:label="MyPayFragment" android:name="com.keka.xhr.features.payroll.mypay.component.SalaryBreakupFragment" android:id="@7F0A09EC">
+    <argument android:name="identifier" app:argType="string" app:nullable="false"/>
+    <argument android:name="showHistory" android:defaultValue="true" app:argType="boolean" app:nullable="false"/>
+    <argument android:name="canEmployeeUpdate" android:defaultValue="false" app:argType="boolean" app:nullable="false"/>
+    <argument android:name="year" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <action android:id="@7F0A0102" app:destination="@7F0A09ED"/>
+    <action android:id="@7F0A0103" app:destination="@7F0A0A80"/>
+  </fragment>
+  <fragment android:label="SwitchTaxRegimeFragment" android:name="com.keka.xhr.features.payroll.mypay.component.SwitchTaxRegimeFragment" android:id="@7F0A0A80">
+    <argument android:name="regimeDetails" app:argType="com.keka.xhr.core.model.payroll.response.TaxRegimeDetailsResponse" app:nullable="false"/>
+    <argument android:name="year" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+  </fragment>
+  <fragment android:label="ViewTimelineFragment" android:name="com.keka.xhr.features.payroll.mypay.component.ViewTimelineFragment" android:id="@7F0A0DEB">
+    <action android:id="@7F0A0117" app:destination="@7F0A09EC"/>
+  </fragment>
+  <dialog android:label="SalaryVersions" android:name="com.keka.xhr.features.payroll.mypay.component.SalaryBreakUpHistoryDialogFragment" android:id="@7F0A09ED">
+    <argument android:name="versionList" app:argType="com.keka.xhr.core.model.payroll.response.SalaryDetailResponse[]" app:nullable="false"/>
+    <argument android:name="currentSalaryId" app:argType="integer" app:nullable="false"/>
+    <argument android:name="currentBreakUpId" app:argType="integer" app:nullable="false"/>
+  </dialog>
+</navigation>

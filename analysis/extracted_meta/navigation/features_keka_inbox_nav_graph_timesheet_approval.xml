@@ -1,0 +1,44 @@
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android" android:id="@7F0A0465" app:startDestination="@7F0A090C">
+  <fragment android:label="pendingRequestsFragment" android:name="com.keka.xhr.features.inbox.timesheetapproval.pendingrequests.component.InboxPendingRequestsFragment" android:id="@7F0A090C">
+    <argument android:name="isArchive" android:defaultValue="false" app:argType="boolean"/>
+    <action android:id="@7F0A0AE9" app:destination="@7F0A055D"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/timesheetApproval?isArchive={isArchive}"/>
+  </fragment>
+  <fragment android:label="InboxEmployeeTimesheetFragment" android:name="com.keka.xhr.features.inbox.timesheetapproval.employeetimesheet.component.InboxEmployeeTimesheetFragment" android:id="@7F0A055D">
+    <argument android:name="employeeName" android:defaultValue="" app:argType="string" app:nullable="false"/>
+    <argument android:name="profileUrl" android:defaultValue="" app:argType="string" app:nullable="false"/>
+    <argument android:name="jobTitle" android:defaultValue="" app:argType="string" app:nullable="false"/>
+    <argument android:name="employeeId" android:defaultValue="-1" app:argType="integer" app:nullable="false"/>
+    <argument android:name="isArchive" android:defaultValue="false" app:argType="boolean"/>
+    <action android:id="@7F0A0B09" app:destination="@7F0A0A99"/>
+    <action android:id="@7F0A0B02" app:destination="@7F0A0968"/>
+    <action android:id="@7F0A0ADF" app:destination="@7F0A0165"/>
+  </fragment>
+  <dialog android:label="TasksFragment" android:name="com.keka.xhr.features.inbox.timesheetapproval.employeetasks.component.TasksBottomSheetFragment" android:id="@7F0A0A99">
+    <argument android:name="timeSheetId" app:argType="integer"/>
+    <argument android:name="employeeId" app:argType="integer"/>
+    <argument android:name="employeeName" app:argType="string"/>
+    <argument android:name="displayDate" app:argType="string"/>
+    <argument android:name="isArchived" app:argType="boolean"/>
+    <action android:id="@7F0A0B0A" app:destination="@7F0A0A9A"/>
+    <action android:id="@7F0A0B02" app:destination="@7F0A0968"/>
+  </dialog>
+  <dialog android:label="TasksDetailBottomSheetFragment" android:name="com.keka.xhr.features.inbox.timesheetapproval.employeetasksdetail.component.TasksDetailBottomSheetFragment" android:id="@7F0A0A9A">
+    <argument android:name="timeSheetId" app:argType="integer"/>
+    <argument android:name="employeeId" app:argType="integer"/>
+    <argument android:name="employeeName" app:argType="string"/>
+    <argument android:name="taskId" app:argType="integer"/>
+    <argument android:name="projectId" app:argType="integer"/>
+    <argument android:name="taskName" app:argType="string"/>
+    <argument android:name="isArchived" app:argType="boolean"/>
+    <argument android:name="workItemId" app:argType="string"/>
+    <action android:id="@7F0A0AEA" app:destination="@7F0A055D"/>
+    <action android:id="@7F0A0B02" app:destination="@7F0A0968"/>
+    <action android:id="@7F0A0AE4" app:destination="@7F0A02FC"/>
+  </dialog>
+  <dialog android:label="RejectionBottomSheetFragment" android:name="com.keka.xhr.features.inbox.timesheetapproval.rejectionbottomsheet.component.RejectionBottomSheetFragment" android:id="@7F0A0968"/>
+  <dialog android:label="CommentsBottomSheetFragment" android:name="com.keka.xhr.features.inbox.timesheetapproval.employeetasksdetail.component.CommentsBottomSheetFragment" android:id="@7F0A02FC">
+    <argument android:name="comments" app:argType="com.keka.xhr.core.model.inbox.request.timesheetapproval.dataArgs.CommentsArgs"/>
+  </dialog>
+  <dialog android:label="AttachmentsBottomSheetFragment" android:name="com.keka.xhr.features.inbox.timesheetapproval.employeetimesheet.component.TimesheetAttachmentBottomSheetFragment" android:id="@7F0A0165"/>
+</navigation>

@@ -1,0 +1,44 @@
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android" android:id="@7F0A014E" app:startDestination="@7F0A014D">
+  <include app:graph="@7F110002"/>
+  <action android:id="@7F0A0B14" app:destination="@7F0A0324">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentViewerInput" app:nullable="false"/>
+  </action>
+  <include app:graph="@7F110000"/>
+  <action android:id="@7F0A0B12" app:destination="@7F0A0322">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentChooserInput" app:nullable="false"/>
+  </action>
+  <fragment android:label="AnnouncementsListFragment" android:name="com.keka.xhr.engage.announcement.component.list.AnnouncementListFragment" android:id="@7F0A014D">
+    <action android:id="@7F0A0ADB" app:destination="@7F0A0146"/>
+    <action android:id="@7F0A0ADC" app:destination="@7F0A0147"/>
+    <action android:id="@7F0A0ADD" app:destination="@7F0A014C"/>
+    <deepLink app:uri="app://com.keka.xhr/announcement/announcementList"/>
+  </fragment>
+  <fragment android:label="AnnouncementsDetailFragment" android:name="com.keka.xhr.engage.announcement.component.detail.AnnouncementDetailFragment" android:id="@7F0A014C">
+    <argument android:name="announcementIdentifier" android:defaultValue="" app:argType="string" app:nullable="false"/>
+    <argument android:name="enableCommentInput" android:defaultValue="false" app:argType="boolean" app:nullable="false"/>
+    <argument android:name="commentId" android:defaultValue="" app:argType="string" app:nullable="true"/>
+    <argument android:name="authorName" android:defaultValue="" app:argType="string" app:nullable="false"/>
+    <argument android:name="commentText" android:defaultValue="" app:argType="string" app:nullable="false"/>
+    <deepLink app:uri="app://com.keka.xhr/announcementDetail?announcementIdentifier={announcementIdentifier}&amp;enableCommentInput={enableCommentInput}&amp;commentId={commentId}&amp;authorName={authorName}&amp;commentText={commentText}"/>
+    <action android:id="@7F0A0AE6" app:destination="@7F0A036A"/>
+  </fragment>
+  <fragment android:label="AnnouncementCreationFragment" android:name="com.keka.xhr.engage.announcement.component.creation.CreateAnnouncementFragment" android:id="@7F0A0147">
+    <deepLink app:uri="app://com.keka.xhr/announcement/creation/announcementCreation"/>
+  </fragment>
+  <dialog android:label="DepartmentLocationSelectionBottomSheetFragment" android:name="com.keka.xhr.engage.announcement.component.bottomsheet.includedepartment.IncludeSelectionBottomSheetFragment" android:id="@7F0A036E">
+    <deepLink app:uri="app://com.keka.xhr/announcement/bottomsheet/departmentLocationSelectionBottomSheet"/>
+  </dialog>
+  <dialog android:label="WallSelectionBottomSheetFragment" android:name="com.keka.xhr.engage.announcement.component.bottomsheet.department.WallSelectionBottomSheetFragment" android:id="@7F0A0E27">
+    <argument android:name="selectionType" android:defaultValue="0" app:argType="string" app:nullable="false"/>
+    <deepLink app:uri="app://com.keka.xhr/announcement/bottomsheet/wallSelectionBottomSheetScreen"/>
+  </dialog>
+  <dialog android:label="AnnouncementActionBottomSheetFragment" android:name="com.keka.xhr.engage.announcement.component.bottomsheet.action.AnnouncementActionBottomSheetFragment" android:id="@7F0A0146">
+    <action android:id="@7F0A0ADC" app:destination="@7F0A0147">
+      <argument android:name="announcementIdentifier" android:defaultValue="0" app:argType="string" app:nullable="false"/>
+    </action>
+  </dialog>
+  <dialog android:name="com.keka.xhr.engage.wall.common.component.bottomsheet.delete.DeleteActionBottomSheetFragment" android:id="@7F0A036A">
+    <argument android:name="backstackResultKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/deleteActionBottomSheet?backstackResultKey={backstackResultKey}"/>
+  </dialog>
+</navigation>

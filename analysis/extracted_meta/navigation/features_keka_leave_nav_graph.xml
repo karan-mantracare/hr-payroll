@@ -1,0 +1,76 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0472">
+  <include app:graph="@7F110002"/>
+  <action android:id="@7F0A0B14" app:destination="@7F0A0324">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentViewerInput" app:nullable="false"/>
+  </action>
+  <include app:graph="@7F110000"/>
+  <action android:id="@7F0A0B12" app:destination="@7F0A0322">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentChooserInput" app:nullable="false"/>
+  </action>
+  <action android:id="@7F0A0096" app:destination="@7F0A0923"/>
+  <dialog android:label="BadgeIfoBottomSheetFragment" android:name="com.keka.xhr.features.leave.applyleave.component.PredefinedReasonBottomDialogFragment" android:id="@7F0A0923">
+    <argument android:name="predefinedResponse" app:argType="string[]"/>
+  </dialog>
+  <navigation android:id="@7F0A0154" app:startDestination="@7F0A07C8">
+    <fragment android:label="fragment_apply_leave" android:name="com.keka.xhr.features.leave.applyleave.component.LeaveApplicationFragment" android:id="@7F0A07C8">
+      <argument android:name="leaveId" android:defaultValue="0" app:argType="integer"/>
+      <argument android:name="selectedDate" android:defaultValue="0" app:argType="integer"/>
+      <argument android:name="selectedMonth" android:defaultValue="-1" app:argType="integer"/>
+      <argument android:name="numOfDays" android:defaultValue="0" app:argType="integer"/>
+      <argument android:name="employeeId" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+      <argument android:name="source" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+      <action android:id="@7F0A00B4" app:destination="@7F0A04DB"/>
+      <action android:id="@7F0A00AC" app:destination="@7F0A035D"/>
+      <action android:id="@7F0A00B3" app:destination="@7F0A04FE"/>
+      <deepLink app:uri="app://com.keka.xhr/applyLeave?employeeId={employeeId}&amp;source={source}"/>
+      <deepLink app:uri="app://com.keka.xhr/applyLeave?leaveId={leaveId}&amp;selectedDate={selectedDate}&amp;selectedMonth={selectedMonth}&amp;numOfDays={numOfDays}&amp;employeeId={employeeId}&amp;source={source}"/>
+    </fragment>
+    <dialog android:label="DayTypeSelectionBottomDialogFragment" android:name="com.keka.xhr.features.leave.applyleave.component.DayTypeSelectionBottomDialogFragment" android:id="@7F0A035D">
+      <argument android:name="backstackResultKey" app:argType="string"/>
+      <argument android:name="selectedDayType" app:argType="integer"/>
+    </dialog>
+    <dialog android:label="HourlyTypeSelectionBottomSheet" android:name="com.keka.xhr.features.leave.applyleave.component.HalfDayTypeSelectionBottomSheet" android:id="@7F0A04DB">
+      <argument android:name="date" android:defaultValue="" app:argType="string"/>
+      <argument android:name="isFirstHalf" android:defaultValue="true" app:argType="boolean"/>
+      <argument android:name="isFirstDate" android:defaultValue="true" app:argType="boolean"/>
+    </dialog>
+    <dialog android:label="ChooseCustomHoursSelectionBottomDialogFragment" android:name="com.keka.xhr.features.leave.applyleave.component.HourlyLeaveBottomDialogFragment" android:id="@7F0A04FE">
+      <argument android:name="actualAvailableDuration" android:defaultValue="0" app:argType="float" app:nullable="false"/>
+    </dialog>
+  </navigation>
+  <fragment android:label="fragment_leave_balances" android:name="com.keka.xhr.features.leave.leavebalance.component.LeavesMainFragment" android:id="@7F0A07CB">
+    <argument android:name="employeeId" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="applyLeave" android:defaultValue="false" app:argType="boolean"/>
+    <deepLink app:uri="app://com.keka.xhr/leavesMain?applyLeave={applyLeave}&amp;employeeId={employeeId}"/>
+    <action android:id="@7F0A0059" app:destination="@7F0A07CC"/>
+  </fragment>
+  <fragment android:label="fragment_leave_transaction_and_policy" android:name="com.keka.xhr.features.leave.transactionandpolicy.component.LeaveTransactionAndPolicyFragment" android:id="@7F0A07CC">
+    <argument android:name="employeeId" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="item" app:argType="com.keka.xhr.core.model.leave.response.LeaveTypeItem"/>
+  </fragment>
+  <navigation android:id="@7F0A0301" app:startDestination="@7F0A0303">
+    <fragment android:label="fragment_complimentary_off" android:name="com.keka.xhr.features.leave.compoff.component.ComplimentaryOffFragment" android:id="@7F0A0303">
+      <action android:id="@7F0A00BF" app:destination="@7F0A0970"/>
+      <deepLink app:uri="app://com.keka.xhr/compOffScreen"/>
+    </fragment>
+    <fragment android:label="fragment_request_comp_off" android:name="com.keka.xhr.features.leave.compoff.component.RequestCompOffFragment" android:id="@7F0A0970">
+      <argument android:name="employeeId" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+      <argument android:name="id" android:defaultValue="0" app:argType="integer"/>
+      <argument android:name="fromEdit" android:defaultValue="true" app:argType="boolean"/>
+      <deepLink app:uri="app://com.keka.xhr/requestCompOff?id={id}&amp;employeeId={employeeId}"/>
+    </fragment>
+  </navigation>
+  <fragment android:label="LeaveRequestDetailFragment" android:name="com.keka.xhr.features.leave.leavedetail.component.LeaveRequestDetailFragment" android:id="@7F0A07CA">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="employeeId" android:defaultValue="" app:argType="string"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <argument android:name="status" android:defaultValue="0" app:argType="integer"/>
+    <deepLink app:uri="app://com.keka.xhr/leave_request_detail?requestId={requestId}&amp;employeeId={employeeId}&amp;backStackRefreshKey={backStackRefreshKey}&amp;status={status}"/>
+  </fragment>
+  <fragment android:label="CompOffRequestDetailFragment" android:name="com.keka.xhr.features.leave.compoffdetail.component.CompOffRequestDetailFragment" android:id="@7F0A0300">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="employeeId" android:defaultValue="" app:argType="string"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/compoff_request_details?requestId={requestId}&amp;employeeId={employeeId}&amp;backStackRefreshKey={backStackRefreshKey}"/>
+  </fragment>
+</navigation>

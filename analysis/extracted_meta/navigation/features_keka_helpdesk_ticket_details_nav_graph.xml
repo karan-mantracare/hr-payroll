@@ -1,0 +1,19 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0AC0" app:startDestination="@7F0A0ABE">
+  <fragment android:label="Ticket detail" android:name="com.keka.xhr.helpdesk.ticketdetails.component.TicketDetailsFragment" android:id="@7F0A0ABE">
+    <argument android:name="ticketId" app:argType="integer"/>
+    <argument android:name="ticketScreenType" android:defaultValue="0" app:argType="integer"/>
+    <deepLink app:uri="app://com.keka.xhr/ticketDetailsNavGraph?ticketId={ticketId}&amp;ticketScreenType={ticketScreenType}"/>
+  </fragment>
+  <dialog android:label="Ticket Options" android:name="com.keka.xhr.helpdesk.ticketdetails.component.TicketDetailsBottomSheet" android:id="@7F0A0AC1">
+    <argument android:name="ticketId" app:argType="integer"/>
+  </dialog>
+  <fragment android:label="Ticket ownership" android:name="com.keka.xhr.helpdesk.ticketdetails.component.TicketOwnershipFragment" android:id="@7F0A0AC3">
+    <argument android:name="ticketOwnerId" app:argType="integer"/>
+  </fragment>
+  <dialog android:label="Feedback" android:name="com.keka.xhr.helpdesk.ticketdetails.component.FeedbackBottomSheet" android:id="@7F0A047A">
+    <argument android:name="ticketId" app:argType="integer"/>
+  </dialog>
+  <action android:id="@7F0A0109" app:destination="@7F0A0AC1"/>
+  <action android:id="@7F0A010A" app:destination="@7F0A0AC3"/>
+  <action android:id="@7F0A0108" app:destination="@7F0A047A"/>
+</navigation>

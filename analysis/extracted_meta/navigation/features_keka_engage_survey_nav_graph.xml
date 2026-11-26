@@ -1,0 +1,15 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0444" app:startDestination="@7F0A0A78">
+  <fragment android:label="SurveyFragment" android:name="com.keka.xhr.engage.survey.component.SurveyFragment" android:id="@7F0A0A78">
+    <argument android:name="surveyId" android:defaultValue="" app:argType="string"/>
+    <argument android:name="surveyResponseStatus" android:defaultValue="-1" app:argType="integer"/>
+    <argument android:name="skipToQuestions" android:defaultValue="false" app:argType="boolean"/>
+    <deepLink app:uri="app://com.keka.xhr/engage/survey/getstartedsurvey?surveyId={surveyId}&amp;surveyResponseStatus={surveyResponseStatus}"/>
+  </fragment>
+  <dialog android:label="SurveyInitialPopUpFragment" android:name="com.keka.xhr.engage.survey.component.InitialPopUpBottomSheetFragment" android:id="@7F0A0A79">
+    <argument android:name="surveyId" android:defaultValue="" app:argType="string"/>
+    <argument android:name="surveyResponseStatus" android:defaultValue="-1" app:argType="integer"/>
+    <argument android:name="skipToQuestions" android:defaultValue="false" app:argType="boolean"/>
+    <action android:id="@7F0A00A3" app:destination="@7F0A0A78"/>
+    <deepLink app:uri="app://com.keka.xhr/survey?surveyId={surveyId}&amp;surveyResponseStatus={surveyResponseStatus}"/>
+  </dialog>
+</navigation>

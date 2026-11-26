@@ -1,0 +1,5 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A043E">
+  <fragment android:label="OpenSourceLicensesFragment" android:name="com.keka.xhr.features.device.openSourceLicences.ui.component.OpenSourceLicensesFragment" android:id="@7F0A08CE">
+    <deepLink app:uri="app://com.keka.xhr/openSourceLicensesFragment"/>
+  </fragment>
+</navigation>

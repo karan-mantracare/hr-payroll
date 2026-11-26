@@ -1,0 +1,4 @@
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android" android:id="@7F0A0322" app:startDestination="@7F0A038E">
+  <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentChooserInput" app:nullable="false"/>
+  <dialog android:label="DocumentChooserFragment" android:name="com.keka.xhr.core.ui.components.documentviewer.presentation.ui.DocumentChooserFragment" android:id="@7F0A038E"/>
+</navigation>

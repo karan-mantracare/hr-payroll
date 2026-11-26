@@ -1,0 +1,87 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0D86" app:startDestination="@7F0A0D87">
+  <action android:id="@7F0A00F3" app:destination="@7F0A0D87"/>
+  <navigation android:id="@7F0A0D87" app:startDestination="@7F0A0D85">
+    <fragment android:label="@7F1409BF" android:name="com.keka.xhr.features.hr.employeeprofile.self_exit.component.ResignationStatusFragment" android:id="@7F0A0978">
+      <argument android:name="exitDetails" app:argType="com.keka.xhr.core.model.hr.response.OtherProfileSummaryResponse"/>
+    </fragment>
+    <fragment android:label="@7F14095A" android:name="com.keka.xhr.features.hr.employeeprofile.self_exit.component.SelfExitFragment" android:id="@7F0A0A25"/>
+    <dialog android:label="CommonBottomSheetDialog" android:name="com.keka.xhr.features.hr.employeeprofile.self_exit.component.CommonBottomSheetDialog" android:id="@7F0A02FD">
+      <argument android:name="title" app:argType="string"/>
+      <argument android:name="items" app:argType="com.keka.xhr.core.model.inbox.CommonBottomSheetItem[]"/>
+    </dialog>
+    <action android:id="@7F0A0075" app:destination="@7F0A02FD"/>
+    <dialog android:label="HRBPEmployeeListBottomSheetFragment" android:name="com.keka.xhr.features.hr.employeeprofile.userprofile.job.component.HRBPEmployeeListBottomSheetFragment" android:id="@7F0A0506">
+      <argument android:name="roleName" app:argType="string"/>
+      <argument android:name="employees" app:argType="com.keka.xhr.core.model.hr.response.AssignedBPResponse[]"/>
+    </dialog>
+    <action android:id="@7F0A0085" app:destination="@7F0A0506"/>
+    <action android:id="@7F0A0076" app:destination="@7F0A02FE"/>
+    <action android:id="@7F0A0115" app:destination="@7F0A0978"/>
+    <dialog android:label="CommonReasonBottomSheetDialog" android:name="com.keka.xhr.features.hr.employeeprofile.self_exit.component.CommonReasonBottomSheetDialog" android:id="@7F0A02FE">
+      <argument android:name="title" app:argType="string"/>
+      <argument android:name="buttonText" app:argType="string"/>
+    </dialog>
+    <fragment android:label="User profile" android:name="com.keka.xhr.features.hr.employeeprofile.userprofile.common.component.UserProfileFragment" android:id="@7F0A0D85">
+      <argument android:name="employeeId" app:argType="integer" app:nullable="false"/>
+      <deepLink app:uri="app://com.keka.xhr/userProfile?employeeId={employeeId}"/>
+      <action android:id="@7F0A0B2A" app:destination="@7F0A0454"/>
+      <action android:id="@7F0A0113" app:destination="@7F0A090F"/>
+      <action android:id="@7F0A010C" app:destination="@7F0A001F"/>
+      <action android:id="@7F0A0112" app:destination="@7F0A042E"/>
+      <action android:id="@7F0A0111" app:destination="@7F0A03C6"/>
+      <action android:id="@7F0A010F" app:destination="@7F0A0120"/>
+      <action android:id="@7F0A0110" app:destination="@7F0A0122"/>
+      <action android:id="@7F0A010E" app:destination="@7F0A011F"/>
+      <action android:id="@7F0A010D" app:destination="@7F0A011D"/>
+      <action android:id="@7F0A0114" app:destination="@7F0A0969"/>
+    </fragment>
+    <fragment android:label="@7F1409A1" android:name="com.keka.xhr.features.hr.employeeprofile.userprofile.personal.details.component.PersonalDetailsFragment" android:id="@7F0A090F">
+      <action android:id="@7F0A00FC" app:destination="@7F0A044E"/>
+    </fragment>
+    <dialog android:label="DialCodeBottomSheetFragment" android:name="com.keka.xhr.features.hr.employeeprofile.userprofile.personal.common.component.DialCodeBottomSheetFragment" android:id="@7F0A044E">
+      <argument android:name="fieldId" app:argType="string"/>
+    </dialog>
+    <fragment android:label="@7F14089E" android:name="com.keka.xhr.features.hr.employeeprofile.userprofile.common.component.AddEditRelationFragment" android:id="@7F0A011F"/>
+    <fragment android:label="@7F1408A2" android:name="com.keka.xhr.features.hr.employeeprofile.userprofile.common.component.AddAddressFragment" android:id="@7F0A011D"/>
+    <fragment android:label="fragment_relation_list" android:name="com.keka.xhr.features.hr.employeeprofile.userprofile.common.component.RelationListFragment" android:id="@7F0A0969">
+      <action android:id="@7F0A00FF" app:destination="@7F0A011F"/>
+    </fragment>
+    <action android:id="@7F0A00AF" app:destination="@7F0A001F"/>
+    <fragment android:label="About me" android:name="com.keka.xhr.features.hr.employeeprofile.userprofile.summary.about.component.AboutFragment" android:id="@7F0A001F">
+      <argument android:name="employeeId" android:defaultValue="0" app:argType="integer"/>
+    </fragment>
+    <fragment android:label="@7F1401B1" android:name="com.keka.xhr.features.hr.employeeprofile.userprofile.summary.experiencelist.component.ExperienceListFragment" android:id="@7F0A042E">
+      <argument android:name="employeeId" android:defaultValue="-1" app:argType="integer"/>
+      <action android:id="@7F0A00C6" app:destination="@7F0A0122"/>
+    </fragment>
+    <fragment android:label="@7F1401B1" android:name="com.keka.xhr.features.hr.employeeprofile.userprofile.common.component.AddExperienceFragment" android:id="@7F0A0122"/>
+    <fragment android:label="@7F1408E5" android:name="com.keka.xhr.features.hr.employeeprofile.userprofile.summary.educationlist.component.EducationListFragment" android:id="@7F0A03C6">
+      <argument android:name="employeeId" android:defaultValue="-1" app:argType="integer"/>
+      <action android:id="@7F0A00C5" app:destination="@7F0A0120"/>
+    </fragment>
+    <fragment android:label="@7F1408E5" android:name="com.keka.xhr.features.hr.employeeprofile.userprofile.summary.addeducation.component.AddEducationFragment" android:id="@7F0A0120">
+      <argument android:name="employeeId" android:defaultValue="-1" app:argType="integer"/>
+      <argument android:name="documentId" android:defaultValue="-1" app:argType="integer"/>
+      <argument android:name="shouldAdd" android:defaultValue="false" app:argType="boolean"/>
+      <argument android:name="shouldEdit" android:defaultValue="false" app:argType="boolean"/>
+    </fragment>
+    <argument android:name="employeeId" android:defaultValue="0" app:argType="integer"/>
+    <fragment android:label="ProfilePicViewerFragment" android:name="com.keka.xhr.features.hr.employeeprofile.userprofile.common.component.ProfilePicViewerFragment" android:id="@7F0A0929">
+      <deepLink app:uri="app://com.keka.xhr/profilePicViewerFragment"/>
+      <argument android:name="urlList" android:defaultValue="@00000000" app:argType="com.keka.xhr.core.model.shared.documentviewer.UrlList" app:nullable="true"/>
+      <argument android:name="isDowloadable" android:defaultValue="false" app:argType="boolean"/>
+      <argument android:name="isUpload" android:defaultValue="false" app:argType="boolean"/>
+      <argument android:name="employeeId" android:defaultValue="" app:argType="string"/>
+      <argument android:name="selectedEmployeeProfileImage" android:defaultValue="" app:argType="string"/>
+    </fragment>
+    <action android:id="@7F0A0116" app:destination="@7F0A0A25"/>
+  </navigation>
+  <fragment android:label="ProfileAuditLogFragment" android:name="com.keka.xhr.features.hr.employeeprofile.profilechanges.component.ProfileAuditLogFragment" android:id="@7F0A0454">
+    <argument android:name="employeeId" app:argType="integer"/>
+  </fragment>
+  <fragment android:label="IdCardFragment" android:name="com.keka.xhr.features.hr.idcard.component.IdCardFragment" android:id="@7F0A0518">
+    <argument android:name="employeeId" android:defaultValue="-1" app:argType="integer"/>
+    <deepLink app:uri="app://com.keka.xhr/idCard?employeeId={employeeId}"/>
+    <deepLink app:uri="app://com.keka.xhr/idCard"/>
+  </fragment>
+</navigation>

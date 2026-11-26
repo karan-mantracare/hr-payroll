@@ -1,0 +1,92 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0325">
+  <include app:graph="@7F110002"/>
+  <action android:id="@7F0A0B14" app:destination="@7F0A0324">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentViewerInput" app:nullable="false"/>
+  </action>
+  <include app:graph="@7F110000"/>
+  <action android:id="@7F0A0B12" app:destination="@7F0A038E">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentChooserInput" app:nullable="false"/>
+  </action>
+  <dialog android:label="AcknowledgeBottomSheetDialog" android:name="com.keka.xhr.core.ui.components.actionbottomsheet.AcknowledgeBottomSheetDialog" android:id="@7F0A004C">
+    <argument android:name="title" app:argType="string" app:nullable="false"/>
+    <argument android:name="description" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="color" android:defaultValue="-1" app:argType="integer" app:nullable="false"/>
+    <argument android:name="btnText" app:argType="string" app:nullable="false"/>
+    <argument android:name="descriptionAsSpannableStr" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="showCancel" android:defaultValue="true" app:argType="boolean" app:nullable="false"/>
+    <argument android:name="type" android:defaultValue="1" app:argType="integer" app:nullable="false"/>
+    <argument android:name="btnTextColor" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="showAcknowledgeButton" android:defaultValue="true" app:argType="boolean" app:nullable="false"/>
+    <deepLink app:uri="app://com.keka.xhr/acknowledgeBottomSheetDialog?title={title}&amp;description={description}&amp;color={color}&amp;btnText={btnText}&amp;descriptionAsSpannableStr={descriptionAsSpannableStr}&amp;showCancel={showCancel}&amp;type={type}&amp;btnTextColor={btnTextColor}&amp;showAcknowledgeButton={showAcknowledgeButton}"/>
+  </dialog>
+  <dialog android:label="Month Picker" android:name="com.keka.xhr.core.ui.components.datepicker.ui.MonthPickerBottomSheetDialog" android:id="@7F0A0860">
+    <argument android:name="data" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="type" android:defaultValue="" app:argType="string" app:nullable="true"/>
+    <argument android:name="fromYear" android:defaultValue="0" app:argType="integer"/>
+    <deepLink app:uri="app://com.keka.xhr/monthPicker?data={data}&amp;type={type}&amp;fromYear={fromYear}"/>
+  </dialog>
+  <fragment android:label="DateRangeSelectionFragment" android:name="com.keka.xhr.core.ui.components.daterangeselection.ui.DateRangeSelectionFragment" android:id="@7F0A0355">
+    <argument android:name="startDate" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="endDate" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="isFuture" android:defaultValue="true" app:argType="boolean" app:nullable="false"/>
+    <argument android:name="startDay" android:defaultValue="0" app:argType="integer" app:nullable="false"/>
+    <argument android:name="endDay" android:defaultValue="1" app:argType="integer" app:nullable="false"/>
+    <argument android:name="requiresLeaveData" android:defaultValue="true" app:argType="boolean" app:nullable="false"/>
+    <argument android:name="isWFHOD" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="employeeId" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="isHalfDayRequired" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="showCustomHours" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="isCustomHoursSelected" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="singleDayOnly" android:defaultValue="false" app:argType="boolean"/>
+    <deepLink app:uri="app://com.keka.xhr/dateRangeSelection?startDate={startDate}&amp;endDate={endDate}&amp;isFuture={isFuture}&amp;startDay={startDay}&amp;endDay={endDay}&amp;requiresLeaveData={requiresLeaveData}&amp;isWFHOD={isWFHOD}&amp;employeeId={employeeId}&amp;isHalfDayRequired={isHalfDayRequired}&amp;showCustomHours={showCustomHours}&amp;isCustomHoursSelected={isCustomHoursSelected}&amp;singleDayOnly={singleDayOnly}"/>
+  </fragment>
+  <fragment android:label="DateSelectionFragment" android:name="com.keka.xhr.core.ui.components.daterangeselection.ui.DateSelectionFragment" android:id="@7F0A0357">
+    <argument android:name="startDate" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="endDate" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="startDay" android:defaultValue="0" app:argType="integer" app:nullable="false"/>
+    <argument android:name="endDay" android:defaultValue="1" app:argType="integer" app:nullable="false"/>
+    <argument android:name="employeeId" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="isHalfDayRequired" android:defaultValue="true" app:argType="boolean"/>
+    <deepLink app:uri="app://com.keka.xhr/leaveDateSelection?startDate={startDate}&amp;endDate={endDate}&amp;startDay={startDay}&amp;endDay={endDay}&amp;employeeId={employeeId}"/>
+  </fragment>
+  <fragment android:label="Employee Selection" android:name="com.keka.xhr.core.ui.components.employee_selection.ui.EmployeeSelectionFragment" android:id="@7F0A03CB">
+    <deepLink app:uri="app://com.keka.xhr/employeeSelection"/>
+  </fragment>
+  <fragment android:label="Select an Employee" android:name="com.keka.xhr.core.ui.components.employee_selection_compose.ui.SelectEmployeeFragment" android:id="@7F0A0A15">
+    <argument android:name="navigateToChooseBadgeScreen" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="departmentId" android:defaultValue="-1" app:argType="integer" app:nullable="false"/>
+    <deepLink app:uri="app://com.keka.xhr/selectAnEmployee?navigateToChooseBadgeScreen={navigateToChooseBadgeScreen}&amp;departmentId={departmentId}"/>
+  </fragment>
+  <dialog android:label="OtBreakUpBottomSheet" android:name="com.keka.xhr.core.ui.components.compose.request_detail.overtime.ui.OtBreakUpBottomSheet" android:id="@7F0A08E4">
+    <deepLink app:uri="app://com.keka.xhr/otBreakUpScreen"/>
+  </dialog>
+  <dialog android:label="HourlyLeaveBreakUpBottomSheet" android:name="com.keka.xhr.core.ui.components.compose.request_detail.leave.ui.HourlyLeaveBreakUpBottomSheet" android:id="@7F0A04FD">
+    <deepLink app:uri="app://com.keka.xhr/hourlyBreadUpBottomSheetScreen"/>
+  </dialog>
+  <dialog android:label="NoInternetDialogFragment" android:name="com.keka.xhr.core.ui.components.NoInternetDialogFragment" android:id="@7F0A08B6">
+    <deepLink app:uri="app://com.keka.xhr/noInternetDialog"/>
+  </dialog>
+  <action android:id="@7F0A00BD" app:destination="@7F0A02FF"/>
+  <dialog android:label="Common Selection Popup" android:name="com.keka.xhr.core.ui.components.commonselection.CommonSelectionPopupDialog" android:id="@7F0A02FF">
+    <argument android:name="title" app:argType="string" app:nullable="false"/>
+    <argument android:name="titleStyle" android:defaultValue="-1" app:argType="integer"/>
+    <argument android:name="items" app:argType="string"/>
+    <argument android:name="type" android:defaultValue="" app:argType="string" app:nullable="true"/>
+    <deepLink app:uri="app://com.keka.xhr/commonSelectionPopUp?title={title}&amp;titleStyle={titleStyle}&amp;items={items}&amp;type={type}"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.core.ui.components.compose.prompt.ViewActivityLogTimelineBottomSheet" android:id="@7F0A0D98">
+    <argument android:name="activities" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/activitytimeline?activities={activities}"/>
+  </dialog>
+  <fragment android:label="RequestConfirmationFragment" android:name="com.keka.xhr.core.ui.components.requestConfirmation.RequestConfirmationFragment" android:id="@7F0A0971">
+    <argument android:name="title" app:argType="string"/>
+    <argument android:name="description" app:argType="string"/>
+    <argument android:name="backstackResultKey" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/requestConfirmationFragment?title={title}&amp;description={description}&amp;backstackResultKey={backstackResultKey}"/>
+  </fragment>
+  <dialog android:label="ReactedEmployeeBottomSheetDialog" android:name="com.keka.xhr.core.ui.components.reacted_employees_bottom_sheet.ui.ReactedEmployeeBottomSheetDialog" android:id="@7F0A095A">
+    <argument android:name="identifier" app:argType="string" app:nullable="false"/>
+    <argument android:name="reactionEntityType" app:argType="string" app:nullable="false"/>
+    <deepLink app:uri="app://com.keka.xhr/reactedEmployeeBottomSheetDialog?identifier={identifier}&amp;reactionEntityType={reactionEntityType}"/>
+  </dialog>
+</navigation>

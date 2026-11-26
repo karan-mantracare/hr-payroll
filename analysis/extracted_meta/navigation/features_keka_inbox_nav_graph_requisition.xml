@@ -1,0 +1,32 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0464">
+  <fragment android:label="InboxRequisitionRequestsFragment" android:name="com.keka.xhr.features.inbox.requisition.requests.component.InboxRequisitionRequestsFragment" android:id="@7F0A057C">
+    <argument android:name="isPending" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="backstackRequestKey" android:defaultValue="" app:argType="string"/>
+    <action android:id="@7F0A008C" app:destination="@7F0A057B"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/requisition/requests?isPending={isPending}&amp;backStackRefreshKey={backStackRefreshKey}"/>
+  </fragment>
+  <fragment android:label="InboxRequisitionRequestDetailFragment" android:name="com.keka.xhr.features.inbox.requisition.detail.component.InboxRequisitionRequestDetailFragment" android:id="@7F0A057B">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="isPending" app:argType="boolean"/>
+    <argument android:name="backstackRequestKey" android:defaultValue="" app:argType="string"/>
+    <action android:id="@7F0A0086" app:destination="@7F0A055C"/>
+    <action android:id="@7F0A0B03" app:destination="@7F0A0976"/>
+  </fragment>
+  <dialog android:label="PositionDetailsBottomSheet" android:name="com.keka.xhr.features.inbox.requisition.positiondetails.component.PositionDetailsBottomSheet" android:id="@7F0A0976">
+    <argument android:name="requisitionPositionDetails" android:defaultValue="" app:argType="string"/>
+  </dialog>
+  <dialog android:label="SelectRequisitionEmployeeBottomSheet" android:name="com.keka.xhr.features.inbox.requisition.common.component.SelectRequisitionEmployeeBottomSheet" android:id="@7F0A0A1A">
+    <argument android:name="selectedEmployees" app:argType="integer[]"/>
+    <argument android:name="otherSelectedEmployees" app:argType="integer[]"/>
+  </dialog>
+  <fragment android:label="InboxEditRequisitionRequestFragment" android:name="com.keka.xhr.features.inbox.requisition.editrequest.component.InboxEditRequisitionRequestFragment" android:id="@7F0A055C">
+    <argument android:name="requestId" android:defaultValue="-1" app:argType="integer"/>
+    <argument android:name="backstackRequestKey" android:defaultValue="" app:argType="string"/>
+    <action android:id="@7F0A007B" app:destination="@7F0A036F"/>
+    <action android:id="@7F0A0B04" app:destination="@7F0A0A1A"/>
+  </fragment>
+  <dialog android:label="DepartmentSelectionBottomSheet" android:name="com.keka.xhr.features.inbox.requisition.departmentselection.component.DepartmentSelectionBottomSheet" android:id="@7F0A036F">
+    <argument android:name="selectedDepartmentId" app:argType="integer"/>
+    <argument android:name="backstackResultKey" app:argType="string"/>
+  </dialog>
+</navigation>

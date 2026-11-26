@@ -1,0 +1,6 @@
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android" android:id="@7F0A0461" app:startDestination="@7F0A056A">
+  <fragment android:label="InboxHelpdeskFragment" android:name="com.keka.xhr.features.inbox.helpdesk.component.InboxHelpdeskFragment" android:id="@7F0A056A">
+    <deepLink app:uri="app://com.keka.xhr/inbox/helpdesk?isArchive={isArchive}"/>
+    <argument android:name="isArchive" android:defaultValue="false" app:argType="boolean"/>
+  </fragment>
+</navigation>

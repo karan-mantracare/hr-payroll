@@ -1,0 +1,11 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A046C" app:startDestination="@7F0A0892">
+  <fragment android:name="com.keka.xhr.features.payroll.financeinformation.component.MyFinanceReviewFragment" android:id="@7F0A0892">
+    <argument android:name="progress" android:defaultValue="1" app:argType="integer"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/my_finance_review?progress={progress}&amp;backStackRefreshKey={backStackRefreshKey}"/>
+  </fragment>
+  <fragment android:name="com.keka.xhr.features.payroll.financeinformation.component.MyFinanceInformationFragment" android:id="@7F0A0891">
+    <argument android:name="selectedTab" android:defaultValue="0" app:argType="integer"/>
+    <deepLink app:uri="app://com.keka.xhr/my_finance_information?selectedTab={selectedTab}"/>
+  </fragment>
+</navigation>

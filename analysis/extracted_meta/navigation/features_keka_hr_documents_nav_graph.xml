@@ -1,0 +1,105 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A044F" app:startDestination="@7F0A0442">
+  <include app:graph="@7F110001"/>
+  <action android:id="@7F0A0B13" app:destination="@7F0A0323">
+    <argument android:name="title" android:defaultValue="" app:argType="string"/>
+    <argument android:name="description" android:defaultValue="" app:argType="string"/>
+  </action>
+  <fragment android:label="OrganisationDocumentsFragment" android:name="com.keka.xhr.features.hr.documents.organisationdocuments.component.OrganisationDocumentsFragment" android:id="@7F0A0443">
+    <deepLink app:uri="app://com.keka.xhr/features_keka/organisationdocumentsfragment"/>
+  </fragment>
+  <fragment android:label="EmployeeDocumentsFragment" android:name="com.keka.xhr.features.hr.documents.empdocuments.home.component.EmployeeDocumentsHomeFragment" android:id="@7F0A0442">
+    <argument android:name="employeeId" android:defaultValue="-1" app:argType="integer"/>
+    <argument android:name="hasEditAccessForDocuments" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="hasEditAccessForIdentities" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="isOwnProfile" android:defaultValue="true" app:argType="boolean"/>
+    <deepLink app:uri="app://com.keka.xhr/features_keka/employeedocumentsfragment?employeeId={employeeId}&amp;hasEditAccessForDocuments={hasEditAccessForDocuments}&amp;hasEditAccessForIdentities={hasEditAccessForIdentities}&amp;isOwnProfile={isOwnProfile}"/>
+  </fragment>
+  <fragment android:label="MandatoryDocumentsFragment" android:name="com.keka.xhr.features.hr.documents.mandatorydocuments.component.MandatoryDocumentsFragment" android:id="@7F0A0452">
+    <deepLink app:uri="app://com.keka.xhr/features_keka/mandatorydocumentsfragment"/>
+  </fragment>
+  <fragment android:label="AddDocumentFragment" android:name="com.keka.xhr.features.hr.documents.empdocuments.adddocuments.component.AddDocumentsFragment" android:id="@7F0A011E">
+    <argument android:name="title" app:argType="string"/>
+    <argument android:name="description" app:argType="string"/>
+    <argument android:name="documentTypeId" app:argType="integer"/>
+    <argument android:name="identityTypeId" app:argType="string"/>
+    <argument android:name="isPendingDocument" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="folderId" app:argType="integer"/>
+    <argument android:name="isEditDocument" app:argType="boolean"/>
+    <argument android:name="documentId" app:argType="integer"/>
+    <argument android:name="isVerificationRequired" app:argType="boolean"/>
+    <argument android:name="isFileUploadOptional" app:argType="boolean"/>
+    <argument android:name="documentTypeIdentifier" app:argType="string"/>
+    <argument android:name="employeeDocumentType" app:argType="integer"/>
+    <deepLink app:uri="app://com.keka.xhr/features_keka/add_document?title={title}&amp;description={description}&amp;documentTypeId={documentTypeId}&amp;identityTypeId={identityTypeId}&amp;isPendingDocument={isPendingDocument}&amp;folderId={folderId}&amp;isEditDocument={isEditDocument}&amp;documentId={documentId}&amp;isVerificationRequired={isVerificationRequired}&amp;isFileUploadOptional={isFileUploadOptional}&amp;documentTypeIdentifier={documentTypeIdentifier}&amp;employeeDocumentType={employeeDocumentType}"/>
+  </fragment>
+  <fragment android:label="EditDocumentFragment" android:name="com.keka.xhr.features.hr.documents.empdocuments.editdocument.component.EditDocumentFragment" android:id="@7F0A03C0">
+    <argument android:name="title" app:argType="string"/>
+    <argument android:name="description" app:argType="string"/>
+    <argument android:name="documentTypeId" app:argType="integer"/>
+    <argument android:name="documentId" app:argType="integer"/>
+    <argument android:name="identityTypeId" app:argType="string"/>
+    <argument android:name="isPendingDocument" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="folderId" app:argType="integer"/>
+    <argument android:name="isMarkedNotApplicable" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="isRecentlyOpenedDocument" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="isFileUploadOptional" app:argType="boolean"/>
+    <argument android:name="isVerificationRequired" app:argType="boolean"/>
+    <argument android:name="employeeDocumentType" app:argType="integer"/>
+    <argument android:name="documentTypeIdentifier" app:argType="string"/>
+    <argument android:name="canUpdateRecentDocument" android:defaultValue="false" app:argType="boolean"/>
+    <deepLink app:uri="app://com.keka.xhr/features_keka/edit_document?title={title}&amp;description={description}&amp;documentTypeId={documentTypeId}&amp;documentId={documentId}&amp;identityTypeId={identityTypeId}&amp;isPendingDocument={isPendingDocument}&amp;folderId={folderId}&amp;isMarkedNotApplicable={isMarkedNotApplicable}&amp;isRecentlyOpenedDocument={isRecentlyOpenedDocument}&amp;isFileUploadOptional={isFileUploadOptional}&amp;isVerificationRequired={isVerificationRequired}&amp;employeeDocumentType={employeeDocumentType}&amp;documentTypeIdentifier={documentTypeIdentifier}&amp;canUpdateRecentDocument={canUpdateRecentDocument}"/>
+  </fragment>
+  <action android:id="@7F0A007E" app:destination="@7F0A03C0"/>
+  <action android:id="@7F0A0065" app:destination="@7F0A011E"/>
+  <fragment android:label="EmployeeDocumentsFragment" android:name="com.keka.xhr.features.hr.documents.empdocuments.documents.component.EmployeeDocumentsFragment" android:id="@7F0A0451">
+    <argument android:name="folderId" android:defaultValue="-1" app:argType="integer"/>
+    <argument android:name="documentTypeId" android:defaultValue="-1" app:argType="integer"/>
+    <argument android:name="folderTitle" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="description" android:defaultValue="" app:argType="string"/>
+    <argument android:name="employeeId" android:defaultValue="-1" app:argType="integer"/>
+    <argument android:name="hasEditAccess" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="isOwnProfile" android:defaultValue="false" app:argType="boolean"/>
+    <deepLink app:uri="app://com.keka.xhr/features_keka/employee_documents_fragment?folderId={folderId}&amp;documentTypeId={documentTypeId}&amp;folderTitle={folderTitle}&amp;description={description}&amp;employeeId={employeeId}&amp;hasEditAccess={hasEditAccess}&amp;isOwnProfile={isOwnProfile}"/>
+  </fragment>
+  <action android:id="@7F0A03CC" app:destination="@7F0A0450"/>
+  <fragment android:label="EmployeeDocumentDetailFragment" android:name="com.keka.xhr.features.hr.documents.empdocuments.documentdetail.component.EmployeeDocumentDetailFragment" android:id="@7F0A0450">
+    <argument android:name="folderId" app:argType="integer"/>
+    <argument android:name="documentTypeId" app:argType="integer"/>
+    <argument android:name="identityIdentifier" app:argType="string"/>
+    <argument android:name="isPendingDocument" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="title" app:argType="string"/>
+    <argument android:name="description" app:argType="string"/>
+    <argument android:name="isVerificationRequired" app:argType="boolean"/>
+    <argument android:name="isFileUploadOptional" app:argType="boolean"/>
+    <argument android:name="allowMultipleDocuments" app:argType="boolean"/>
+    <argument android:name="employeeDocumentType" app:argType="integer"/>
+  </fragment>
+  <fragment android:label="DocumentSignatureFragment" android:name="com.keka.xhr.features.hr.documents.empdocuments.signature.component.documentsignatures.DocumentSignatureFragment" android:id="@7F0A038C">
+    <deepLink app:uri="app://com.keka.xhr/features_keka/documentsignaturesfragment"/>
+  </fragment>
+  <fragment android:label="DocumentSignatureDetailsFragment" android:name="com.keka.xhr.features.hr.documents.empdocuments.signature.component.documentsignaturedetails.DocumentSignatureDetailsFragment" android:id="@7F0A038B">
+    <argument android:name="documentId" android:defaultValue="-1" app:argType="integer"/>
+    <deepLink app:uri="app://com.keka.xhr/features_keka/documentsignaturedetailsfragment?documentId={documentId}"/>
+  </fragment>
+  <action android:id="@7F0A007C" app:destination="@7F0A038C"/>
+  <dialog android:label="CommonBottomSheetDialog" android:name="com.keka.xhr.features.hr.employeeprofile.self_exit.component.CommonBottomSheetDialog" android:id="@7F0A02FD">
+    <argument android:name="title" app:argType="string"/>
+    <argument android:name="items" app:argType="com.keka.xhr.core.model.inbox.CommonBottomSheetItem[]"/>
+  </dialog>
+  <action android:id="@7F0A0075" app:destination="@7F0A02FD"/>
+  <fragment android:label="PendingDocumentsFragment" android:name="com.keka.xhr.features.hr.documents.empdocuments.pendingDocuments.component.PendingDocumentsFragment" android:id="@7F0A090B">
+    <argument android:name="employeeId" android:defaultValue="-1" app:argType="integer"/>
+    <argument android:name="hasEditAccess" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="isOwnProfile" android:defaultValue="false" app:argType="boolean"/>
+    <deepLink app:uri="app://com.keka.xhr/features_keka/pendingDocumentsFragment?employeeId={employeeId}&amp;hasEditAccess={hasEditAccess}&amp;isOwnProfile={isOwnProfile}"/>
+  </fragment>
+  <action android:id="@7F0A0094" app:destination="@7F0A090B"/>
+  <fragment android:label="LastVerifiedDocumentFragment" android:name="com.keka.xhr.features.hr.documents.empdocuments.lastverifieddocument.component.LastVerifiedDocumentFragment" android:id="@7F0A06C5">
+    <argument android:name="title" app:argType="string"/>
+    <argument android:name="documentTypeId" app:argType="integer"/>
+    <argument android:name="documentId" app:argType="integer"/>
+    <argument android:name="identityTypeId" app:argType="string"/>
+  </fragment>
+  <action android:id="@7F0A008E" app:destination="@7F0A06C5"/>
+  <fragment android:label="ProfileTabNavigatingFragment" android:name="com.keka.xhr.features.hr.documents.empdocuments.home.component.ProfileToDocumentsNavigatingFragment" android:id="@7F0A0455"/>
+</navigation>

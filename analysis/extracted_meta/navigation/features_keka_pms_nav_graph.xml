@@ -1,0 +1,95 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0474">
+  <include app:graph="@7F110034"/>
+  <include app:graph="@7F110002"/>
+  <action android:id="@7F0A0B14" app:destination="@7F0A0324">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentViewerInput" app:nullable="false"/>
+  </action>
+  <include app:graph="@7F110000"/>
+  <action android:id="@7F0A0B12" app:destination="@7F0A0322">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentChooserInput" app:nullable="false"/>
+  </action>
+  <navigation android:id="@7F0A047E" app:startDestination="@7F0A047B">
+    <fragment android:label="FeedbackFragment" android:name="com.keka.xhr.features.pms.feedback.component.FeedbackFragment" android:id="@7F0A047B">
+      <action android:id="@7F0A00C9" app:destination="@7F0A04B3"/>
+      <action android:id="@7F0A00CA" app:destination="@7F0A0973"/>
+      <action android:id="@7F0A00C8" app:destination="@7F0A047C"/>
+      <action android:id="@7F0A00C7" app:destination="@7F0A0479"/>
+      <deepLink app:uri="app://com.keka.xhr/personalFeedback"/>
+    </fragment>
+    <fragment android:label="GivePersonalFeedbackFragment" android:name="com.keka.xhr.features.pms.feedback.component.GivePersonalFeedbackFragment" android:id="@7F0A04B3">
+      <argument android:name="feedbackItem" android:defaultValue="@00000000" app:argType="com.keka.xhr.core.model.pms.response.PendingFeedbackResponseItem" app:nullable="true"/>
+      <action android:id="@7F0A0100" app:destination="@7F0A047B" app:popUpTo="@7F0A047E" app:popUpToInclusive="true"/>
+      <argument android:name="isFromEmployeeProfile" android:defaultValue="false" app:argType="boolean"/>
+      <argument android:name="feedbackToEmployeeId" android:defaultValue="0" app:argType="integer"/>
+      <argument android:name="feedbackFromEmployeeId" android:defaultValue="0" app:argType="integer"/>
+      <argument android:name="feedbackFromUsername" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+      <argument android:name="feedbackToUsername" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+      <argument android:name="feedbackToImageUrl" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+      <deepLink app:uri="app://com.keka.xhr/givePersonalFeedbackFragment?isFromEmployeeProfile={isFromEmployeeProfile}&amp;feedbackToEmployeeId={feedbackToEmployeeId}&amp;feedbackFromEmployeeId={feedbackFromEmployeeId}&amp;feedbackFromUsername={feedbackFromUsername}&amp;feedbackToUsername={feedbackToUsername}&amp;feedbackToImageUrl={feedbackToImageUrl}&amp;"/>
+    </fragment>
+    <fragment android:label="RequestFeedbackFragment" android:name="com.keka.xhr.features.pms.feedback.component.RequestFeedbackFragment" android:id="@7F0A0973">
+      <argument android:name="feedbackType" android:defaultValue="REQUEST_FEEDBACK" app:argType="com.keka.xhr.core.model.pms.constants.RequestFeedbackType"/>
+      <argument android:name="selectedProfile" app:argType="com.keka.xhr.core.model.hr.response.EmployeeProfile" app:nullable="false"/>
+      <action android:id="@7F0A0100" app:destination="@7F0A047B" app:popUpTo="@7F0A047E" app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment android:label="FeedbackListFragment" android:name="com.keka.xhr.features.pms.feedback.component.FeedbackListFragment" android:id="@7F0A047C">
+      <deepLink app:uri="app://com.keka.xhr/feedbacklist"/>
+      <argument android:name="type" android:defaultValue="PendingFeedbackRequests" app:argType="com.keka.xhr.core.model.pms.constants.FeedbackTypes"/>
+      <action android:id="@7F0A00CC" app:destination="@7F0A095B"/>
+      <action android:id="@7F0A00CB" app:destination="@7F0A047D"/>
+    </fragment>
+    <fragment android:label="Received request" android:name="com.keka.xhr.features.pms.feedback.component.ReceivedRequestFragment" android:id="@7F0A095B">
+      <action android:id="@7F0A00FE" app:destination="@7F0A04B3"/>
+      <argument android:name="feedbackItem" app:argType="com.keka.xhr.core.model.pms.response.PendingFeedbackResponseItem"/>
+    </fragment>
+    <fragment android:label="SentRequestDetailFragment" android:name="com.keka.xhr.features.pms.feedback.component.SentRequestDetailFragment" android:id="@7F0A047D">
+      <argument android:name="feedbackItem" android:defaultValue="@00000000" app:argType="com.keka.xhr.core.model.pms.response.PendingFeedbackResponseItem" app:nullable="true"/>
+    </fragment>
+    <fragment android:label="FeedbackChatFragment" android:name="com.keka.xhr.features.pms.feedback.component.FeedbackDetailsFragment" android:id="@7F0A0479">
+      <argument android:name="feedback" android:defaultValue="@00000000" app:argType="com.keka.xhr.core.model.pms.request.FeedbackDetailArguments" app:nullable="true"/>
+    </fragment>
+  </navigation>
+  <navigation android:id="@7F0A0921" app:startDestination="@7F0A091F">
+    <fragment android:label="PraiseFragment" android:name="com.keka.xhr.features.pms.praise.component.PraiseFragment" android:id="@7F0A091F">
+      <action android:id="@7F0A00F9" app:destination="@7F0A0176"/>
+      <action android:id="@7F0A00FB" app:destination="@7F0A091E"/>
+      <deepLink app:uri="app://com.keka.xhr/praise"/>
+    </fragment>
+  </navigation>
+  <dialog android:label="Choose a Badge" android:name="com.keka.xhr.features.pms.praise.component.BadgesListFragment" android:id="@7F0A0176"/>
+  <fragment android:label="GivePraiseFragment" android:name="com.keka.xhr.features.pms.praise.component.GivePraiseFragment" android:id="@7F0A04B5">
+    <action android:id="@7F0A00F9" app:destination="@7F0A0176"/>
+    <action android:id="@7F0A00FA" app:destination="@7F0A0370"/>
+    <deepLink app:uri="app://com.keka.xhr/givePraiseScreen"/>
+  </fragment>
+  <dialog android:label="Choose a Department" android:name="com.keka.xhr.features.pms.praise.component.DepartmentsFragment" android:id="@7F0A0370"/>
+  <fragment android:label="ViewPraisesFragment" android:name="com.keka.xhr.features.pms.praise.component.ViewPraisesFragment" android:id="@7F0A0DD5">
+    <argument android:name="empId" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="departmentId" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="employeeName" android:defaultValue="" app:argType="string" app:nullable="true"/>
+    <deepLink app:uri="app://com.keka.xhr/viewPraiseScreen?empId={empId}&amp;departmentId={departmentId}&amp;employeeName={employeeName}"/>
+  </fragment>
+  <action android:id="@7F0A00CF" app:destination="@7F0A0DD5"/>
+  <action android:id="@7F0A0072" app:destination="@7F0A091C"/>
+  <dialog android:label="BadgeIfoBottomSheetFragment" android:name="com.keka.xhr.features.pms.praise.component.BadgeIfoBottomSheetFragment" android:id="@7F0A091C">
+    <argument android:name="badgeInfo" app:argType="com.keka.xhr.core.model.pms.BadgeBottomSheetModel"/>
+  </dialog>
+  <fragment android:label="PraiseDetailsFragment" android:name="com.keka.xhr.features.pms.praise.component.PraiseDetailsFragment" android:id="@7F0A091E">
+    <action android:id="@7F0A00F8" app:destination="@7F0A095A"/>
+    <argument android:name="praiseIdentifier" app:argType="string" app:nullable="false"/>
+    <argument android:name="praiseType" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="praise" android:defaultValue="@00000000" app:argType="com.keka.xhr.core.model.pms.response.Praise" app:nullable="true"/>
+    <deepLink app:uri="app://com.keka.xhr/viewPraiseDetailsFragment?praiseIdentifier={praiseIdentifier}&amp;praiseType={praiseType}"/>
+  </fragment>
+  <action android:id="@7F0A005F" app:destination="@7F0A091E"/>
+  <action android:id="@7F0A010B" app:destination="@7F0A0A98"/>
+  <dialog android:label="TaggedEmployeeListFragment" android:name="com.keka.xhr.features.pms.praise.component.TaggedEmployeeListFragment" android:id="@7F0A0A98">
+    <argument android:name="ids" app:argType="integer[]"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.features.pms.feedback.component.DeclineRequestBottomSheet" android:id="@7F0A0364">
+    <argument android:name="heading" app:argType="string"/>
+    <argument android:name="reasonRequired" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="backstackResultKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/decline_request?heading={heading}&amp;reasonRequired={reasonRequired}&amp;backstackResultKey={backstackResultKey}"/>
+  </dialog>
+</navigation>

@@ -1,0 +1,31 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A03D6" app:startDestination="@7F0A0939">
+  <dialog android:label="PulseBottomSheetFragment" android:name="com.keka.xhr.engage.pulse.component.pulsebottomsheet.PulseBottomSheetFragment" android:id="@7F0A0939">
+    <deepLink app:uri="app://com.keka.xhr/engage/pulse/getpulsestarted"/>
+    <action android:id="@7F0A0098" app:destination="@7F0A093B"/>
+  </dialog>
+  <fragment android:label="PulseQuestionScreenFragment" android:name="com.keka.xhr.engage.pulse.component.pulsequestionscreen.PulseQuestionScreenFragment" android:id="@7F0A093B">
+    <argument android:name="pulseResponseId" android:defaultValue="" app:argType="string"/>
+    <argument android:name="responseStatus" android:defaultValue="-1" app:argType="integer"/>
+    <argument android:name="allowEmployeeComment" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="isCommentMandatory" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="allowAnonymousResponse" android:defaultValue="false" app:argType="boolean"/>
+    <deepLink app:uri="app://com.keka.xhr/engage/pulse/getpulsequestions?pulseResponseId={pulseResponseId}&amp;responseStatus={responseStatus}&amp;allowEmployeeComment={allowEmployeeComment}&amp;isCommentMandatory={isCommentMandatory}&amp;allowAnonymousResponse={allowAnonymousResponse}"/>
+    <action android:id="@7F0A009A" app:destination="@7F0A093E"/>
+    <action android:id="@7F0A0090" app:destination="@7F0A085E"/>
+  </fragment>
+  <fragment android:label="PulseThankYouScreenFragment" android:name="com.keka.xhr.engage.pulse.component.pulsethankyouscreen.PulseThankYouScreenFragment" android:id="@7F0A093E">
+    <action android:id="@7F0A0099" app:destination="@7F0A093C"/>
+  </fragment>
+  <fragment android:label="PulseReviewGlassdoorFragment" android:name="com.keka.xhr.engage.pulse.component.pulsereviewglassdoorscreen.PulseReviewGlassdoorFragment" android:id="@7F0A093C">
+    <action android:id="@7F0A0097" app:destination="@7F0A093A"/>
+  </fragment>
+  <fragment android:label="PulseGlassdoorReviewSuccessFragment" android:name="com.keka.xhr.engage.pulse.component.pulsegdreviewsuccessscreen.PulseGlassdoorReviewSuccessFragment" android:id="@7F0A093A"/>
+  <dialog android:label="MidwayQuitBottomSheetFragment" android:name="com.keka.xhr.engage.pulse.component.midwayquitbottomsheet.PulseMidwayQuitBottomSheetFragment" android:id="@7F0A085E"/>
+  <fragment android:label="PulseStarterScreenFragment" android:name="com.keka.xhr.engage.pulse.component.pulsestarterscreens.PulseStarterScreenFragment" android:id="@7F0A093D">
+    <argument android:name="pulseResponseId" android:defaultValue="" app:argType="string"/>
+    <argument android:name="pulseStatus" android:defaultValue="-1" app:argType="integer"/>
+    <argument android:name="noOfRemainingQuestions" android:defaultValue="0" app:argType="integer"/>
+    <deepLink app:uri="app://com.keka.xhr/start_pulse?pulseId={pulseId}&amp;pulseStatus={pulseStatus}&amp;noOfRemainingQuestions={noOfRemainingQuestions}"/>
+    <action android:id="@7F0A0098" app:destination="@7F0A093B"/>
+  </fragment>
+</navigation>

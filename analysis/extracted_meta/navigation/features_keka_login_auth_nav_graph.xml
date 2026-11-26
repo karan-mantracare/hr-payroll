@@ -1,0 +1,41 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A046B" app:startDestination="@7F0A0A55">
+  <fragment android:label="fragment_splash" android:name="com.keka.xhr.core.ui.components.applicationaceess.ApplicationAccessBlockedFragment" android:id="@7F0A0151">
+    <deepLink app:uri="app://com.keka.xhr/appAccessBlockedFragment"/>
+  </fragment>
+  <fragment android:label="fragment_splash" android:name="com.keka.xhr.splash.ui.SplashFragment" android:id="@7F0A0A55" app:popUpTo="@7F0A0A55" app:popUpToInclusive="true">
+    <argument android:name="subDomain" android:defaultValue="" app:argType="string"/>
+    <action android:id="@7F0A0105" app:destination="@7F0A0826"/>
+  </fragment>
+  <fragment android:label="fragment_login" android:name="com.keka.xhr.login.login.component.LoginFragment" android:id="@7F0A0826">
+    <action android:id="@7F0A00DC" app:destination="@7F0A0E2B"/>
+    <argument android:name="subDomain" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/loginFragment?subDomain={subDomain}"/>
+  </fragment>
+  <fragment android:label="fragment_web_view" android:name="com.keka.xhr.login.login.component.WebViewFragment" android:id="@7F0A0E2B">
+    <deepLink app:uri="app://com.keka.xhr/webViewFragment"/>
+  </fragment>
+  <fragment android:label="fragment_error" android:name="com.keka.xhr.login.login.component.ErrorFragment" android:id="@7F0A03DD">
+    <action android:id="@7F0A046A" app:destination="@7F0A0826" app:popUpTo="@7F0A0826" app:popUpToInclusive="true"/>
+  </fragment>
+  <fragment android:label="Select Organisation" android:name="com.keka.xhr.login.login.component.OrganisationFragment" android:id="@7F0A089E">
+    <argument android:name="autoSwitchToTenant" android:defaultValue="" app:argType="string"/>
+    <argument android:name="targetDeeplink" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/navigationOrgFragment?autoSwitchToTenant={autoSwitchToTenant}&amp;targetDeeplink={targetDeeplink}"/>
+  </fragment>
+  <fragment android:label="Select Organisation" android:name="com.keka.xhr.login.login.component.LogOutFragment" android:id="@7F0A089D">
+    <deepLink app:uri="app://com.keka.xhr/navigationLogoutFragment"/>
+  </fragment>
+  <fragment android:label="Secure Your Keka App" android:name="com.keka.xhr.login.login.component.SecureAppFragment" android:id="@7F0A089F">
+    <deepLink app:uri="app://com.keka.xhr/navigationSecureAppFragment"/>
+  </fragment>
+  <dialog android:label="@7F140C19" android:name="com.keka.xhr.login.login.component.LogoutBottomSheetDialogFragment" android:id="@7F0A082B">
+    <argument android:name="orgSubdomainName" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="organisationTenantId" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="logoutFromAllOrganisations" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="isComingFromOrganisationsScreen" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="descriptionType" android:defaultValue="0" app:argType="integer"/>
+    <deepLink app:uri="app://com.keka.xhr/logoutBottomSheetFragment?orgSubdomainName={orgSubdomainName}&amp;organisationTenantId={organisationTenantId}&amp;logoutFromAllOrganisations={logoutFromAllOrganisations}&amp;isComingFromOrganisationsScreen={isComingFromOrganisationsScreen}&amp;descriptionType={descriptionType}"/>
+  </dialog>
+  <dialog android:label="LoginSupportBottomSheet" android:name="com.keka.xhr.login.bottomsheet.component.LoginSupportBottomSheet" android:id="@7F0A0828"/>
+  <action android:id="@7F0A008F" app:destination="@7F0A0828"/>
+</navigation>

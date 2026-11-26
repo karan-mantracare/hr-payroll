@@ -1,0 +1,222 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A043C" app:startDestination="@7F0A082E">
+  <fragment android:label="SelfieCameraClockInFragment" android:name="com.keka.xhr.features.attendance.clockin.component.ui.SelfieCameraClockInFragment" android:id="@7F0A0A26">
+    <argument android:name="clockInOutRequestBody" app:argType="com.keka.xhr.core.model.attendance.request.ClockInRequestBodyModel"/>
+  </fragment>
+  <fragment android:label="ClockInMapInfoFragment" android:name="com.keka.xhr.features.attendance.clockin.component.ui.ClockInMapInfoFragment" android:id="@7F0A02F0">
+    <argument android:name="address" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="city" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="state" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="latitude" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="longitude" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="punchStatus" app:argType="integer"/>
+    <argument android:name="manualClockInType" app:argType="integer"/>
+    <argument android:name="timestamp" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="attachmentUrl" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="accuracy" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="failedPermissions" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <deepLink android:id="@7F0A0366" app:uri="app://com.keka.xhr/mapInfo?address={address}&amp;city={city}&amp;state={state}&amp;latitude={latitude}&amp;longitude={longitude}&amp;punchStatus={punchStatus}&amp;manualClockInType={manualClockInType}&amp;timestamp={timestamp}&amp;attachmentUrl={attachmentUrl}&amp;accuracy={accuracy}&amp;failedPermissions={failedPermissions}"/>
+  </fragment>
+  <fragment android:label="ViewSelfieFragment" android:name="com.keka.xhr.features.attendance.clockin.component.ui.ViewSelfieFragment" android:id="@7F0A0DDA">
+    <argument android:name="address" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="city" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="state" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="latitude" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="longitude" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="punchStatus" app:argType="integer"/>
+    <argument android:name="manualClockInType" app:argType="integer"/>
+    <argument android:name="timestamp" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="attachmentUrl" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <deepLink android:id="@7F0A0366" app:uri="app://com.keka.xhr/viewSelfie?address={address}&amp;city={city}&amp;state={state}&amp;latitude={latitude}&amp;longitude={longitude}&amp;punchStatus={punchStatus}&amp;manualClockInType={manualClockInType}&amp;timestamp={timestamp}&amp;attachmentUrl={attachmentUrl}"/>
+  </fragment>
+  <fragment android:label="ClockInMapFragment" android:name="com.keka.xhr.features.attendance.clockin.component.ui.ClockInMapFragment" android:id="@7F0A02EF">
+    <argument android:name="punchStatus" app:argType="integer"/>
+    <argument android:name="source" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <action android:id="@7F0A00BC" app:destination="@7F0A0A26"/>
+    <action android:id="@7F0A0051" app:destination="@7F0A0430"/>
+    <deepLink app:uri="app://com.keka.xhr/clockInMapScreen?punchStatus={punchStatus}&amp;source={source}"/>
+  </fragment>
+  <fragment android:label="LocationPermissionOnboardingFragment" android:name="com.keka.xhr.features.attendance.clockin.permissiononboarding.component.LocationPermissionOnboardingFragment" android:id="@7F0A0824">
+    <argument android:name="isContinuousPunchEnabled" app:argType="boolean"/>
+    <argument android:name="punchStatus" app:argType="integer"/>
+    <argument android:name="source" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <action android:id="@7F0A00DB" app:destination="@7F0A02EF" app:popUpTo="@7F0A0824" app:popUpToInclusive="true"/>
+    <deepLink app:uri="app://com.keka.xhr/locationPermissionOnboarding?isContinuousPunchEnabled={isContinuousPunchEnabled}&amp;punchStatus={punchStatus}&amp;source={source}"/>
+  </fragment>
+  <fragment android:label="AttendanceAdjustmentFragment" android:name="com.keka.xhr.features.attendance.adjustmentandregularisation.component.AttendanceAdjustmentFragment" android:id="@7F0A0166">
+    <argument android:name="date" app:argType="string"/>
+    <argument android:name="employeeId" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="isMultiShifts" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <argument android:name="maxAllowedAdjustmentsEnabled" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="hasRegularisationRequestsLimit" android:defaultValue="false" app:argType="boolean"/>
+    <deepLink app:uri="app://com.keka.xhr/attendanceAdjustmentFragment?date={date}&amp;employeeId={employeeId}&amp;backStackRefreshKey={backStackRefreshKey}"/>
+    <action android:id="@7F0A0050" app:destination="@7F0A0A19"/>
+    <action android:id="@7F0A004F" app:destination="@7F0A0178"/>
+  </fragment>
+  <fragment android:label="fragment_logs_and_shifts_date_detail" android:name="com.keka.xhr.features.attendance.logshistory.component.LogsAndShiftsDateDetailFragment" android:id="@7F0A082E">
+    <argument android:name="date" android:defaultValue="" app:argType="string"/>
+    <argument android:name="employeeProfileToTimeTabData" android:defaultValue="" app:argType="string"/>
+    <argument android:name="employeeId" android:defaultValue="" app:argType="string"/>
+    <argument android:name="navigateToLogsDetail" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="navigateToEmployeeLogs" android:defaultValue="false" app:argType="boolean"/>
+    <action android:id="@7F0A0071" app:destination="@7F0A0166"/>
+    <action android:id="@7F0A00F1" app:destination="@7F0A0E2E"/>
+    <action android:id="@7F0A005A" app:destination="@7F0A0A2E"/>
+    <action android:id="@7F0A0AE3" app:destination="@7F0A02F0"/>
+    <action android:id="@7F0A0B0B" app:destination="@7F0A0DDA"/>
+    <deepLink app:uri="app://com.keka.xhr/logsAndShiftsDateDetailScreen?date={date}&amp;employeeId={employeeId}&amp;navigateToLogsDetail={navigateToLogsDetail}&amp;navigateToEmployeeLogs={navigateToEmployeeLogs}&amp;employeeProfileToTimeTabData={employeeProfileToTimeTabData}"/>
+  </fragment>
+  <fragment android:label="fragment_request_history" android:name="com.keka.xhr.features.attendance.attendancerequest.component.fragments.RequestHistoryFragment" android:id="@7F0A0975">
+    <argument android:name="employeeId" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="shouldShowApplyWFH" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="shouldShowApplyOD" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="shouldShowApplyPD" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="shouldShowApplyOT" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="shouldShowShiftChange" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="shouldShowWeeklyOff" android:defaultValue="false" app:argType="boolean"/>
+    <action android:id="@7F0A0101" app:destination="@7F0A0974"/>
+    <deepLink app:uri="app://com.keka.xhr/requestHistoryScreen?employeeId={employeeId}&amp;shouldShowApplyWFH={shouldShowApplyWFH}&amp;shouldShowApplyOD={shouldShowApplyOD}&amp;shouldShowApplyPD={shouldShowApplyPD}&amp;shouldShowApplyOT={shouldShowApplyOT}&amp;shouldShowShiftChange={shouldShowShiftChange}&amp;shouldShowWeeklyOff={shouldShowWeeklyOff}"/>
+  </fragment>
+  <fragment android:label="fragment_on_duty" android:name="com.keka.xhr.features.attendance.attendancerequest.component.fragments.OnDutyRequestFragment" android:id="@7F0A08C8">
+    <argument android:name="requestType" android:defaultValue="OD" app:argType="string"/>
+    <argument android:name="employeeId" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <action android:id="@7F0A005D" app:destination="@7F0A0A19"/>
+    <action android:id="@7F0A005C" app:destination="@7F0A0178"/>
+    <deepLink app:uri="app://com.keka.xhr/onDuty?requestType={requestType}&amp;employeeId={employeeId}"/>
+  </fragment>
+  <fragment android:label="OtRequestFragment" android:name="com.keka.xhr.features.attendance.attendancerequest.component.fragments.OtRequestFragment" android:id="@7F0A08EB">
+    <argument android:name="employeeId" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <action android:id="@7F0A00F6" app:destination="@7F0A08E5"/>
+    <action android:id="@7F0A0AF8" app:destination="@7F0A08EE"/>
+    <deepLink app:uri="app://com.keka.xhr/otRequestScreen?employeeId={employeeId}"/>
+  </fragment>
+  <dialog android:label="OvertimeEventBottomSheetFragment" android:name="com.keka.xhr.features.attendance.attendancerequest.component.dialog.OvertimeEventBottomSheetFragment" android:id="@7F0A08EE">
+    <argument android:name="customOvertimeDetails" app:argType="com.keka.xhr.core.model.attendance.request.OverTimeDetailsArgs"/>
+  </dialog>
+  <dialog android:label="OtHourDetailsBottomSheet" android:name="com.keka.xhr.features.attendance.attendancerequest.component.dialog.OtHourDetailsBottomSheet" android:id="@7F0A08E5"/>
+  <fragment android:label="fragment_partial_day_request" android:name="com.keka.xhr.features.attendance.attendancerequest.component.fragments.PartialDayRequestFragment" android:id="@7F0A08FD">
+    <argument android:name="employeeId" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <action android:id="@7F0A005E" app:destination="@7F0A0178"/>
+    <deepLink app:uri="app://com.keka.xhr/partialDayRequest?employeeId={employeeId}"/>
+  </fragment>
+  <fragment android:label="InboxAdjustmentRegularisationRequestDetailFragment" android:name="com.keka.xhr.features.attendance.detail.component.AdjustmentRegularisationRequestDetailFragment" android:id="@7F0A0551">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="employeeId" android:defaultValue="" app:argType="string"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <argument android:name="status" android:defaultValue="0" app:argType="integer"/>
+    <deepLink app:uri="app://com.keka.xhr/adjustment_regularisation_request_detail?requestId={requestId}&amp;employeeId={employeeId}&amp;backStackRefreshKey={backStackRefreshKey}&amp;status={status}"/>
+  </fragment>
+  <fragment android:label="OvertimeRequestDetailFragment" android:name="com.keka.xhr.features.attendance.detail.component.OvertimeRequestDetailFragment" android:id="@7F0A08EF">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="employeeId" android:defaultValue="" app:argType="string"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/overtime_request_details?requestId={requestId}&amp;employeeId={employeeId}&amp;backStackRefreshKey={backStackRefreshKey}"/>
+  </fragment>
+  <fragment android:label="PartialDayRequestDetailFragment" android:name="com.keka.xhr.features.attendance.detail.component.PartialDayRequestDetailFragment" android:id="@7F0A08FC">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="employeeId" android:defaultValue="" app:argType="string"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/partial_day_request_details?requestId={requestId}&amp;employeeId={employeeId}&amp;backStackRefreshKey={backStackRefreshKey}"/>
+  </fragment>
+  <fragment android:label="RemoteClockInRequestDetailFragment" android:name="com.keka.xhr.features.attendance.detail.component.RemoteClockInRequestDetailFragment" android:id="@7F0A096C">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="employeeId" android:defaultValue="" app:argType="string"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/remote_clock_in_request_details?requestId={requestId}&amp;employeeId={employeeId}&amp;backStackRefreshKey={backStackRefreshKey}"/>
+  </fragment>
+  <fragment android:label="WorkingRemotelyRequestDetailFragment" android:name="com.keka.xhr.features.attendance.detail.component.WorkingRemotelyRequestDetailFragment" android:id="@7F0A0E37">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="employeeId" android:defaultValue="" app:argType="string"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/working_remotely_request_details?requestId={requestId}&amp;employeeId={employeeId}&amp;backStackRefreshKey={backStackRefreshKey}"/>
+  </fragment>
+  <dialog android:name="com.keka.xhr.features.attendance.detail.component.CancelRequestBottomSheet" android:id="@7F0A01E6">
+    <argument android:name="heading" app:argType="string"/>
+    <argument android:name="reasonRequired" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="backstackResultKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/cancel_request?heading={heading}&amp;reasonRequired={reasonRequired}&amp;backstackResultKey={backstackResultKey}"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.features.attendance.attendancerequest.component.dialog.RaiseRequestBottomSheetDialog" android:id="@7F0A0942">
+    <argument android:name="employeeProfileToTimeTabData" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <argument android:name="shiftChangeAndWeekOffPolicyUiModel" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+    <deepLink app:uri="app://com.keka.xhr/raiseRequestBottomSheet?employeeProfileToTimeTabData={employeeProfileToTimeTabData}&amp;shiftChangeAndWeekOffPolicyUiModel={shiftChangeAndWeekOffPolicyUiModel}"/>
+  </dialog>
+  <dialog android:label="ReactedEmployeeBottomSheetDialog" android:name="com.keka.xhr.features.attendance.clockin.component.ui.PenaltyExplanationBottomSheet" android:id="@7F0A0909">
+    <argument android:name="date" app:argType="string" app:nullable="false"/>
+    <argument android:name="itemPosition" app:argType="integer" app:nullable="false"/>
+    <argument android:name="employeeId" android:defaultValue="@00000000" app:argType="string" app:nullable="true"/>
+  </dialog>
+  <dialog android:label="RequestHistoryFilterBottomSheet" android:name="com.keka.xhr.features.attendance.attendancerequest.component.dialog.RequestHistoryFilterBottomSheet" android:id="@7F0A0974"/>
+  <dialog android:label="ShiftTimingBottomSheetDialog" android:name="com.keka.xhr.features.attendance.attendancerequest.component.dialog.ShiftTimingBottomSheetDialog" android:id="@7F0A0A31">
+    <deepLink app:uri="app://com.keka.xhr/shiftTimingBottomSheetDialog"/>
+  </dialog>
+  <action android:id="@7F0A0118" app:destination="@7F0A0A31"/>
+  <fragment android:label="fragment_shift_change_request" android:name="com.keka.xhr.features.attendance.attendancerequest.component.fragments.ShiftChangeRequestFragment" android:id="@7F0A0A2E">
+    <argument android:name="shiftIdentifiersList" android:defaultValue="@00000000" app:argType="string[]" app:nullable="true"/>
+    <action android:id="@7F0A0B06" app:destination="@7F0A0A32"/>
+    <action android:id="@7F0A0B05" app:destination="@7F0A0A2F"/>
+    <action android:id="@7F0A0B07" app:destination="@7F0A0A33"/>
+    <action android:id="@7F0A0AF6" app:destination="@7F0A0625"/>
+  </fragment>
+  <dialog android:label="ShiftTimingBottomSheetFragment" android:name="com.keka.xhr.features.attendance.attendancerequest.component.fragments.ShiftTimingBottomSheetFragment" android:id="@7F0A0A32">
+    <argument android:name="shiftTimeDetails" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/shiftTimingBottomSheetFragment?shiftTimeDetails={shiftTimeDetails}"/>
+  </dialog>
+  <dialog android:label="JobCodeSelectionBottomSheetFragment" android:name="com.keka.xhr.features.attendance.attendancerequest.component.fragments.JobCodeSelectionBottomSheetFragment" android:id="@7F0A0625">
+    <argument android:name="jobCodes" app:argType="com.keka.xhr.core.model.attendance.response.shiftchange.JobCodesArgs"/>
+  </dialog>
+  <dialog android:label="ShiftValidationResultBottomSheetFragment" android:name="com.keka.xhr.features.attendance.attendancerequest.component.fragments.ShiftValidationResultBottomSheetFragment" android:id="@7F0A0A33">
+    <argument android:name="shiftValidationArgs" app:argType="com.keka.xhr.core.model.attendance.request.shiftchange.ShiftValidationArgs"/>
+  </dialog>
+  <dialog android:label="ShiftSelectionBottomSheet" android:name="com.keka.xhr.features.attendance.attendancerequest.component.fragments.ShiftSelectionBottomSheet" android:id="@7F0A0A2F"/>
+  <fragment android:name="com.keka.xhr.features.attendance.attendancerequest.component.fragments.RequestWeeklyOffFragment" android:id="@7F0A0E2E">
+    <argument android:name="shiftIdentifiersList" android:defaultValue="@00000000" app:argType="string[]" app:nullable="true"/>
+    <argument android:name="shiftChangeOrWeekOffRequestType" app:argType="com.keka.xhr.core.model.attendance.constant.ShiftChangeAndWeekOffRequestType"/>
+  </fragment>
+  <action android:id="@7F0A00F1" app:destination="@7F0A0E2E"/>
+  <action android:id="@7F0A005A" app:destination="@7F0A0A2E"/>
+  <fragment android:name="com.keka.xhr.features.attendance.detail.component.MeShiftChangeAndWeekOffRequestDetailsFragment" android:id="@7F0A0A2D">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="shiftChangeOrWeekOffRequestType" app:argType="integer"/>
+    <deepLink app:uri="app://com.keka.xhr/shiftChangeOrWeekOffRequestDetailsFragment?requestId={requestId}&amp;shiftChangeOrWeekOffRequestType={shiftChangeOrWeekOffRequestType}"/>
+  </fragment>
+  <dialog android:name="com.keka.xhr.features.attendance.common.component.PredefinedReasonBottomSheet" android:id="@7F0A0A19">
+    <argument android:name="title" app:argType="string"/>
+    <argument android:name="reasons" app:argType="string[]"/>
+    <argument android:name="backstackResultKey" app:argType="string"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.features.attendance.common.component.BalanceDetailsBottomSheet" android:id="@7F0A0178">
+    <argument android:name="entries" app:argType="com.keka.xhr.features.attendance.common.model.AttendanceBalanceEntry[]"/>
+  </dialog>
+  <include app:graph="@7F110002"/>
+  <action android:id="@7F0A0B14" app:destination="@7F0A0324">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentViewerInput" app:nullable="false"/>
+  </action>
+  <include app:graph="@7F110000"/>
+  <action android:id="@7F0A0B12" app:destination="@7F0A0322">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentChooserInput" app:nullable="false"/>
+  </action>
+  <fragment android:label="FacialSetUpFragment" android:name="com.keka.xhr.features.attendance.faceregistration.component.FacialSetUpFragment" android:id="@7F0A0433">
+    <deepLink app:uri="app://com.keka.xhr/facialSetUpFragment"/>
+    <action android:id="@7F0A0056" app:destination="@7F0A0432"/>
+  </fragment>
+  <fragment android:label="FaceRegistrationFragment" android:name="com.keka.xhr.features.attendance.faceregistration.component.FaceRegistrationFragment" android:id="@7F0A0432">
+    <argument android:name="reRegistering" android:defaultValue="false" app:argType="boolean"/>
+    <action android:id="@7F0A0060" app:destination="@7F0A0431"/>
+  </fragment>
+  <fragment android:label="FaceRecognitionFragment" android:name="com.keka.xhr.features.attendance.facerecognition.component.FaceRecognitionFragment" android:id="@7F0A0430">
+    <argument android:name="clockInOutRequestBody" app:argType="com.keka.xhr.core.model.attendance.request.ClockInRequestBodyModel"/>
+    <action android:id="@7F0A0054" app:destination="@7F0A0432"/>
+    <action android:id="@7F0A0055" app:destination="@7F0A0A26"/>
+  </fragment>
+  <dialog android:label="faceRecognitionGuidePopUp" android:name="com.keka.xhr.features.attendance.faceregistration.component.FaceRecognitionGuideSheet" android:id="@7F0A0431">
+    <deepLink app:uri="app://com.keka.xhr/faceRecognitionGuidePopUp?args={args}"/>
+    <argument android:name="args" app:argType="string" app:nullable="false"/>
+  </dialog>
+  <dialog android:label="selectShiftBottomSheet" android:name="com.keka.xhr.features.attendance.common.component.SelectShiftBottomSheet" android:id="@7F0A0A1B">
+    <argument android:name="title" app:argType="string"/>
+    <argument android:name="items" app:argType="com.keka.xhr.core.model.inbox.CommonBottomSheetItem[]"/>
+    <argument android:name="backstackResultKey" android:defaultValue="" app:argType="string"/>
+  </dialog>
+  <action android:id="@7F0A00A2" app:destination="@7F0A0A1B"/>
+</navigation>

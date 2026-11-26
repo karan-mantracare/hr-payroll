@@ -1,0 +1,59 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A045F" app:startDestination="@7F0A0560">
+  <fragment android:label="InboxExitRequestsFragment" android:name="com.keka.xhr.features.inbox.exitrequests.requests.component.InboxExitRequestsFragment" android:id="@7F0A0560">
+    <argument android:name="isArchive" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/exits?isArchive={isArchive}&amp;backStackRefreshKey={backStackRefreshKey}"/>
+  </fragment>
+  <fragment android:label="InboxExitRequestDetailsFragment" android:name="com.keka.xhr.features.inbox.exitrequests.detail.component.InboxExitRequestDetailFragment" android:id="@7F0A055E">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="isArchive" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <argument android:name="lastApproverName" android:defaultValue="" app:argType="string"/>
+    <argument android:name="lastApprovalStatus" app:argType="integer"/>
+  </fragment>
+  <fragment android:label="InboxAcceptResignationFormFragment" android:name="com.keka.xhr.features.inbox.exitrequests.takeexitaction.acceptresignation.component.AcceptResignationFormFragment" android:id="@7F0A000D">
+    <argument android:name="employeeId" app:argType="integer"/>
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="resignationAction" android:defaultValue="" app:argType="string"/>
+    <argument android:name="noticePeriod" android:defaultValue="" app:argType="string"/>
+    <argument android:name="preferredLastWorkingDate" android:defaultValue="" app:argType="string"/>
+    <argument android:name="recommendLastWorkingDay" app:argType="integer"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <argument android:name="resignationType" app:argType="integer"/>
+    <argument android:name="noticePeriodEndDate" android:defaultValue="" app:argType="string"/>
+  </fragment>
+  <dialog android:label="FeedbackBottomSheet" android:name="com.keka.xhr.features.inbox.exitrequests.feedbackbottomsheet.component.ShowFeedBackBottomSheet" android:id="@7F0A0478">
+    <argument android:name="aproverName" android:defaultValue="" app:argType="string"/>
+    <argument android:name="approvalTime" android:defaultValue="" app:argType="string"/>
+    <argument android:name="approverProfileImage" android:defaultValue="" app:argType="string"/>
+    <argument android:name="approverStatus" app:argType="integer"/>
+    <argument android:name="isEmployeeEligibleToRehire" app:argType="boolean"/>
+    <argument android:name="recommendedLastDayOfWorking" android:defaultValue="" app:argType="string"/>
+    <argument android:name="didTakeAnyStepsToRetain" android:defaultValue="" app:argType="string"/>
+    <argument android:name="comments" android:defaultValue="" app:argType="string"/>
+    <argument android:name="resignationType" app:argType="integer"/>
+    <argument android:name="exitAction" app:argType="integer"/>
+  </dialog>
+  <action android:id="@7F0A0083" app:destination="@7F0A0478"/>
+  <action android:id="@7F0A007F" app:destination="@7F0A055E"/>
+  <action android:id="@7F0A0063" app:destination="@7F0A000D"/>
+  <dialog android:label="InboxExitRequestsCommonBottomSheet" android:name="com.keka.xhr.features.inbox.exitrequests.commonbottomsheet.component.InboxExitRequestsCommonBottomSheet" android:id="@7F0A055F">
+    <argument android:name="title" app:argType="string"/>
+    <argument android:name="items" app:argType="com.keka.xhr.core.model.inbox.CommonBottomSheetItem[]"/>
+    <argument android:name="backstackResultKey" android:defaultValue="" app:argType="string"/>
+  </dialog>
+  <action android:id="@7F0A0087" app:destination="@7F0A055F"/>
+  <dialog android:label="RequestResignationWithdrawBottomSheet" android:name="com.keka.xhr.features.inbox.exitrequests.detail.withdraw.request.component.RequestResignationWithdrawBottomSheetFragment" android:id="@7F0A0466">
+    <argument android:name="exitRequestId" app:argType="integer"/>
+    <argument android:name="request" app:argType="com.keka.xhr.core.model.inbox.response.selfexits.AcknowledgeExitRequest"/>
+  </dialog>
+  <action android:id="@7F0A009B" app:destination="@7F0A0466"/>
+  <dialog android:label="WithdrawResignationBottomSheetFragment" android:name="com.keka.xhr.features.inbox.exitrequests.detail.withdraw.confirmation.component.WithdrawResignationBottomSheetFragment" android:id="@7F0A0467">
+    <argument android:name="exitRequestId" app:argType="integer"/>
+  </dialog>
+  <dialog android:label="ViewAttachmentsBottomSheetFragment" android:name="com.keka.xhr.features.inbox.exitrequests.commonbottomsheet.component.ViewAttachmentsBottomSheet" android:id="@7F0A0456">
+    <argument android:name="attachments" app:argType="com.keka.xhr.core.model.inbox.response.selfexits.InboxExitDetailAttachment[]"/>
+  </dialog>
+  <action android:id="@7F0A00A7" app:destination="@7F0A0456"/>
+  <action android:id="@7F0A00AB" app:destination="@7F0A0467"/>
+</navigation>

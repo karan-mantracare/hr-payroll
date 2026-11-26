@@ -1,0 +1,13 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0463">
+  <fragment android:label="InboxOfferLetterRequestsFragment" android:name="com.keka.xhr.features.inbox.offerletter.request.component.InboxOfferLetterRequestsFragment" android:id="@7F0A0572">
+    <action android:id="@7F0A008B" app:destination="@7F0A0571"/>
+    <argument android:name="isPending" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/offerletter/requests?isPending={isPending}&amp;backStackRefreshKey={backStackRefreshKey}"/>
+  </fragment>
+  <fragment android:label="InboxOfferLetterDetailsFragment" android:name="com.keka.xhr.features.inbox.offerletter.detail.component.InboxOfferLetterDetailsFragment" android:id="@7F0A0571">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="isPending" app:argType="boolean"/>
+    <argument android:name="backstackRequestKey" android:defaultValue="" app:argType="string"/>
+  </fragment>
+</navigation>

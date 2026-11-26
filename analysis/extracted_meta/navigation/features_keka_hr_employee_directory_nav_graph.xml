@@ -1,0 +1,11 @@
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android" android:id="@7F0A0441" app:startDestination="@7F0A03CA">
+  <fragment android:label="fragment_emp_directory" android:name="com.keka.xhr.features.hr.employeedirectory.component.EmployeeDirectoryFragment" android:id="@7F0A03CA">
+    <argument android:name="isKeyBoardOpen" android:defaultValue="false" app:argType="boolean"/>
+    <action android:id="@7F0A00AE" app:destination="@7F0A09FC"/>
+    <deepLink app:uri="app://com.keka.xhr/employeeDirectory?isKeyBoardOpen={isKeyBoardOpen}"/>
+  </fragment>
+  <dialog android:label="SearchByLocationBottomSheet" android:name="com.keka.xhr.features.hr.enhancedsearch.component.EmployeeDirectoryFilterBottomSheet" android:id="@7F0A09FC">
+    <deepLink app:uri="app://com.keka.xhr/employeeDirectoryFilter?filterType={filterType}"/>
+    <argument android:name="filterType" app:argType="com.keka.xhr.core.model.hr.enums.EmployeeDirectoryFilterType"/>
+  </dialog>
+</navigation>

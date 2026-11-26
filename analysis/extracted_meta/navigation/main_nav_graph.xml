@@ -1,0 +1,66 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0832" app:startDestination="@7F0A04F9">
+  <include app:graph="@7F11001A"/>
+  <include app:graph="@7F110038"/>
+  <include app:graph="@7F11003A"/>
+  <include app:graph="@7F110003"/>
+  <include app:graph="@7F11002C"/>
+  <include app:graph="@7F11002B"/>
+  <include app:graph="@7F110035"/>
+  <include app:graph="@7F11000C"/>
+  <include app:graph="@7F110018"/>
+  <include app:graph="@7F110005"/>
+  <include app:graph="@7F110037"/>
+  <include app:graph="@7F110017"/>
+  <include app:graph="@7F110036"/>
+  <include app:graph="@7F110014"/>
+  <include app:graph="@7F110007"/>
+  <include app:graph="@7F11000D"/>
+  <include app:graph="@7F11000A"/>
+  <include app:graph="@7F110002"/>
+  <include app:graph="@7F110004"/>
+  <include app:graph="@7F11000B"/>
+  <include app:graph="@7F11002A"/>
+  <action android:id="@7F0A0B14" app:destination="@7F0A0324">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentViewerInput" app:nullable="false"/>
+  </action>
+  <action android:id="@7F0A00D0" app:destination="@7F0A0D87"/>
+  <action android:id="@7F0A00CD" app:destination="@7F0A0929"/>
+  <action android:id="@7F0A00BE" app:destination="@7F0A02FF"/>
+  <action android:id="@7F0A00F7" app:destination="@7F0A08FD"/>
+  <action android:id="@7F0A0104" app:destination="@7F0A0DD4"/>
+  <action android:id="@7F0A00CE" app:destination="@7F0A0D7E"/>
+  <action android:id="@7F0A0057" app:destination="@7F0A013A"/>
+  <fragment android:label="AllHolidayFragment" android:name="com.keka.xhr.bottomtabs.me.time.holiday.ui.AllHolidayFragment" android:id="@7F0A013A">
+    <action android:id="@7F0A009F" app:destination="@7F0A0A18"/>
+  </fragment>
+  <dialog android:name="com.keka.xhr.bottomtabs.me.time.holiday.ui.SelectYearBottomSheet" android:id="@7F0A0A18">
+    <argument android:name="selectedYear" app:argType="integer"/>
+    <argument android:name="years" app:argType="integer[]"/>
+    <argument android:name="backstackResultKey" app:argType="string"/>
+  </dialog>
+  <fragment android:label="In App Feedback" android:name="com.keka.xhr.features.inappfeedback.component.InAppFeedbackFragment" android:id="@7F0A089B"/>
+  <action android:id="@7F0A0058" app:destination="@7F0A089B"/>
+  <fragment android:label="Global Search" android:name="com.keka.xhr.core.globalsearch.ui.GlobalSearchFragment" android:id="@7F0A04BC">
+    <deepLink app:uri="app://com.keka.xhr/global_search"/>
+  </fragment>
+  <action android:id="@7F0A0062" app:destination="@7F0A001E"/>
+  <fragment android:label="AboutAppFragment" android:name="com.keka.xhr.about.ui.AboutAppFragment" android:id="@7F0A001E">
+    <argument android:name="versionNumber" app:argType="string" app:nullable="false"/>
+  </fragment>
+  <action android:id="@7F0A007D" app:destination="@7F0A03A1"/>
+  <fragment android:label="DynamicFeatureLauncherFragment" android:name="com.keka.xhr.dynamicfeaturelauncher.DynamicFeatureLauncherFragment" android:id="@7F0A03A1">
+    <argument android:name="moduleName" app:argType="string"/>
+    <argument android:name="source" app:argType="string"/>
+    <argument android:name="deeplink" android:defaultValue="" app:argType="string"/>
+  </fragment>
+  <fragment android:name="com.keka.xhr.features.uspayroll.USPayrollFragment" android:id="@7F0A0D81" app:moduleName="uspayroll">
+    <argument android:name="startDestination" app:argType="integer"/>
+    <argument android:name="selectedLocaleCode" app:argType="string"/>
+    <argument android:name="employeeName" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/uspayroll?startDestination={startDestination}&amp;employeeName={employeeName}&amp;selectedLocaleCode={selectedLocaleCode}"/>
+  </fragment>
+  <action android:id="@7F0A0ADE" app:destination="@7F0A0152"/>
+  <fragment android:label="AppCrashHandlerFragment" android:name="com.keka.xhr.core.crashhandler.ui.AppCrashHandlerFragment" android:id="@7F0A0152">
+    <argument android:name="crashInfo" app:argType="string" app:nullable="false"/>
+  </fragment>
+</navigation>

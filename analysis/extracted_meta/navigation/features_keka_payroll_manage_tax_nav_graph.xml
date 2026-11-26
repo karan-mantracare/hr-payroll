@@ -1,0 +1,61 @@
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android" android:id="@7F0A048F" app:startDestination="@7F0A0834">
+  <fragment android:label="MyPayFragment" android:name="com.keka.xhr.features.payroll.managetax.component.ManageTaxFragment" android:id="@7F0A0834">
+    <action android:id="@7F0A00DD" app:destination="@7F0A0501"/>
+    <action android:id="@7F0A00E2" app:destination="@7F0A08E7"/>
+    <action android:id="@7F0A00E1" app:destination="@7F0A08E6"/>
+    <action android:id="@7F0A00E0" app:destination="@7F0A08CC"/>
+    <deepLink app:uri="app://com.keka.xhr/payroll/managetax"/>
+  </fragment>
+  <fragment android:label="OtherIncomeSource" android:name="com.keka.xhr.features.payroll.managetax.component.IncomeFromOtherSourcesFragment" android:id="@7F0A08E7">
+    <argument android:name="year" app:argType="string" app:nullable="false"/>
+    <argument android:name="otherIncomeDetails" android:defaultValue="@00000000" app:argType="com.keka.xhr.core.model.payroll.response.DeductionsFromOtherSources" app:nullable="true"/>
+  </fragment>
+  <fragment android:label="OtherIncomeSourceDetails" android:name="com.keka.xhr.features.payroll.managetax.component.IncomeFromOtherSourcesDetailsFragment" android:id="@7F0A08E6">
+    <argument android:name="year" app:argType="string" app:nullable="false"/>
+    <argument android:name="otherIncomeDetails" app:argType="com.keka.xhr.core.model.payroll.response.DeductionsFromOtherSources" app:nullable="false"/>
+    <action android:id="@7F0A00F5" app:destination="@7F0A08E7"/>
+  </fragment>
+  <fragment android:label="HousePropertyFragment" android:name="com.keka.xhr.features.payroll.managetax.component.HousePropertyFragment" android:id="@7F0A0501">
+    <argument android:name="year" app:argType="string" app:nullable="false"/>
+    <action android:id="@7F0A00DE" app:destination="@7F0A0502"/>
+    <action android:id="@7F0A00DF" app:destination="@7F0A0503"/>
+    <action android:id="@7F0A00D6" app:destination="@7F0A0504"/>
+    <action android:id="@7F0A00D7" app:destination="@7F0A0505"/>
+  </fragment>
+  <fragment android:label="HousePropertyRentedDetails" android:name="com.keka.xhr.features.payroll.managetax.component.HousePropertyRentedDetailsFragment" android:id="@7F0A0502">
+    <argument android:name="houseIdentifier" app:argType="string" app:nullable="false"/>
+    <argument android:name="year" app:argType="string" app:nullable="false"/>
+    <action android:id="@7F0A00D8" app:destination="@7F0A0503"/>
+  </fragment>
+  <fragment android:label="HousePropertyRentedEdit" android:name="com.keka.xhr.features.payroll.managetax.component.HousePropertyRentedEditFragment" android:id="@7F0A0503">
+    <argument android:name="rentDetail" android:defaultValue="@00000000" app:argType="com.keka.xhr.core.model.payroll.response.RentDetail" app:nullable="true"/>
+    <argument android:name="year" app:argType="string" app:nullable="false"/>
+  </fragment>
+  <fragment android:label="HousePropertySelfDetails" android:name="com.keka.xhr.features.payroll.managetax.component.HousePropertySelfDetailsFragment" android:id="@7F0A0504">
+    <argument android:name="houseIdentifier" app:argType="string" app:nullable="false"/>
+    <argument android:name="year" app:argType="string" app:nullable="false"/>
+    <action android:id="@7F0A00D9" app:destination="@7F0A0505"/>
+  </fragment>
+  <fragment android:label="HousePropertySelfEdit" android:name="com.keka.xhr.features.payroll.managetax.component.HousePropertySelfEditFragment" android:id="@7F0A0505">
+    <argument android:name="letOutDetails" android:defaultValue="@00000000" app:argType="com.keka.xhr.core.model.payroll.response.LetOutHouseProperty" app:nullable="true"/>
+    <argument android:name="year" app:argType="string" app:nullable="false"/>
+    <argument android:name="occupancyType" android:defaultValue="-1" app:argType="integer"/>
+  </fragment>
+  <fragment android:label="OnePointFiveLakhDeductionFragment" android:name="com.keka.xhr.features.payroll.managetax.component.OnePointFiveLakhDeductionFragment" android:id="@7F0A08CC">
+    <argument android:name="title" app:argType="string" app:nullable="false"/>
+    <argument android:name="year" app:argType="string" app:nullable="false"/>
+    <argument android:name="type" app:argType="string" app:nullable="false"/>
+    <action android:id="@7F0A00F4" app:destination="@7F0A0362"/>
+  </fragment>
+  <fragment android:name="com.keka.xhr.features.payroll.managetax.component.DeclarationCommonFragment" android:id="@7F0A0362">
+    <argument android:name="year" app:argType="string" app:nullable="false"/>
+    <argument android:name="decleration" app:argType="com.keka.xhr.core.model.payroll.DeclarationModel"/>
+    <argument android:name="requireValidation" app:argType="boolean"/>
+  </fragment>
+  <dialog android:name="com.keka.xhr.features.payroll.managetax.component.Select80DAgeBottomSheet" android:id="@7F0A0A13">
+    <argument android:name="isAgeAboveAgeLimit" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="isEmployeeOrSpouse" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/select_80d_age?isAgeAboveAgeLimit={isAgeAboveAgeLimit}&amp;isEmployeeOrSpouse={isEmployeeOrSpouse}&amp;backStackRefreshKey={backStackRefreshKey}"/>
+  </dialog>
+</navigation>

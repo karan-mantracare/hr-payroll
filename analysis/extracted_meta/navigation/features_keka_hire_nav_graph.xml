@@ -1,0 +1,41 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0440" app:startDestination="@7F0A0857">
+  <fragment android:label="MeHireJobListFragment" android:name="com.keka.xhr.features.hire.joblist.component.MeHireJobListFragment" android:id="@7F0A0857">
+    <argument android:name="isArchive" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <action android:id="@7F0A0B27" app:destination="@7F0A04E8"/>
+    <deepLink app:uri="app://com.keka.xhr/recruiterJobs"/>
+  </fragment>
+  <dialog android:name="com.keka.xhr.features.hire.jobfilter.component.HireJobsFilterBottomSheet" android:id="@7F0A04E8"/>
+  <action android:id="@7F0A04F1" app:destination="@7F0A04E7">
+    <argument android:name="jobId" app:argType="long" app:nullable="false"/>
+  </action>
+  <fragment android:label="MeHireMyInterviewsListFragment" android:name="com.keka.xhr.features.hire.interviews.component.HireMyInterviewsListFragment" android:id="@7F0A0854">
+    <argument android:name="isArchive" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/hire_MeHireMyInterviewsListFragment"/>
+  </fragment>
+  <fragment android:label="MeHireInterviewsTabFragment" android:name="com.keka.xhr.features.hire.interviews.component.MeHireInterviewsTabFragment" android:id="@7F0A0855">
+    <argument android:name="jobId" android:defaultValue="-1L" app:argType="long"/>
+    <argument android:name="isArchive" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/hire_MeHireInterviewsTabFragment"/>
+  </fragment>
+  <dialog android:name="com.keka.xhr.features.hire.interviews.component.HireInterviewsFilterBottomSheet" android:id="@7F0A04E9">
+    <deepLink app:uri="app://com.keka.xhr/hire_interviews_filter"/>
+  </dialog>
+  <include app:graph="@7F110013"/>
+  <include app:graph="@7F110010"/>
+  <include app:graph="@7F110012"/>
+  <action android:id="@7F0A0B11" app:destination="@7F0A04EA">
+    <argument android:name="jobId" app:argType="integer" app:nullable="false"/>
+    <argument android:name="candidateIdentifier" app:argType="string" app:nullable="false"/>
+  </action>
+  <include app:graph="@7F110002"/>
+  <action android:id="@7F0A0B14" app:destination="@7F0A0324">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentViewerInput" app:nullable="false"/>
+  </action>
+  <include app:graph="@7F110000"/>
+  <action android:id="@7F0A0B12" app:destination="@7F0A0322">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentChooserInput" app:nullable="false"/>
+  </action>
+</navigation>

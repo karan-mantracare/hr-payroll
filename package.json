@@ -1,0 +1,14 @@
+{
+  "name": "pulse-hr-app",
+  "version": "1.0.0",
+  "description": "Original enterprise HR application with configurable leave policies, multi-tier approvals, attendance, timesheets, and payroll",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/e2e-workflow.test.js"
+  },
+  "keywords": ["hr", "hrms", "payroll", "attendance", "leave", "approvals"],
+  "author": "Antigravity Engineering",
+  "license": "MIT"
+}

@@ -1,0 +1,25 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0470" app:startDestination="@7F0A04BF">
+  <dialog android:label="GoalsUpdateProgressBottomSheet" android:name="com.keka.xhr.features.pms.goals.component.GoalsUpdateProgressBottomSheet" android:id="@7F0A0471">
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <argument android:name="isMyObjective" app:argType="boolean"/>
+    <argument android:name="goalType" app:argType="integer"/>
+    <argument android:name="goalId" app:argType="integer"/>
+    <argument android:name="goalStatus" app:argType="integer"/>
+    <argument android:name="currentValue" app:argType="string"/>
+    <argument android:name="metricType" app:argType="integer"/>
+    <argument android:name="isNoteMandatory" app:argType="boolean"/>
+    <deepLink app:uri="app://com.keka.xhr/pms/kmmGoals/updateProgressStatus?backStackRefreshKey={backStackRefreshKey}&amp;isMyObjective={isMyObjective}&amp;goalType={goalType}&amp;goalId={goalId}&amp;goalStatus={goalStatus}&amp;currentValue={currentValue}&amp;metricType={metricType}&amp;isNoteMandatory={isNoteMandatory}"/>
+  </dialog>
+  <fragment android:label="GoalFragment" android:name="com.keka.xhr.features.pms.goals.component.GoalFragment" android:id="@7F0A04BF">
+    <argument android:name="selectedLocaleCode" app:argType="string"/>
+    <argument android:name="canUpdateProgress" app:argType="boolean"/>
+    <argument android:name="canManageGoal" app:argType="boolean"/>
+    <argument android:name="objectiveIdentifier" android:defaultValue="" app:argType="string"/>
+    <argument android:name="isSelfGoal" app:argType="boolean"/>
+    <argument android:name="isMyGoalOrTask" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="objectiveTypeList" app:argType="string"/>
+    <argument android:name="isTimeFrameClosed" app:argType="boolean"/>
+    <argument android:name="isNewlyCreated" android:defaultValue="false" app:argType="boolean"/>
+    <deepLink app:uri="app://com.keka.xhr/goalsfragment?selectedLocaleCode={selectedLocaleCode}&amp;isSelfGoal={isSelfGoal}&amp;objectiveTypeList={objectiveTypeList}&amp;canUpdateProgress={canUpdateProgress}&amp;canManageGoal={canManageGoal}&amp;objectiveIdentifier={objectiveIdentifier}&amp;isMyGoalOrTask={isMyGoalOrTask}&amp;isTimeFrameClosed={isTimeFrameClosed}&amp;isNewlyCreated={isNewlyCreated}"/>
+  </fragment>
+</navigation>

@@ -1,0 +1,60 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A046D">
+  <fragment android:name="com.keka.xhr.features.payroll.airtickets.component.AirTicketFragment" android:id="@7F0A0132">
+    <argument android:name="backStackRequestKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/payroll/airtickets?backStackRequestKey={backStackRequestKey}"/>
+    <action android:id="@7F0A0068" app:destination="@7F0A012F"/>
+    <action android:id="@7F0A006A" app:destination="@7F0A0131"/>
+    <action android:id="@7F0A006C" app:destination="@7F0A0134"/>
+  </fragment>
+  <dialog android:name="com.keka.xhr.features.payroll.airtickets.component.prompt.selection.AirTicketBenefitSelectionBottomSheet" android:id="@7F0A012F">
+    <argument android:name="bookingAllowed" app:argType="boolean"/>
+    <argument android:name="reimbursementAllowed" app:argType="boolean"/>
+    <argument android:name="currencyCode" app:argType="string"/>
+    <argument android:name="reimbursementAmount" app:argType="float"/>
+    <argument android:name="backStackRequestKey" app:argType="string"/>
+    <action android:id="@7F0A004E" app:destination="@7F0A0130"/>
+    <action android:id="@7F0A006B" app:destination="@7F0A0133"/>
+  </dialog>
+  <fragment android:name="com.keka.xhr.features.payroll.airtickets.component.request.raise.booking.AirTicketBookingRequestFragment" android:id="@7F0A0130">
+    <argument android:name="id" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="backStackRequestKey" android:defaultValue="" app:argType="string"/>
+    <action android:id="@7F0A006D" app:destination="@7F0A0135"/>
+    <action android:id="@7F0A0077" app:destination="@7F0A032A"/>
+    <action android:id="@7F0A006C" app:destination="@7F0A0134" app:popUpTo="@7F0A0130" app:popUpToInclusive="true"/>
+  </fragment>
+  <fragment android:name="com.keka.xhr.features.payroll.airtickets.component.request.detail.AirTicketRequestDetailFragment" android:id="@7F0A0134">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="requestType" android:defaultValue="-1" app:argType="integer"/>
+    <argument android:name="backStackRequestKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/payroll/airticket/request/detail?requestId={requestId}&amp;requestType={requestType}&amp;backStackRequestKey={backStackRequestKey}"/>
+    <action android:id="@7F0A0069" app:destination="@7F0A0130"/>
+    <action android:id="@7F0A006B" app:destination="@7F0A0133"/>
+    <action android:id="@7F0A006E" app:destination="@7F0A0136"/>
+    <action android:id="@7F0A00A9" app:destination="@7F0A0DD8"/>
+  </fragment>
+  <dialog android:name="com.keka.xhr.features.payroll.airtickets.component.prompt.withdraw.AirTicketWithDrawRequestBottomSheetFragment" android:id="@7F0A0136">
+    <argument android:name="backStackRequestKey" app:argType="string"/>
+  </dialog>
+  <fragment android:label="AirTicketReimbursementRequestFragment" android:name="com.keka.xhr.features.payroll.airtickets.component.request.raise.reimbursement.AirTicketReimbursementRequestFragment" android:id="@7F0A0133">
+    <argument android:name="id" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="backStackRequestKey" android:defaultValue="" app:argType="string"/>
+    <action android:id="@7F0A006C" app:destination="@7F0A0134" app:popUpTo="@7F0A0133" app:popUpToInclusive="true"/>
+  </fragment>
+  <fragment android:name="com.keka.xhr.features.payroll.airtickets.component.request.raise.encashment.AirTicketEncashmentRequestFragment" android:id="@7F0A0131">
+    <argument android:name="backStackRequestKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/payroll/airticket/encashment/request?backStackRequestKey={backStackRequestKey}"/>
+    <action android:id="@7F0A006C" app:destination="@7F0A0134" app:popUpTo="@7F0A0131" app:popUpToInclusive="true"/>
+  </fragment>
+  <dialog android:name="com.keka.xhr.features.payroll.airtickets.component.request.raise.booking.selectgender.AirTicketSelectGenderBottomSheet" android:id="@7F0A0135">
+    <argument android:name="selectedGender" android:defaultValue="-1" app:argType="integer"/>
+    <argument android:name="backStackRequestKey" android:defaultValue="" app:argType="string"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.features.payroll.airtickets.component.prompt.countrycode.CountryCodeSelectionBottomSheet" android:id="@7F0A032A">
+    <argument android:name="selectedCountryCode" app:argType="string"/>
+    <argument android:name="backStackRequestKey" android:defaultValue="" app:argType="string"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.features.payroll.airtickets.component.prompt.reason.ViewReasonBottomSheet" android:id="@7F0A0DD8">
+    <argument android:name="heading" app:argType="string"/>
+    <argument android:name="reason" app:argType="string"/>
+  </dialog>
+</navigation>

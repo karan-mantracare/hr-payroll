@@ -1,0 +1,9 @@
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android" android:id="@7F0A0324" app:startDestination="@7F0A038D">
+  <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentViewerInput" app:nullable="false"/>
+  <fragment android:label="DocumentViewerFragment" android:name="com.keka.xhr.core.ui.components.documentviewer.presentation.ui.DocumentViewerFragment" android:id="@7F0A038D"/>
+  <include app:graph="@7F110001"/>
+  <action android:id="@7F0A0B13" app:destination="@7F0A0323">
+    <argument android:name="title" android:defaultValue="" app:argType="string"/>
+    <argument android:name="description" android:defaultValue="" app:argType="string"/>
+  </action>
+</navigation>

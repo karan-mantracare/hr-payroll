@@ -1,0 +1,29 @@
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android" android:id="@7F0A04F9" app:startDestination="@7F0A04F8">
+  <fragment android:label="home" android:name="com.keka.xhr.bottomtabs.home.ui.HomeFragment" android:id="@7F0A04F8">
+    <action android:id="@7F0A00D2" app:destination="@7F0A014B"/>
+    <action android:id="@7F0A00D1" app:destination="@7F0A0149"/>
+    <action android:id="@7F0A00D3" app:destination="@7F0A02EF"/>
+    <action android:id="@7F0A00D5" app:destination="@7F0A0E33"/>
+    <action android:id="@7F0A00D4" app:destination="@7F0A0D7C"/>
+    <action android:id="@7F0A0B2E" app:destination="@7F0A0445">
+      <argument android:name="employeeId" app:argType="integer"/>
+      <argument android:name="wishType" app:argType="string" app:nullable="false"/>
+    </action>
+  </fragment>
+  <fragment android:label="AnnouncementDetailFragment" android:name="com.keka.xhr.announcements.presentation.ui.AnnouncementDetailFragment" android:id="@7F0A0149">
+    <argument android:name="reactionIdentifier" app:argType="string" app:nullable="false"/>
+    <argument android:name="announcementId" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="hasUserAcknowledged" android:defaultValue="false" app:argType="boolean"/>
+    <action android:id="@7F0A00B1" app:destination="@7F0A038D"/>
+  </fragment>
+  <fragment android:label="AnnouncementListFragment" android:name="com.keka.xhr.announcements.presentation.ui.AnnouncementListFragment" android:id="@7F0A014B">
+    <action android:id="@7F0A00B2" app:destination="@7F0A0149"/>
+  </fragment>
+  <fragment android:name="com.keka.xhr.bottomtabs.home.WishThemFragment" android:id="@7F0A0E33">
+    <action android:id="@7F0A0B2E" app:destination="@7F0A0445">
+      <argument android:name="employeeId" app:argType="integer"/>
+      <argument android:name="wishType" app:argType="string" app:nullable="false"/>
+    </action>
+  </fragment>
+  <fragment android:label="fragment_unsupported_os_version" android:name="com.keka.xhr.unsupported.UnsupportedOsVersionFragment" android:id="@7F0A0D7C"/>
+</navigation>

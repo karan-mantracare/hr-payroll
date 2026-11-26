@@ -1,0 +1,14 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A045B" app:startDestination="@7F0A0576">
+  <fragment android:label="InboxPartialDayRequestsFragment" android:name="com.keka.xhr.features.inbox.attendance.partialday.request.component.InboxPartialDayRequestsFragment" android:id="@7F0A0576">
+    <argument android:name="isPending" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <action android:id="@7F0A0AF3" app:destination="@7F0A0575"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/attendance/partialday/requests?isPending={isPending}&amp;backStackRefreshKey={backStackRefreshKey}"/>
+  </fragment>
+  <fragment android:label="InboxPartialDayRequestDetailFragment" android:name="com.keka.xhr.features.inbox.attendance.partialday.detail.component.InboxPartialDayRequestDetailFragment" android:id="@7F0A0575">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="isPending" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/attendance/partialday/requests?requestId={requestId}&amp;isPending={isPending}&amp;backStackRefreshKey={backStackRefreshKey}"/>
+  </fragment>
+</navigation>

@@ -1,0 +1,21 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0453" app:startDestination="@7F0A0852">
+  <include app:graph="@7F110015"/>
+  <include app:graph="@7F110016"/>
+  <include app:graph="@7F110017"/>
+  <include app:graph="@7F110019"/>
+  <include app:graph="@7F110002"/>
+  <action android:id="@7F0A0B14" app:destination="@7F0A0324">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentViewerInput" app:nullable="false"/>
+  </action>
+  <include app:graph="@7F110000"/>
+  <action android:id="@7F0A0B12" app:destination="@7F0A0322">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentChooserInput" app:nullable="false"/>
+  </action>
+  <fragment android:label="MeAssetsFragment" android:name="com.keka.xhr.features.hr.assets.MeAssetsFragment" android:id="@7F0A0852">
+    <argument android:name="isPending" app:argType="boolean"/>
+    <deepLink app:uri="app://com.keka.xhr/meAssets?isPending={isPending}"/>
+  </fragment>
+  <fragment android:label="MeAssetRequestsFragment" android:name="com.keka.xhr.features.hr.assets.MeAssetRequestsFragment" android:id="@7F0A0851">
+    <deepLink app:uri="app://com.keka.xhr/meAssetRequests"/>
+  </fragment>
+</navigation>

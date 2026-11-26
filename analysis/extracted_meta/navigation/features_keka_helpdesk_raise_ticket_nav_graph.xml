@@ -1,0 +1,11 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0946" app:startDestination="@7F0A0943">
+  <fragment android:label="fragment_raise_ticket_category" android:name="com.keka.xhr.helpdesk.raiseticket.component.RaiseTicketCategoryFragment" android:id="@7F0A0943">
+    <argument android:name="ticketScreenType" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="categoryId" android:defaultValue="0" app:argType="integer"/>
+    <action android:id="@7F0A00FD" app:destination="@7F0A0944"/>
+    <deepLink app:uri="app://com.keka.xhr/raiseTicket?ticketScreenType={ticketScreenType}&amp;categoryId={categoryId}"/>
+  </fragment>
+  <fragment android:label="RaiseTicketFragment" android:name="com.keka.xhr.helpdesk.raiseticket.component.RaiseTicketFragment" android:id="@7F0A0944">
+    <argument android:name="ticketScreenType" android:defaultValue="0" app:argType="integer"/>
+  </fragment>
+</navigation>

@@ -1,0 +1,45 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A046E">
+  <fragment android:name="com.keka.xhr.features.payroll.payslips.component.PayslipsFragment" android:id="@7F0A0905">
+    <action android:id="@7F0A00A1" app:destination="@7F0A0A1D"/>
+    <action android:id="@7F0A00A8" app:destination="@7F0A0DD1"/>
+    <action android:id="@7F0A0092" app:destination="@7F0A0903"/>
+    <action android:id="@7F0A0093" app:destination="@7F0A0904"/>
+    <action android:id="@7F0A0091" app:destination="@7F0A0902"/>
+    <deepLink app:uri="app://com.keka.xhr/payroll/payslips"/>
+  </fragment>
+  <fragment android:name="com.keka.xhr.features.payroll.payslips.component.ViewPayslipFragment" android:id="@7F0A0DD1">
+    <argument android:name="month" app:argType="integer"/>
+    <argument android:name="year" app:argType="integer"/>
+    <argument android:name="availableMonths" app:argType="com.keka.xhr.features.payroll.payslips.state.AvailableMonthData[]"/>
+    <action android:id="@7F0A0092" app:destination="@7F0A0903"/>
+    <action android:id="@7F0A0093" app:destination="@7F0A0904"/>
+    <deepLink app:uri="app://com.keka.xhr/payroll/payslip?month={month}&amp;year={year}&amp;availableMonths={availableMonths}"/>
+  </fragment>
+  <dialog android:name="com.keka.xhr.features.payroll.payslips.component.bottomsheet.PayslipDownloadAcknowledgeBottomSheet" android:id="@7F0A0903">
+    <argument android:name="month" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="year" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="showPasswordInfo" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="isReimbursementPresent" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="cycleId" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="payslipCount" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="backstackResultKey" app:argType="string"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.features.payroll.payslips.component.bottomsheet.PayslipDownloadReimbursementBottomSheet" android:id="@7F0A0904">
+    <argument android:name="month" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="year" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="showPasswordInfo" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="cycleId" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="payslipCount" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="backstackResultKey" app:argType="string"/>
+    <action android:id="@7F0A0092" app:destination="@7F0A0903" app:popUpTo="@7F0A0904" app:popUpToInclusive="true"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.features.payroll.payslips.component.bottomsheet.PayslipBulkDownloadBottomSheet" android:id="@7F0A0902">
+    <argument android:name="totalPayslipsAvailable" app:argType="integer"/>
+    <argument android:name="backstackResultKey" app:argType="string"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.features.payroll.payslips.component.bottomsheet.SelectYearBottomSheet" android:id="@7F0A0A1D">
+    <argument android:name="selectedYear" app:argType="integer"/>
+    <argument android:name="years" app:argType="integer[]"/>
+    <argument android:name="backstackResultKey" app:argType="string"/>
+  </dialog>
+</navigation>

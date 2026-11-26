@@ -1,0 +1,13 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A043D">
+  <fragment android:label="@7F140093" android:name="com.keka.xhr.features.settings.component.LanguageSelectionFragment" android:id="@7F0A089C">
+    <deepLink app:uri="app://com.keka.xhr/navigationLanguageSelectionFragment"/>
+  </fragment>
+  <fragment android:label="Theme" android:name="com.keka.xhr.features.settings.component.ThemeBottomDialogFragment" android:id="@7F0A08A0">
+    <deepLink app:uri="app://com.keka.xhr/navigationAppThemeSelectionFragment"/>
+  </fragment>
+  <fragment android:label="SettingsFragment" android:name="com.keka.xhr.features.settings.component.SettingsFragment" android:id="@7F0A0321">
+    <deepLink app:uri="app://com.keka.xhr/navigationSettingsFragment"/>
+    <action android:id="@7F0A0AE5" app:destination="@7F0A0320"/>
+  </fragment>
+  <fragment android:label="DateFormatFragment" android:name="com.keka.xhr.features.settings.component.DateFormatFragment" android:id="@7F0A0320"/>
+</navigation>

@@ -1,0 +1,7 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0458">
+  <include app:graph="@7F11001D"/>
+  <include app:graph="@7F110020"/>
+  <include app:graph="@7F110021"/>
+  <include app:graph="@7F11001F"/>
+  <include app:graph="@7F11001E"/>
+</navigation>

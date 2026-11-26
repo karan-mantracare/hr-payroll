@@ -1,0 +1,164 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0E28" app:startDestination="@7F0A0E25">
+  <include app:graph="@7F110002"/>
+  <action android:id="@7F0A0B14" app:destination="@7F0A0324">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentViewerInput" app:nullable="false"/>
+  </action>
+  <include app:graph="@7F110000"/>
+  <action android:id="@7F0A0B12" app:destination="@7F0A0322">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentChooserInput" app:nullable="false"/>
+  </action>
+  <fragment android:label="WallFragment" android:name="com.keka.xhr.engage.wall.list.component.WallFragment" android:id="@7F0A0E25">
+    <action android:id="@7F0A0AFE" app:destination="@7F0A0013">
+      <argument android:name="postId" app:argType="string" app:nullable="false"/>
+      <argument android:name="enableCommentInput" android:defaultValue="false" app:argType="boolean" app:nullable="false"/>
+    </action>
+    <action android:id="@7F0A0AFB" app:destination="@7F0A0011">
+      <argument android:name="pollIdentifier" app:argType="string" app:nullable="false"/>
+      <argument android:name="pollId" android:defaultValue="-1" app:argType="integer" app:nullable="false"/>
+      <argument android:name="enableCommentInput" android:defaultValue="false" app:argType="boolean" app:nullable="false"/>
+    </action>
+    <action android:id="@7F0A0B0C" app:destination="@7F0A001D"/>
+    <action android:id="@7F0A0AF7" app:destination="@7F0A08B4"/>
+    <action android:id="@7F0A0AE6" app:destination="@7F0A036A"/>
+    <action android:id="@7F0A0B0D" app:destination="@7F0A0E24"/>
+    <action android:id="@7F0A0B00" app:destination="@7F0A0014"/>
+  </fragment>
+  <fragment android:label="AddPostFragment" android:name="com.keka.xhr.engage.wall.post.component.creation.AddPostFragment" android:id="@7F0A0001">
+    <argument android:name="contentId" android:defaultValue="-1" app:argType="integer" app:nullable="false"/>
+    <argument android:name="postId" android:defaultValue="" app:argType="string" app:nullable="false"/>
+    <argument android:name="departmentId" android:defaultValue="-1" app:argType="integer" app:nullable="false"/>
+    <action android:id="@7F0A0AFD" app:destination="@7F0A091A"/>
+    <deepLink app:uri="app://com.keka.xhr/wallAddPostFragment"/>
+  </fragment>
+  <fragment android:label="PostDetailFragment" android:name="com.keka.xhr.engage.wall.post.component.detail.PostDetailFragment" android:id="@7F0A0013">
+    <deepLink app:uri="app://com.keka.xhr/wallPostDetailFragment?postId={postId}&amp;commentId={commentId}&amp;authorName={authorName}&amp;commentText={commentText}&amp;enableCommentInput={enableCommentInput}&amp;backStackRefreshKey={backStackRefreshKey}"/>
+    <argument android:name="postId" app:argType="string" app:nullable="false"/>
+    <argument android:name="enableCommentInput" android:defaultValue="false" app:argType="boolean" app:nullable="false"/>
+    <argument android:name="commentId" android:defaultValue="" app:argType="string"/>
+    <argument android:name="authorName" android:defaultValue="" app:argType="string"/>
+    <argument android:name="commentText" android:defaultValue="" app:argType="string"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <action android:id="@7F0A0B0C" app:destination="@7F0A001D"/>
+    <action android:id="@7F0A0AE6" app:destination="@7F0A036A"/>
+    <action android:id="@7F0A0B01" app:destination="@7F0A095A"/>
+  </fragment>
+  <fragment android:label="PollCreationFragment" android:name="com.keka.xhr.engage.wall.poll.component.creation.PollCreationFragment" android:id="@7F0A0010">
+    <argument android:name="pollIdentifier" android:defaultValue="" app:argType="string" app:nullable="false"/>
+    <argument android:name="pollId" android:defaultValue="-1" app:argType="integer" app:nullable="false"/>
+    <argument android:name="departmentId" android:defaultValue="-1" app:argType="integer" app:nullable="false"/>
+    <action android:id="@7F0A0B08" app:destination="@7F0A001A">
+      <argument android:name="title" app:argType="string"/>
+      <argument android:name="items" app:argType="string"/>
+      <argument android:name="backstackResultKey" android:defaultValue=""/>
+    </action>
+    <action android:id="@7F0A0AFA" app:destination="@7F0A0916"/>
+    <deepLink app:uri="app://com.keka.xhr/wallPollCreationFragment"/>
+  </fragment>
+  <fragment android:label="PollDetailFragment" android:name="com.keka.xhr.engage.wall.poll.component.detail.PollDetailFragment" android:id="@7F0A0011">
+    <argument android:name="pollIdentifier" android:defaultValue="-1" app:argType="string" app:nullable="false"/>
+    <argument android:name="pollId" android:defaultValue="-1" app:argType="integer" app:nullable="false"/>
+    <argument android:name="commentId" android:defaultValue="" app:argType="string"/>
+    <argument android:name="authorName" android:defaultValue="" app:argType="string"/>
+    <argument android:name="commentText" android:defaultValue="" app:argType="string"/>
+    <argument android:name="enableCommentInput" android:defaultValue="false" app:argType="boolean" app:nullable="false"/>
+    <action android:id="@7F0A0B0C" app:destination="@7F0A001D"/>
+    <action android:id="@7F0A0AE6" app:destination="@7F0A036A"/>
+    <deepLink app:uri="app://com.keka.xhr/wallPollDetailFragment?pollIdentifier={pollIdentifier}&amp;pollId={pollId}&amp;commentId={commentId}&amp;authorName={authorName}&amp;commentText={commentText}"/>
+    <action android:id="@7F0A0B01" app:destination="@7F0A095A"/>
+  </fragment>
+  <fragment android:label="PollStats" android:name="com.keka.xhr.engage.wall.poll.component.stats.PollStatsFragment" android:id="@7F0A0012">
+    <argument android:name="pollIdentifier" app:argType="string" app:nullable="false"/>
+  </fragment>
+  <dialog android:label="ReactedEmployeesBottomSheet" android:name="com.keka.xhr.engage.wall.common.component.bottomsheet.reaction.ReactedEmployeesBottomSheet" android:id="@7F0A095A">
+    <argument android:name="feedId" app:argType="string"/>
+    <argument android:name="entityType" app:argType="com.keka.xhr.core.model.shared.enums.ReactionEntityType"/>
+    <argument android:name="commentId" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/reactedEmployeesBottomSheet?feedId={feedId}&amp;commentId={commentId}&amp;entityType={entityType}"/>
+  </dialog>
+  <dialog android:label="SwitchingWallBottomSheet" android:name="com.keka.xhr.engage.wall.common.component.shared.SwitchWallTypeSheet" android:id="@7F0A001A">
+    <argument android:name="title" app:argType="string"/>
+    <argument android:name="items" app:argType="string"/>
+    <argument android:name="backstackResultKey" android:defaultValue="" app:argType="string"/>
+  </dialog>
+  <action android:id="@7F0A00A4" app:destination="@7F0A001A"/>
+  <dialog android:label="WallFiltersBottomSheet" android:name="com.keka.xhr.engage.wall.list.component.bottomsheet.WallFiltersBottomSheet" android:id="@7F0A048D"/>
+  <action android:id="@7F0A0084" app:destination="@7F0A048D"/>
+  <dialog android:name="com.keka.xhr.engage.wall.common.component.bottomsheet.action.WallActionsBottomSheetFragment" android:id="@7F0A001D">
+    <argument android:name="wallActionsArgs" app:argType="string"/>
+    <action android:id="@7F0A0AE8" app:destination="@7F0A0001">
+      <argument android:name="contentId" android:defaultValue="-1" app:argType="integer" app:nullable="false"/>
+      <argument android:name="postId" android:defaultValue="" app:argType="string" app:nullable="false"/>
+    </action>
+    <action android:id="@7F0A0AE7" app:destination="@7F0A0010">
+      <argument android:name="pollIdentifier" android:defaultValue="-1" app:argType="string" app:nullable="false"/>
+      <argument android:name="pollId" android:defaultValue="-1" app:argType="integer" app:nullable="false"/>
+    </action>
+    <action android:id="@7F0A0AFC" app:destination="@7F0A0012">
+      <argument android:name="pollIdentifier" android:defaultValue="-1" app:argType="string" app:nullable="false"/>
+    </action>
+    <deepLink app:uri="app://com.keka.xhr/wallActionsBottomSheet?wallActionsArgs={wallActionsArgs}"/>
+  </dialog>
+  <dialog android:label="WallCommentsBottomSheet" android:name="com.keka.xhr.engage.wall.common.component.bottomsheet.comment.WallCommentsBottomSheetFragment" android:id="@7F0A0E24">
+    <argument android:name="contentId" android:defaultValue="-1" app:argType="integer"/>
+    <argument android:name="feedId" app:argType="string"/>
+    <argument android:name="entityType" app:argType="com.keka.xhr.core.model.shared.enums.ReactionEntityType"/>
+    <argument android:name="authorId" android:defaultValue="-1" app:argType="integer" app:nullable="false"/>
+    <argument android:name="selectedDepartments" android:defaultValue="" app:argType="string"/>
+    <action android:id="@7F0A0AE6" app:destination="@7F0A036A"/>
+    <action android:id="@7F0A0B01" app:destination="@7F0A095A"/>
+    <deepLink app:uri="app://com.keka.xhr/wallCommentsBottomSheet?feedId={feedId}&amp;entityType={entityType}&amp;authorId={authorId}&amp;selectedDepartments={selectedDepartments}&amp;contentId={contentId}&amp;"/>
+  </dialog>
+  <dialog android:label="NewPostBottomSheet" android:name="com.keka.xhr.engage.wall.common.component.bottomsheet.creation.NewPostBottomSheetFragment" android:id="@7F0A08B4">
+    <argument android:name="isPostEnabled" android:defaultValue="false" app:argType="boolean" app:nullable="false"/>
+    <argument android:name="isPollEnabled" android:defaultValue="false" app:argType="boolean" app:nullable="false"/>
+    <argument android:name="isPraiseEnabled" android:defaultValue="false" app:argType="boolean" app:nullable="false"/>
+    <argument android:name="departmentId" android:defaultValue="-1" app:argType="integer" app:nullable="false"/>
+    <action android:id="@7F0A0ADA" app:destination="@7F0A0001">
+      <argument android:name="departmentId" android:defaultValue="-1" app:argType="integer" app:nullable="false"/>
+    </action>
+    <action android:id="@7F0A0AD9" app:destination="@7F0A0010">
+      <argument android:name="departmentId" android:defaultValue="-1" app:argType="integer" app:nullable="false"/>
+    </action>
+    <deepLink app:uri="app://com.keka.xhr/newPostBottomSheet?isPostEnabled={isPostEnabled}&amp;isPollEnabled={isPollEnabled}&amp;isPraiseEnabled={isPraiseEnabled}"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.engage.wall.common.component.bottomsheet.delete.DeleteActionBottomSheetFragment" android:id="@7F0A036A">
+    <argument android:name="backstackResultKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/deleteActionBottomSheet?backstackResultKey={backstackResultKey}"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.engage.wall.common.component.bottomsheet.department.PollDepartmentsBottomSheetFragment" android:id="@7F0A0916">
+    <argument android:name="selectedDepartments" app:argType="string"/>
+    <argument android:name="backStackResultKey" android:defaultValue="" app:argType="string"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.engage.wall.common.component.bottomsheet.department.PostDepartmentsBottomSheetFragment" android:id="@7F0A091A">
+    <argument android:name="selectedDepartments" app:argType="string"/>
+    <argument android:name="backStackResultKey" android:defaultValue="" app:argType="string"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.engage.wall.praise.departmentsBottomSheet.ui.PraiseDepartmentsBottomSheetFragment" android:id="@7F0A091D">
+    <argument android:name="backStackResultKey" android:defaultValue="" app:argType="string"/>
+    <argument android:name="selectedDepartmentId" android:defaultValue="-1" app:argType="integer" app:nullable="false"/>
+  </dialog>
+  <fragment android:label="ChooseBadgeFragment" android:name="com.keka.xhr.engage.wall.praise.component.ChooseBadgeFragment" android:id="@7F0A0218">
+    <argument android:name="departmentId" android:defaultValue="-1" app:argType="integer" app:nullable="false"/>
+    <deepLink app:uri="app://com.keka.xhr/ChooseBadgeFragment?departmentId={departmentId}"/>
+  </fragment>
+  <fragment android:label="AddPraiseFragment" android:name="com.keka.xhr.engage.wall.praise.component.AddPraiseFragment" android:id="@7F0A0002">
+    <argument android:name="departmentId" android:defaultValue="-1" app:argType="integer" app:nullable="false"/>
+    <action android:id="@7F0A0AE2" app:destination="@7F0A0218"/>
+    <action android:id="@7F0A0AFF" app:destination="@7F0A091D"/>
+    <deepLink app:uri="app://com.keka.xhr/AddPraiseFragment?departmentId={departmentId}"/>
+  </fragment>
+  <fragment android:label="PraiseDetailFragment" android:name="com.keka.xhr.engage.wall.praise.component.PraiseDetailFragment" android:id="@7F0A0014">
+    <argument android:name="praiseIdentifier" app:argType="string" app:nullable="false"/>
+    <argument android:name="praiseId" android:defaultValue="-1" app:argType="integer" app:nullable="false"/>
+    <argument android:name="enableCommentInput" android:defaultValue="false" app:argType="boolean" app:nullable="false"/>
+    <argument android:name="replyToComment" android:defaultValue="false" app:argType="boolean" app:nullable="false"/>
+    <argument android:name="commentId" android:defaultValue="" app:argType="string"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <argument android:name="authorName" android:defaultValue="" app:argType="string"/>
+    <argument android:name="authorImageUrl" android:defaultValue="" app:argType="string"/>
+    <action android:id="@7F0A0AE6" app:destination="@7F0A036A"/>
+    <action android:id="@7F0A0B0C" app:destination="@7F0A001D"/>
+    <action android:id="@7F0A0B01" app:destination="@7F0A095A"/>
+    <deepLink app:uri="app://com.keka.xhr/wallPraiseDetailScreen?praiseIdentifier={praiseIdentifier}&amp;commentId={commentId}&amp;enableCommentInput={enableCommentInput}&amp;backStackRefreshKey={backStackRefreshKey}&amp;replyToComment={replyToComment}&amp;authorName={authorName}&amp;authorImageUrl={authorImageUrl}"/>
+  </fragment>
+</navigation>

@@ -1,0 +1,16 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0858" app:startDestination="@7F0A0853">
+  <include app:graph="@7F110030"/>
+  <include app:graph="@7F11002D"/>
+  <fragment android:label="MeFragment" android:name="com.keka.xhr.bottomtabs.me.ui.MeFragment" android:id="@7F0A0853">
+    <action android:id="@7F0A00E3" app:destination="@7F0A047E"/>
+    <action android:id="@7F0A00E4" app:destination="@7F0A0921"/>
+  </fragment>
+  <include app:graph="@7F110000"/>
+  <action android:id="@7F0A0B12" app:destination="@7F0A0322">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentChooserInput" app:nullable="false"/>
+  </action>
+  <include app:graph="@7F110002"/>
+  <action android:id="@7F0A0B14" app:destination="@7F0A0324">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentViewerInput" app:nullable="false"/>
+  </action>
+</navigation>

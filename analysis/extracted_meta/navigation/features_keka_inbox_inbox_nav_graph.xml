@@ -1,0 +1,108 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0583" app:startDestination="@7F0A0569">
+  <include app:graph="@7F110026"/>
+  <include app:graph="@7F110022"/>
+  <include app:graph="@7F11001C"/>
+  <include app:graph="@7F110024"/>
+  <include app:graph="@7F110023"/>
+  <include app:graph="@7F11001B"/>
+  <include app:graph="@7F110027"/>
+  <include app:graph="@7F110028"/>
+  <include app:graph="@7F110029"/>
+  <include app:graph="@7F110025"/>
+  <include app:graph="@7F110002"/>
+  <action android:id="@7F0A0B14" app:destination="@7F0A0324">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentViewerInput" app:nullable="false"/>
+  </action>
+  <include app:graph="@7F110000"/>
+  <action android:id="@7F0A0B12" app:destination="@7F0A0322">
+    <argument android:name="input" app:argType="com.keka.xhr.core.model.shared.documentviewer.DocumentChooserInput" app:nullable="false"/>
+  </action>
+  <fragment android:label="InboxFragment" android:name="com.keka.xhr.features.inbox.common.component.InboxFragment" android:id="@7F0A0569">
+    <action android:id="@7F0A0AED" app:destination="@7F0A0554"/>
+    <action android:id="@7F0A0AF1" app:destination="@7F0A0570"/>
+  </fragment>
+  <fragment android:label="InboxArchiveFragment" android:name="com.keka.xhr.features.inbox.archive.component.InboxArchiveFragment" android:id="@7F0A0554">
+    <deepLink app:uri="app://com.keka.xhr/inbox/archive"/>
+  </fragment>
+  <fragment android:label="InboxNotificationFragment" android:name="com.keka.xhr.features.inbox.notification.component.InboxNotificationFragment" android:id="@7F0A0570"/>
+  <dialog android:name="com.keka.xhr.features.inbox.dialog.component.InboxRejectRequestBottomSheet" android:id="@7F0A0578">
+    <argument android:name="id" app:argType="integer"/>
+    <argument android:name="employeeId" app:argType="integer"/>
+    <argument android:name="profilePic" app:argType="string"/>
+    <argument android:name="name" app:argType="string"/>
+    <argument android:name="description1" app:argType="string"/>
+    <argument android:name="description2" app:argType="string"/>
+    <argument android:name="date" app:argType="string"/>
+    <argument android:name="reasonRequired" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="backstackResultKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/reject?id={id}&amp;employeeId={employeeId}&amp;profilePic={profilePic}&amp;name={name}&amp;description1={description1}&amp;description2={description2}&amp;date={date}&amp;reasonRequired={reasonRequired}&amp;backstackResultKey={backstackResultKey}"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.features.inbox.dialog.component.InboxApproveRequestBottomSheet" android:id="@7F0A0553">
+    <argument android:name="id" app:argType="integer"/>
+    <argument android:name="employeeId" app:argType="integer"/>
+    <argument android:name="profilePic" app:argType="string"/>
+    <argument android:name="name" app:argType="string"/>
+    <argument android:name="description1" app:argType="string"/>
+    <argument android:name="description2" app:argType="string"/>
+    <argument android:name="date" app:argType="string"/>
+    <argument android:name="reasonRequired" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="backstackResultKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/approve?id={id}&amp;employeeId={employeeId}&amp;profilePic={profilePic}&amp;name={name}&amp;description1={description1}&amp;description2={description2}&amp;date={date}&amp;reasonRequired={reasonRequired}&amp;backstackResultKey={backstackResultKey}"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.features.inbox.dialog.component.InboxBulkRejectionBottomSheet" android:id="@7F0A0559">
+    <argument android:name="count" app:argType="integer"/>
+    <argument android:name="reasonRequired" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="backstackResultKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/bulkrejection?count={count}&amp;reasonRequired={reasonRequired}&amp;backstackResultKey={backstackResultKey}"/>
+  </dialog>
+  <dialog android:label="CommonBottomSheetDialog" android:name="com.keka.xhr.features.inbox.dialog.component.CommonBottomSheetDialog" android:id="@7F0A02FD">
+    <argument android:name="title" app:argType="string"/>
+    <argument android:name="items" app:argType="com.keka.xhr.core.model.inbox.CommonBottomSheetItem[]"/>
+  </dialog>
+  <action android:id="@7F0A0075" app:destination="@7F0A02FD"/>
+  <action android:id="@7F0A04BB" app:destination="@7F0A088C"/>
+  <dialog android:label="MultiSelectionBottomSheetDialog" android:name="com.keka.xhr.features.inbox.dialog.multiselection.component.MultiSelectionBottomSheetDialog" android:id="@7F0A088C">
+    <argument android:name="title" app:argType="string"/>
+    <argument android:name="items" app:argType="string"/>
+    <argument android:name="backstackResultKey" app:argType="string"/>
+  </dialog>
+  <action android:id="@7F0A04BA" app:destination="@7F0A057F"/>
+  <dialog android:label="InboxViewActivityTimelineBottomSheet" android:name="com.keka.xhr.features.inbox.dialog.activitytimeline.component.InboxViewActivityTimelineBottomSheet" android:id="@7F0A057F">
+    <argument android:name="activities" app:argType="com.keka.xhr.core.ui.components.compose.request_detail.ActivityLog[]"/>
+  </dialog>
+  <fragment android:label="InboxShiftChangeAndWeekOffRequestFragment" android:name="com.keka.xhr.features.inbox.attendance.shiftchangeandwekkoff.detail.component.InboxShiftChangeAndWeekOffRequestDetailFragment" android:id="@7F0A057D">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="isArchive" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <argument android:name="shiftChangeOrWeekOffRequestType" android:defaultValue="0" app:argType="integer"/>
+    <argument android:name="fromDate" android:defaultValue="" app:argType="string"/>
+    <argument android:name="toDate" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox_shift_change_and_week_off_request_details?requestId={requestId}&amp;isArchive={isArchive}&amp;backStackRefreshKey={backStackRefreshKey}&amp;shiftChangeOrWeekOffRequestType={shiftChangeOrWeekOffRequestType}&amp;fromDate={fromDate}&amp;toDate={toDate}"/>
+  </fragment>
+  <fragment android:label="InboxShiftChangeAndWeekOffRequestsFragment" android:name="com.keka.xhr.features.inbox.attendance.shiftchangeandwekkoff.request.component.InboxShiftChangeAndWeekOffPendingRequestsFragment" android:id="@7F0A057E">
+    <argument android:name="isArchive" android:defaultValue="false" app:argType="boolean"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <argument android:name="shiftChangeOrWeekOffRequestType" android:defaultValue="0" app:argType="integer"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox_shift_change_and_week_off_requests?isArchive={isArchive}&amp;backStackRefreshKey={backStackRefreshKey}&amp;shiftChangeOrWeekOffRequestType={shiftChangeOrWeekOffRequestType}"/>
+  </fragment>
+  <fragment android:label="inboxProbationFeedBacksFragment" android:name="com.keka.xhr.features.inbox.probationfeedacks.component.ProbationFeedbacksFragment" android:id="@7F0A0577">
+    <argument android:name="isPending" android:defaultValue="false" app:argType="boolean"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/probationfeedbacks/requests?isPending={isPending}"/>
+  </fragment>
+  <fragment android:label="InboxMyReviewsFragment" android:name="com.keka.xhr.features.inbox.myreviews.component.InboxMyReviewsFragment" android:id="@7F0A056F">
+    <argument android:name="isPending" android:defaultValue="false" app:argType="boolean"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/pms/myreviews?isPending={isPending}"/>
+  </fragment>
+  <fragment android:label="InboxAssetsFragment" android:name="com.keka.xhr.features.inbox.assets.InboxAssetsFragment" android:id="@7F0A0558">
+    <deepLink app:uri="app://com.keka.xhr/inbox/corehr/assets"/>
+  </fragment>
+  <fragment android:label="InboxAssetRequestsFragment" android:name="com.keka.xhr.features.inbox.assets.InboxAssetRequestsFragment" android:id="@7F0A0557">
+    <deepLink app:uri="app://com.keka.xhr/inbox/corehr/assetrequests"/>
+  </fragment>
+  <fragment android:label="InboxAssetAcknowledgementArchiveFragment" android:name="com.keka.xhr.features.inbox.assets.InboxAssetAcknowledgementArchiveFragment" android:id="@7F0A0555">
+    <deepLink app:uri="app://com.keka.xhr/inbox/corehr/assetacknowledgementarchive"/>
+  </fragment>
+  <fragment android:label="InboxAssetRequestsArchiveFragment" android:name="com.keka.xhr.features.inbox.assets.InboxAssetRequestsArchiveFragment" android:id="@7F0A0556">
+    <deepLink app:uri="app://com.keka.xhr/inbox/corehr/assetrequestsarchive"/>
+  </fragment>
+</navigation>

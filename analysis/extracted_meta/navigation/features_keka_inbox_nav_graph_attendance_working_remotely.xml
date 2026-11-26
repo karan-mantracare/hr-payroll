@@ -1,0 +1,14 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A045D" app:startDestination="@7F0A0581">
+  <fragment android:label="InboxWorkingRemotelyRequestsFragment" android:name="com.keka.xhr.features.inbox.attendance.workingremotely.request.component.InboxWorkingRemotelyRequestsFragment" android:id="@7F0A0581">
+    <argument android:name="isPending" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <action android:id="@7F0A0AF5" app:destination="@7F0A0580"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/attendance/workingremotely/requests?isPending={isPending}&amp;backStackRefreshKey={backStackRefreshKey}"/>
+  </fragment>
+  <fragment android:label="InboxWorkingRemotelyRequestDetailFragment" android:name="com.keka.xhr.features.inbox.attendance.workingremotely.detail.component.InboxWorkingRemotelyRequestDetailFragment" android:id="@7F0A0580">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="isPending" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/attendance/workingremotely/details?requestId={requestId}&amp;isPending={isPending}&amp;backStackRefreshKey={backStackRefreshKey}"/>
+  </fragment>
+</navigation>

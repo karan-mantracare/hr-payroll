@@ -1,0 +1,14 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@7F0A0462" app:startDestination="@7F0A056E">
+  <fragment android:label="InboxLeaveRequestsFragment" android:name="com.keka.xhr.features.inbox.leave.requests.component.InboxLeaveRequestsFragment" android:id="@7F0A056E">
+    <argument android:name="isPending" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <action android:id="@7F0A0AF0" app:destination="@7F0A056B"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/leave/requests?isPending={isPending}&amp;backStackRefreshKey={backStackRefreshKey}"/>
+  </fragment>
+  <fragment android:label="InboxLeaveDetailFragment" android:name="com.keka.xhr.features.inbox.leave.detail.component.InboxLeaveRequestDetailFragment" android:id="@7F0A056B">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="isPending" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/leave/requests?requestId={requestId}&amp;isPending={isPending}&amp;backStackRefreshKey={backStackRefreshKey}"/>
+  </fragment>
+</navigation>

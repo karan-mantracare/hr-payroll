@@ -1,0 +1,73 @@
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android" android:id="@7F0A0460">
+  <fragment android:label="InboxExpenseRequestsFragment" android:name="com.keka.xhr.features.inbox.expense.common.component.InboxExpenseRequestsFragment" android:id="@7F0A0567">
+    <argument android:name="isPending" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="backStackRefreshKey" android:defaultValue="" app:argType="string"/>
+    <action android:id="@7F0A0AEF" app:destination="@7F0A0565"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/expense/requests?isPending={isPending}&amp;backStackRefreshKey={backStackRefreshKey}"/>
+  </fragment>
+  <fragment android:label="InboxExpenseDetailFragment" android:name="com.keka.xhr.features.inbox.expense.detail.common.component.InboxExpenseDetailFragment" android:id="@7F0A0565">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="advanceRequestId" app:argType="integer"/>
+    <argument android:name="expenseIds" app:argType="string"/>
+    <argument android:name="itemType" app:argType="integer"/>
+    <argument android:name="status" app:argType="integer"/>
+    <argument android:name="requestType" app:argType="integer"/>
+    <argument android:name="flowEntrySourceType" app:argType="integer"/>
+    <argument android:name="backstackRequestKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/expense/details?requestId={requestId}&amp;advanceRequestId={advanceRequestId}&amp;requestType={requestType}&amp;expenseIds={expenseIds}&amp;itemType={itemType}&amp;status={status}&amp;flowEntrySourceType={flowEntrySourceType}&amp;backstackRequestKey={backstackRequestKey}"/>
+  </fragment>
+  <fragment android:label="InboxExpenseClaimDetailFragment" android:name="com.keka.xhr.features.inbox.expense.detail.claim.component.InboxExpenseClaimDetailFragment" android:id="@7F0A0563">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="requestStatus" app:argType="integer"/>
+    <argument android:name="itemType" app:argType="integer"/>
+    <argument android:name="isPending" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="backstackRequestKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/expense/claim/details?requestId={requestId}&amp;itemType={itemType}&amp;requestStatus={requestStatus}&amp;isPending={isPending}&amp;backstackRequestKey={backstackRequestKey}"/>
+  </fragment>
+  <fragment android:label="InboxExpenseAdvanceDetailFragment" android:name="com.keka.xhr.features.inbox.expense.detail.advancerequest.component.InboxExpenseAdvanceDetailFragment" android:id="@7F0A0561">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="isPending" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="backstackRequestKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/expense/advance/details?requestId={requestId}&amp;isPending={isPending}&amp;backstackRequestKey={backstackRequestKey}"/>
+  </fragment>
+  <fragment android:label="InboxExpenseSettlementDetailFragment" android:name="com.keka.xhr.features.inbox.expense.detail.settlement.component.InboxExpenseSettlementDetailFragment" android:id="@7F0A0568">
+    <argument android:name="requestId" app:argType="integer"/>
+    <argument android:name="isPending" android:defaultValue="true" app:argType="boolean"/>
+    <argument android:name="backstackRequestKey" android:defaultValue="" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/expense/settlement/details?requestId={requestId}&amp;isPending={isPending}&amp;backstackRequestKey={backstackRequestKey}"/>
+  </fragment>
+  <dialog android:label="InboxExpenseClaimInfoBottomSheet" android:name="com.keka.xhr.features.inbox.expense.dialog.component.InboxExpenseClaimInfoBottomSheet" android:id="@7F0A0564">
+    <argument android:name="state" app:argType="com.keka.xhr.core.model.inbox.InboxExpenseClaimInfoUiState"/>
+  </dialog>
+  <dialog android:label="InboxExpenseApprovalBottomSheet" android:name="com.keka.xhr.features.inbox.expense.dialog.component.InboxExpenseApprovalBottomSheet" android:id="@7F0A0562">
+    <argument android:name="title" app:argType="string"/>
+    <argument android:name="subtitle" app:argType="string"/>
+    <argument android:name="description" app:argType="string"/>
+    <argument android:name="currency" app:argType="string"/>
+    <argument android:name="amount" app:argType="float"/>
+    <argument android:name="paymentStatus" app:argType="integer"/>
+    <argument android:name="paymentMode" app:argType="integer"/>
+    <argument android:name="paymentDate" app:argType="string"/>
+    <argument android:name="reason" app:argType="string"/>
+    <argument android:name="showTooltipInfo" app:argType="boolean"/>
+    <argument android:name="employeePayrollIsINR" app:argType="boolean"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.features.inbox.expense.dialog.component.InfoBottomSheetFragment" android:id="@7F0A058B">
+    <argument android:name="title" app:argType="string"/>
+    <argument android:name="description" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/info_bottom_sheet?title={title}&amp;description={description}"/>
+  </dialog>
+  <dialog android:name="com.keka.xhr.features.inbox.dialog.component.InboxExpenseReasonBottomSheet" android:id="@7F0A0566">
+    <argument android:name="profilePic" app:argType="string"/>
+    <argument android:name="name" app:argType="string"/>
+    <argument android:name="requestType" app:argType="string"/>
+    <argument android:name="currencyCode" app:argType="string"/>
+    <argument android:name="amount" app:argType="float"/>
+    <argument android:name="isApprove" app:argType="boolean"/>
+    <argument android:name="backstackResultKey" app:argType="string"/>
+    <deepLink app:uri="app://com.keka.xhr/inbox/expense/reason?profilePic={profilePic}&amp;name={name}&amp;requestType={requestType}&amp;currencyCode={currencyCode}&amp;amount={amount}&amp;isApprove={isApprove}&amp;backstackResultKey={backstackResultKey}"/>
+  </dialog>
+  <action android:id="@7F0A0089" app:destination="@7F0A0564"/>
+  <action android:id="@7F0A0088" app:destination="@7F0A0562"/>
+  <action android:id="@7F0A008D" app:destination="@7F0A058B"/>
+</navigation>
