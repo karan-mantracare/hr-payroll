@@ -4,6 +4,9 @@
   "description": "Original enterprise HR application with configurable leave policies, multi-tier approvals, attendance, timesheets, and payroll",
   "main": "server.js",
   "type": "commonjs",
+  "engines": {
+    "node": ">=22.x"
+  },
   "scripts": {
     "start": "node server.js",
     "test": "node tests/e2e-workflow.test.js"
