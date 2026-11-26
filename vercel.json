@@ -1,4 +1,6 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": false,
   "rewrites": [
     {
       "source": "/",
@@ -7,6 +9,14 @@
     {
       "source": "/hr-payroll/keka/api/(.*)",
       "destination": "/api/index.js"
+    },
+    {
+      "source": "/hr-payroll/keka/styles.css",
+      "destination": "/public/styles.css"
+    },
+    {
+      "source": "/hr-payroll/keka/app.js",
+      "destination": "/public/app.js"
     },
     {
       "source": "/hr-payroll/keka/(.*)",
