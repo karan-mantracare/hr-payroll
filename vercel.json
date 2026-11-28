@@ -1,6 +1,18 @@
 {
   "rewrites": [
     {
+      "source": "/payroll/keka",
+      "destination": "/hr-payroll/keka/index.html"
+    },
+    {
+      "source": "/hr-payroll/keka",
+      "destination": "/hr-payroll/keka/index.html"
+    },
+    {
+      "source": "/payroll/peoplefold",
+      "destination": "/payroll/peoplefold/index.html"
+    },
+    {
       "source": "/hr-payroll/keka/api/(.*)",
       "destination": "/api/index.js?path=$1"
     },

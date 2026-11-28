@@ -115,6 +115,12 @@ const handleRequest = async (req, res) => {
   }
 
   // 2. Base path /hr-payroll/keka routing
+  if (pathname === '/payroll/keka' || pathname === '/payroll/keka/') {
+    pathname = '/hr-payroll/keka';
+  }
+  if (pathname === '/payroll/peoplefold' || pathname === '/payroll/peoplefold/') {
+    pathname = '/payroll/peoplefold/index.html';
+  }
   const PREFIX = '/hr-payroll/keka';
   let isKekaApp = false;
   if (pathname === PREFIX || pathname === `${PREFIX}/`) {
