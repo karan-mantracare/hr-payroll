@@ -25,8 +25,8 @@ const ICONS = {
 
 // Pulse HR - Frontend Application Engine
 
-// Detect base URL path dynamically (e.g. '' or '/hr-payroll/keka')
-const BASE_PATH = window.location.pathname.startsWith('/hr-payroll/keka') ? '/hr-payroll/keka' : '';
+// Global API base path
+const BASE_PATH = '/api';
 
 let currentUser = null;
 let authToken = '';
@@ -43,13 +43,14 @@ const DEMO_CREDENTIALS = {
 
 // API Fetch Helper
 async function api(path, options = {}) {
-  const url = `${BASE_PATH}${path}`;
+  // Ensure path starts with /api/ correctly without duplicating
+  const cleanPath = path.startsWith('/api/') ? path : (path.startsWith('/') ? `/api${path}` : `/api/${path}`);
   const headers = {
     'Content-Type': 'application/json',
     ...(authToken ? { 'Authorization': `Bearer ${authToken}` } : {}),
     ...(options.headers || {})
   };
-  const res = await fetch(url, { ...options, headers });
+  const res = await fetch(cleanPath, { ...options, headers });
   const data = await res.json().catch(() => ({}));
   if (!res.ok) {
     throw new Error(data.error || `HTTP ${res.status}`);
