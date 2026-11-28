@@ -137,7 +137,7 @@ function view() {
 }
 function render(){
  const pending=scope().filter(r=>mayReview(r)&&openStatus(r)).length;
- $('sidebar').innerHTML='<div class="brand"><span class="mark">◫</span>Peoplefold</div><div class="company"><span class="avatar">N</span><div><strong>Northstar Studio</strong><small>Employee workspace</small></div></div>'+
+ $('sidebar').innerHTML='<div class="brand"><span class="mark">◫</span>Keka - Peoplefold</div><div class="company"><span class="avatar">N</span><div><strong>Northstar Studio</strong><small>Employee workspace</small></div></div>'+
   Object.keys(modules).filter(n=>n!=='Settings'||admin()).map(n=>(n==='Overview'?'<div class="navlabel">WORKSPACE</div>':n==='Payroll'?'<div class="navlabel">OPERATIONS</div>':n==='Performance'?'<div class="navlabel">GROWTH</div>':'')+
   '<button class="navbtn '+(n===page?'active':'')+'" '+(n===page?'aria-current="page"':'')+' data-action="nav" data-value="'+n+'"><span aria-hidden="true" class="ni">'+modules[n][0]+'</span>'+n+(n==='Inbox'&&pending?'<span class="pill pending">'+pending+'</span>':'')+'</button>').join('')+
   '<div class="navbottom"><span class="avatar">'+escape(state.people.find(p=>p[0]===actor())?.[4])+'</span><div><strong>'+escape(actor())+'</strong><small>'+escape(state.role)+'</small></div></div>';
