@@ -77,6 +77,20 @@ const handleRequest = async (req, res) => {
   let pathname = parsedUrl.pathname;
   const method = req.method;
 
+  // In Vercel serverless functions with rewrites like /api/index.js?path=$1
+  // extract real API path from query params or matched headers if pathname is /api/index.js
+  if (pathname === '/api/index.js' || pathname === '/api/index') {
+    const qPath = parsedUrl.searchParams.get('path');
+    if (qPath) {
+      pathname = '/api/' + qPath.replace(/^\/+/, '');
+    } else {
+      const matchHeader = req.headers['x-matched-path'] || req.headers['x-vercel-matched-path'];
+      if (matchHeader) {
+        pathname = matchHeader.split('?')[0];
+      }
+    }
+  }
+
   // Handle CORS preflight
   if (method === 'OPTIONS') {
     res.writeHead(204, {
