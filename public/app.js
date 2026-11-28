@@ -1,3 +1,28 @@
+// Clean SVG Icon Library for Enterprise UI
+const ICONS = {
+  check: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>',
+  close: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>',
+  plus: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>',
+  clock: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>',
+  calendar: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>',
+  mail: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>',
+  phone: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>',
+  building: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="22"></line><line x1="15" y1="22" x2="15" y2="22"></line><line x1="8" y1="6" x2="10" y2="6"></line><line x1="14" y1="6" x2="16" y2="6"></line><line x1="8" y1="10" x2="10" y2="10"></line><line x1="14" y1="10" x2="16" y2="10"></line><line x1="8" y1="14" x2="10" y2="14"></line><line x1="14" y1="14" x2="16" y2="14"></line></svg>',
+  user: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>',
+  mapPin: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>',
+  home: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>',
+  fileText: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>',
+  inbox: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg>',
+  download: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>',
+  ticket: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"></path></svg>',
+  monitor: '<svg class="icon icon-xl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>',
+  bell: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>',
+  heart: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>',
+  message: '<svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>',
+  coffee: '<svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>',
+  sparkles: '<svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path></svg>'
+};
+
 // Pulse HR - Frontend Application Engine
 
 // Detect base URL path dynamically (e.g. '' or '/hr-payroll/keka')
@@ -52,7 +77,7 @@ async function switchDemoUser(userId) {
 
     document.getElementById('demoRoleIndicator').innerHTML = `
       <span style="font-size:11px; background:#4338ca; padding:3px 8px; border-radius:4px; font-weight:600;">
-        Active: ${currentUser.name} (${currentUser.role.toUpperCase()})
+        Active Persona: ${currentUser.name} &bull; ${currentUser.role.replace('_', ' ').toUpperCase()}
       </span>
     `;
 
@@ -130,18 +155,18 @@ async function renderHome() {
   main.innerHTML = `
     <div class="page-header">
       <div>
-        <h1 class="page-title">Good Day, ${currentUser.name.split(' ')[0]} 👋</h1>
+        <h1 class="page-title">Good Day, ${currentUser.name.split(' ')[0]}</h1>
         <div class="page-sub">${new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })} | ${currentUser.designation} (${currentUser.department})</div>
       </div>
       <div>
-        <button class="btn btn-primary" onclick="navigate('leave')">🏖️ Request Leave</button>
+        <button class="btn btn-primary" onclick="navigate('leave')">${ICONS.calendar} Request Leave</button>
       </div>
     </div>
 
     ${inbox.total_count > 0 ? `
       <div style="background: #fffbeb; border: 1px solid #fde68a; border-radius: var(--radius-md); padding: 16px 20px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between;">
         <div style="display:flex; align-items:center; gap: 12px;">
-          <span style="font-size:24px;">📥</span>
+          <span style="display:inline-flex; align-items:center; color:var(--primary);">${ICONS.inbox}</span>
           <div>
             <div style="font-weight: 700; color: #92400e;">You have ${inbox.total_count} pending approval request(s) requiring your review.</div>
             <div style="font-size: 12px; color: #b45309;">Includes team leaves, timesheets, and expense claims.</div>
@@ -162,10 +187,10 @@ async function renderHome() {
         <div class="card-sub">Mode: <strong>${attendance.work_mode || 'OFFICE'}</strong> | Gross: ${attendance.gross_hours || 0} hrs</div>
         <div style="margin-top: 16px; display:flex; gap:10px;">
           ${!isClockedIn && !attendance.clock_out_time ? `
-            <button class="btn btn-success" style="flex:1;" onclick="quickClockIn('OFFICE')">📍 Clock In (Office)</button>
-            <button class="btn btn-secondary" onclick="quickClockIn('REMOTE')">🏠 Remote</button>
+            <button class="btn btn-success" style="flex:1;" onclick="quickClockIn('OFFICE')">${ICONS.mapPin} Clock In (Office)</button>
+            <button class="btn btn-secondary" onclick="quickClockIn('REMOTE')">${ICONS.home} Remote</button>
           ` : isClockedIn ? `
-            <button class="btn btn-danger" style="flex:1;" onclick="quickClockOut()">⏱️ Clock Out</button>
+            <button class="btn btn-danger" style="flex:1;" onclick="quickClockOut()">${ICONS.clock} Clock Out</button>
           ` : `
             <button class="btn btn-secondary" style="flex:1;" disabled>Shift Finished Today</button>
           `}
@@ -268,11 +293,11 @@ async function showEmployeeModal(empId) {
       <div style="color:var(--text-muted); font-size:13px; margin-top:2px;">${emp.department} • ${emp.location}</div>
       
       <div style="margin-top:20px; text-align:left; background:var(--bg-main); padding:16px; border-radius:var(--radius-md); font-size:13px;">
-        <div style="margin-bottom:8px;">📧 <strong>Email:</strong> ${emp.email}</div>
-        <div style="margin-bottom:8px;">📱 <strong>Phone:</strong> ${emp.phone || '+91 98765 00000'}</div>
-        <div style="margin-bottom:8px;">🏢 <strong>Employee Code:</strong> ${emp.employee_code}</div>
-        <div style="margin-bottom:8px;">👔 <strong>Reporting Manager:</strong> ${emp.reporting_manager_name || 'None (Top Level)'}</div>
-        <div>📅 <strong>Joined:</strong> ${emp.joining_date || '2022-01-01'}</div>
+        <div style="margin-bottom:8px;"><span style="display:inline-flex; align-items:center; gap:6px;">${ICONS.mail} <strong>Email:</strong></span> ${emp.email}</div>
+        <div style="margin-bottom:8px;"><span style="display:inline-flex; align-items:center; gap:6px;">${ICONS.phone} <strong>Phone:</strong></span> ${emp.phone || '+91 98765 00000'}</div>
+        <div style="margin-bottom:8px;"><span style="display:inline-flex; align-items:center; gap:6px;">${ICONS.building} <strong>Employee Code:</strong></span> ${emp.employee_code}</div>
+        <div style="margin-bottom:8px;"><span style="display:inline-flex; align-items:center; gap:6px;">${ICONS.user} <strong>Reporting Manager:</strong></span> ${emp.reporting_manager_name || 'None (Top Level)'}</div>
+        <div><span style="display:inline-flex; align-items:center; gap:6px;">${ICONS.calendar} <strong>Joined:</strong></span> ${emp.joining_date || '2022-01-01'}</div>
       </div>
 
       ${emp.direct_reports && emp.direct_reports.length > 0 ? `
@@ -317,11 +342,11 @@ async function renderAttendance() {
         <div class="page-sub">Biometric punches, work modes, effective hours, and regularizations.</div>
       </div>
       <div style="display:flex; gap:10px;">
-        <button class="btn btn-secondary" onclick="openRegularizeModal()">📝 Request Regularization</button>
+        <button class="btn btn-secondary" onclick="openRegularizeModal()">${ICONS.fileText} Request Regularization</button>
         ${!isClockedIn && !todayLog.clock_out_time ? `
-          <button class="btn btn-success" onclick="quickClockIn('OFFICE')">📍 Clock In</button>
+          <button class="btn btn-success" onclick="quickClockIn('OFFICE')">${ICONS.mapPin} Clock In</button>
         ` : isClockedIn ? `
-          <button class="btn btn-danger" onclick="quickClockOut()">⏱️ Clock Out</button>
+          <button class="btn btn-danger" onclick="quickClockOut()">${ICONS.clock} Clock Out</button>
         ` : `
           <button class="btn btn-secondary" disabled>Shift Logged</button>
         `}
@@ -484,7 +509,7 @@ async function renderLeave() {
         <h1 class="page-title">Leave & Time Off</h1>
         <div class="page-sub">View leave allowances, apply for time off, and track approvals.</div>
       </div>
-      <button class="btn btn-primary" onclick="openApplyLeaveModal()">🏖️ Apply for Leave</button>
+      <button class="btn btn-primary" onclick="openApplyLeaveModal()">${ICONS.plus} Apply for Leave</button>
     </div>
 
     <!-- Balance Overview Cards -->
@@ -687,7 +712,7 @@ async function renderInbox() {
         </div>
       </div>
       <div class="card" style="text-align:center; padding:60px 20px;">
-        <div style="font-size:48px; margin-bottom:16px;">☕</div>
+        <div style="margin-bottom:16px; color:var(--text-light);">${ICONS.coffee}</div>
         <h2 style="font-size:20px; font-weight:700; margin-bottom:8px;">All Caught Up!</h2>
         <p style="color:var(--text-muted); max-width:440px; margin: 0 auto;">
           You are signed in as an <strong>Employee (${currentUser.name})</strong> without direct reporting staff. 
@@ -710,7 +735,7 @@ async function renderInbox() {
 
     ${inbox.total_count === 0 ? `
       <div class="card" style="text-align:center; padding:60px 20px;">
-        <div style="font-size:48px; margin-bottom:16px;">🎉</div>
+        <div style="margin-bottom:16px; color:var(--success);">${ICONS.sparkles}</div>
         <h2 style="font-size:20px; font-weight:700; margin-bottom:8px;">Zero Pending Tasks!</h2>
         <p style="color:var(--text-muted);">You have reviewed and acted on all submissions assigned to you.</p>
       </div>
@@ -719,7 +744,7 @@ async function renderInbox() {
       ${inbox.leaves.length > 0 ? `
         <div class="table-container">
           <div style="padding:16px 20px; font-weight:700; font-size:15px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between;">
-            <span>🏖️ Leave Applications (${inbox.leaves.length})</span>
+            <span>${ICONS.calendar} Leave Applications (${inbox.leaves.length})</span>
           </div>
           <table>
             <thead>
@@ -753,8 +778,8 @@ async function renderInbox() {
                   <td>${req.reason}</td>
                   <td>
                     <div style="display:flex; gap:6px;">
-                      <button class="btn btn-success" style="padding:4px 10px; font-size:11px;" onclick="approveLeave(${req.id})">✓ Approve</button>
-                      <button class="btn btn-danger" style="padding:4px 10px; font-size:11px;" onclick="openRejectLeaveModal(${req.id})">✕ Reject</button>
+                      <button class="btn btn-success" style="padding:4px 10px; font-size:11px;" onclick="approveLeave(${req.id})">\${ICONS.check} Approve</button>
+                      <button class="btn btn-danger" style="padding:4px 10px; font-size:11px;" onclick="openRejectLeaveModal(${req.id})">\${ICONS.close} Reject</button>
                     </div>
                   </td>
                 </tr>
@@ -768,7 +793,7 @@ async function renderInbox() {
       ${inbox.attendance.length > 0 ? `
         <div class="table-container">
           <div style="padding:16px 20px; font-weight:700; font-size:15px; border-bottom:1px solid var(--border);">
-            <span>⏱️ Attendance Regularization Requests (${inbox.attendance.length})</span>
+            <span>${ICONS.clock} Attendance Regularization Requests (${inbox.attendance.length})</span>
           </div>
           <table>
             <thead>
@@ -789,8 +814,8 @@ async function renderInbox() {
                   <td>${ar.reason}</td>
                   <td>
                     <div style="display:flex; gap:6px;">
-                      <button class="btn btn-success" style="padding:4px 10px; font-size:11px;" onclick="approveRegularization(${ar.id})">✓ Approve</button>
-                      <button class="btn btn-danger" style="padding:4px 10px; font-size:11px;" onclick="rejectRegularization(${ar.id})">✕ Reject</button>
+                      <button class="btn btn-success" style="padding:4px 10px; font-size:11px;" onclick="approveRegularization(${ar.id})">\${ICONS.check} Approve</button>
+                      <button class="btn btn-danger" style="padding:4px 10px; font-size:11px;" onclick="rejectRegularization(${ar.id})">\${ICONS.close} Reject</button>
                     </div>
                   </td>
                 </tr>
@@ -892,7 +917,7 @@ async function renderPayroll() {
         <h1 class="page-title">My Pay & Payslips</h1>
         <div class="page-sub">Salary structure, payslip downloads, and income tax breakdown.</div>
       </div>
-      <button class="btn btn-primary" onclick="showPrintablePayslip()">📄 View Printable Payslip</button>
+      <button class="btn btn-primary" onclick="showPrintablePayslip()">${ICONS.fileText} View Printable Payslip</button>
     </div>
 
     <div class="grid-cards">
@@ -1000,7 +1025,7 @@ function showPrintablePayslip() {
     </div>
     <div class="modal-footer">
       <button class="btn btn-secondary" onclick="closeModal()">Close</button>
-      <button class="btn btn-primary" onclick="alert('Payslip PDF downloaded to device.')">📥 Download PDF</button>
+      <button class="btn btn-primary" onclick="alert('Payslip PDF downloaded to device.')">${ICONS.download} Download PDF</button>
     </div>
   `);
 }
@@ -1018,7 +1043,7 @@ async function renderExpenses() {
         <h1 class="page-title">Expenses & Reimbursements</h1>
         <div class="page-sub">Track corporate travel, meals, equipment claims, and mileage.</div>
       </div>
-      <button class="btn btn-primary" onclick="openAddExpenseModal()">🧾 New Expense Claim</button>
+      <button class="btn btn-primary" onclick="openAddExpenseModal()">${ICONS.plus} New Expense Claim</button>
     </div>
 
     <div class="table-container">
@@ -1045,7 +1070,7 @@ async function renderExpenses() {
               </td>
               <td><span class="status-pill status-approved">${e.category}</span></td>
               <td><strong>₹${e.amount.toLocaleString()}</strong></td>
-              <td>${e.billable ? '✓ Billable' : 'Internal'}</td>
+              <td>${e.billable ? '<span class="status-pill status-approved">' + ICONS.check + ' Billable</span>' : '<span class="status-pill status-neutral">Internal</span>'}</td>
               <td><span class="status-pill status-${e.status.toLowerCase()}">${e.status}</span></td>
             </tr>
           `).join('')}
@@ -1138,7 +1163,7 @@ async function renderTimesheets() {
         <h1 class="page-title">Weekly Timesheets</h1>
         <div class="page-sub">Log billable project tasks, client hours, and sprint activities.</div>
       </div>
-      <button class="btn btn-primary" onclick="openLogTimeModal()">⏱️ Log Task Hours</button>
+      <button class="btn btn-primary" onclick="openLogTimeModal()">${ICONS.clock} Log Task Hours</button>
     </div>
 
     <div class="table-container">
@@ -1165,7 +1190,7 @@ async function renderTimesheets() {
                 <div style="font-size:11px; color:var(--text-muted);">${t.comments || 'No comment'}</div>
               </td>
               <td><strong>${t.hours}</strong> hrs</td>
-              <td>${t.is_billable ? '✓ Yes' : 'No'}</td>
+              <td>${t.is_billable ? '<span class="status-pill status-approved">' + ICONS.check + ' Billable</span>' : '<span class="status-pill status-neutral">Non-Billable</span>'}</td>
               <td><span class="status-pill status-pending">${t.status}</span></td>
             </tr>
           `).join('')}
@@ -1245,7 +1270,7 @@ async function renderHelpdesk() {
         <h1 class="page-title">Helpdesk Support</h1>
         <div class="page-sub">IT, HR, Admin, and Facilities service requests.</div>
       </div>
-      <button class="btn btn-primary" onclick="openRaiseTicketModal()">🎫 Raise Support Ticket</button>
+      <button class="btn btn-primary" onclick="openRaiseTicketModal()">${ICONS.ticket} Raise Support Ticket</button>
     </div>
 
     <div style="display:flex; flex-direction:column; gap:16px;">
@@ -1353,7 +1378,7 @@ async function renderAssets() {
         <div class="card" style="text-align:center; padding:32px; color:#94a3b8;">No physical assets assigned.</div>
       ` : assets.map(a => `
         <div class="card">
-          <div style="font-size:32px; margin-bottom:12px;">💻</div>
+          <div style="margin-bottom:12px; color:var(--primary);">${ICONS.monitor}</div>
           <div class="card-title">${a.asset_tag} (${a.category})</div>
           <div style="font-size:16px; font-weight:700; margin-bottom:4px;">${a.name}</div>
           <div style="font-size:12px; color:var(--text-muted);">Serial: <strong>${a.serial_number}</strong></div>
@@ -1361,7 +1386,7 @@ async function renderAssets() {
 
           <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border);">
             ${a.acknowledged ? `
-              <span class="status-pill status-approved">✓ Policy Acknowledged</span>
+              <span class="status-pill status-approved">\${ICONS.check} Policy Acknowledged</span>
             ` : `
               <button class="btn btn-primary" style="width:100%;" onclick="acknowledgeAsset(${a.id})">Acknowledge Receipt</button>
             `}
@@ -1494,7 +1519,7 @@ async function renderLearning() {
         <div class="card">
           <span class="status-pill status-approved">${c.category}</span>
           <h3 style="font-size:16px; font-weight:700; margin:10px 0 6px;">${c.title}</h3>
-          <div style="font-size:12px; color:var(--text-muted); margin-bottom:16px;">⏱️ ${c.duration_mins} mins • ${c.lessons_count} Lessons</div>
+          <div style="font-size:12px; color:var(--text-muted); margin-bottom:16px;"><span style="display:inline-flex; align-items:center; gap:4px;">${ICONS.clock} ${c.duration_mins} mins</span> • ${c.lessons_count} Lessons</div>
 
           <div>
             <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:6px; font-weight:600;">
@@ -1524,7 +1549,7 @@ async function renderEngage() {
         <h1 class="page-title">Company Wall & Engagement</h1>
         <div class="page-sub">Celebrations, team kudos, executive updates, and peer polls.</div>
       </div>
-      <button class="btn btn-primary" onclick="openNewPostModal()">📢 Post Announcement</button>
+      <button class="btn btn-primary" onclick="openNewPostModal()">${ICONS.bell} Post Announcement</button>
     </div>
 
     <div style="display:flex; flex-direction:column; gap:16px;">
@@ -1544,8 +1569,8 @@ async function renderEngage() {
               <p style="font-size:14px; line-height:1.5; color:var(--text-main);">${post.content}</p>
               
               <div style="margin-top:16px; padding-top:12px; border-top:1px solid var(--border); display:flex; align-items:center; gap:12px; font-size:13px; color:var(--text-muted);">
-                <span>❤️ ${post.likes_count} Likes</span>
-                <span>💬 4 Comments</span>
+                <span><span style="display:inline-flex; align-items:center; gap:4px;">${ICONS.heart} ${post.likes_count} Likes</span></span>
+                <span><span style="display:inline-flex; align-items:center; gap:4px;">${ICONS.message} 4 Comments</span></span>
               </div>
             </div>
           </div>
