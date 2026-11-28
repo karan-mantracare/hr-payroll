@@ -13,6 +13,14 @@
       "destination": "/payroll/peoplefold/index.html"
     },
     {
+      "source": "/payroll/darwinbox",
+      "destination": "/payroll/darwinbox/index.html"
+    },
+    {
+      "source": "/payroll/openhrapp",
+      "destination": "/payroll/openhrapp/index.html"
+    },
+    {
       "source": "/hr-payroll/keka/api/(.*)",
       "destination": "/api/index.js?path=$1"
     },

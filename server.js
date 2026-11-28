@@ -121,6 +121,12 @@ const handleRequest = async (req, res) => {
   if (pathname === '/payroll/peoplefold' || pathname === '/payroll/peoplefold/') {
     pathname = '/payroll/peoplefold/index.html';
   }
+  if (pathname === '/payroll/darwinbox' || pathname === '/payroll/darwinbox/') {
+    pathname = '/payroll/darwinbox/index.html';
+  }
+  if (pathname === '/payroll/openhrapp' || pathname === '/payroll/openhrapp/') {
+    pathname = '/payroll/openhrapp/index.html';
+  }
   const PREFIX = '/hr-payroll/keka';
   let isKekaApp = false;
   if (pathname === PREFIX || pathname === `${PREFIX}/`) {
